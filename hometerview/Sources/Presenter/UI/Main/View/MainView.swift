@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
+    @StateObject private var viewModel = MainViewModel()
+    
     var body: some View {
         Text("Hello, hometerview")
             .padding()
@@ -16,6 +18,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
