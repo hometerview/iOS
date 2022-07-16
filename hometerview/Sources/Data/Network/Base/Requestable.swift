@@ -13,9 +13,8 @@ public protocol Requestable: URLRequestConvertible {
     var path: String { get }
     var baseURL: String { get }
     var method: HTTPMethod { get }
-    var query: [String: AnyHashable]? { get }
     var requestParameters: RequestParams { get }
-    var header: [HTTPField: String] { get }
+    var header: [HTTPFields : String] { get }
 }
 
 extension Requestable {

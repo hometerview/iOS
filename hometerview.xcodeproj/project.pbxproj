@@ -23,6 +23,8 @@
 		FC7AB44B288059D500DF03E5 /* HTTPHeaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB44A288059D500DF03E5 /* HTTPHeaderType.swift */; };
 		FC7AB44D288059E900DF03E5 /* HTTPFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB44C288059E900DF03E5 /* HTTPFields.swift */; };
 		FC7AB44F28805A1400DF03E5 /* RequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB44E28805A1400DF03E5 /* RequestParams.swift */; };
+		FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDA2882533300E35F97 /* MainService.swift */; };
+		FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDC2882539600E35F97 /* HomeRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		FC7AB44A288059D500DF03E5 /* HTTPHeaderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderType.swift; sourceTree = "<group>"; };
 		FC7AB44C288059E900DF03E5 /* HTTPFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPFields.swift; sourceTree = "<group>"; };
 		FC7AB44E28805A1400DF03E5 /* RequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParams.swift; sourceTree = "<group>"; };
+		FCEB3BDA2882533300E35F97 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
+		FCEB3BDC2882539600E35F97 /* HomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +270,7 @@
 		FC7AB43A287ABDDB00DF03E5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FCEB3BD82882532200E35F97 /* Service */,
 				FC7AB441287E213C00DF03E5 /* RequestModel */,
 				FC7AB440287E213700DF03E5 /* Base */,
 			);
@@ -285,8 +290,8 @@
 				FC7AB43D287ABE8F00DF03E5 /* BaseNetwork.swift */,
 				FC7AB448288059AB00DF03E5 /* Requestable.swift */,
 				FC7AB44E28805A1400DF03E5 /* RequestParams.swift */,
-				FC7AB44A288059D500DF03E5 /* HTTPHeaderType.swift */,
 				FC7AB44C288059E900DF03E5 /* HTTPFields.swift */,
+				FC7AB44A288059D500DF03E5 /* HTTPHeaderType.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 		FC7AB441287E213C00DF03E5 /* RequestModel */ = {
 			isa = PBXGroup;
 			children = (
+				FCEB3BDC2882539600E35F97 /* HomeRequest.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -305,6 +311,14 @@
 				FC7AB4462880598500DF03E5 /* extension+Encodable.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		FCEB3BD82882532200E35F97 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3BDA2882533300E35F97 /* MainService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +458,7 @@
 			files = (
 				FC7AB44D288059E900DF03E5 /* HTTPFields.swift in Sources */,
 				FC7AB4472880598500DF03E5 /* extension+Encodable.swift in Sources */,
+				FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */,
 				FC7AB449288059AB00DF03E5 /* Requestable.swift in Sources */,
 				FC7AB3FA287942AD00DF03E5 /* MainView.swift in Sources */,
 				FC7AB44F28805A1400DF03E5 /* RequestParams.swift in Sources */,
@@ -453,6 +468,7 @@
 				FC7AB433287ABCBA00DF03E5 /* MainViewModel.swift in Sources */,
 				FC7AB43E287ABE8F00DF03E5 /* BaseNetwork.swift in Sources */,
 				FC7AB44B288059D500DF03E5 /* HTTPHeaderType.swift in Sources */,
+				FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
