@@ -21,7 +21,7 @@ final class CoreDataStorage {
 
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreDataStorage")
-        container.loadPersistentStores { _, error in
+        container.loadPersistentStores { description, error in
             if let error = error as NSError? {
                 print(error)
             }
