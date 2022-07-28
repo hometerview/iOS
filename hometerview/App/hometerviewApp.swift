@@ -11,7 +11,12 @@ import SwiftUI
 struct hometerviewApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            switch User.shared.status {
+                case .unAuthenticated:
+                    MainView()
+                case .authenticated:
+                    MainTabView()
+            }
         }
     }
 }
