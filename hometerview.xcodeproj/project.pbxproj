@@ -38,6 +38,8 @@
 		FCEB3C0D2892C7C900E35F97 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C0C2892C7C900E35F97 /* MyPageViewModel.swift */; };
 		FCEB3C122892C8B400E35F97 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C112892C8B400E35F97 /* User.swift */; };
 		FCEB3C142892CF2B00E35F97 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C132892CF2B00E35F97 /* Logger.swift */; };
+		FCEB3C1628942C3900E35F97 /* Color+colorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C1528942C3900E35F97 /* Color+colorStyle.swift */; };
+		FCEB3C1828942D1800E35F97 /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C1728942D1800E35F97 /* Color+hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		FCEB3C0C2892C7C900E35F97 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		FCEB3C112892C8B400E35F97 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCEB3C132892CF2B00E35F97 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		FCEB3C1528942C3900E35F97 /* Color+colorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+colorStyle.swift"; sourceTree = "<group>"; };
+		FCEB3C1728942D1800E35F97 /* Color+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,8 @@
 		FC7AB42D287ABC7700DF03E5 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				FCEB3C1528942C3900E35F97 /* Color+colorStyle.swift */,
+				FCEB3C1728942D1800E35F97 /* Color+hex.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -630,6 +636,8 @@
 				FCEB3C0B2892C78C00E35F97 /* WishViewModel.swift in Sources */,
 				FC7AB3FA287942AD00DF03E5 /* MainView.swift in Sources */,
 				FC7AB44F28805A1400DF03E5 /* RequestParams.swift in Sources */,
+				FCEB3C1828942D1800E35F97 /* Color+hex.swift in Sources */,
+				FCEB3C1628942C3900E35F97 /* Color+colorStyle.swift in Sources */,
 				FC7AB3F8287942AD00DF03E5 /* hometerviewApp.swift in Sources */,
 				FCEB3BFA2892C6A500E35F97 /* WishView.swift in Sources */,
 				FC7AB438287ABD3000DF03E5 /* MainUseCase.swift in Sources */,
