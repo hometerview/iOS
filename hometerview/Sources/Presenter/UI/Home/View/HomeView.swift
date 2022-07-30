@@ -12,12 +12,11 @@ struct HomeView: View {
 
     var body: some View {
         Button {
-            print("Hello")
+            print("Hello World!")
         } label: {
-            Text("Ho")
+            Text("Hello World!")
+                .font(.pretendard(size: 16))
 
-                .frame(width: 100, height: 30)
-                .background(Color.gray)
         }
 
     }

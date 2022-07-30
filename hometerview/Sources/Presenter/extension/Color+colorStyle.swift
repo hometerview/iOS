@@ -44,7 +44,7 @@ extension Color {
         }
     }
 
-    func colorStyle(_ config: Config) -> Color {
+    static func colorStyle(_ config: Config) -> Color {
         return Color.init(hex: config.hexCode)
     }
 }

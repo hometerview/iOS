@@ -22,7 +22,10 @@ class User {
     open var status: User.Status = .unAuthenticated
     open var memberToken: MemberToken? = nil
 
-    private init() { }
+    private init() {
+        // User Default에 Token 유효성 검사
+        status = .authenticated
+    }
 }
 
 extension User {

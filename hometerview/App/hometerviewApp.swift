@@ -13,7 +13,7 @@ struct hometerviewApp: App {
         WindowGroup {
             switch User.shared.status {
                 case .unAuthenticated:
-                    MainTabView()
+                    MainView()
                 case .authenticated:
                     MainTabView()
             }

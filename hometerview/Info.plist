@@ -4,5 +4,17 @@
 <dict>
 	<key>BaseURL</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PRETENDARD-BLACK.OTF</string>
+		<string>PRETENDARD-BOLD.OTF</string>
+		<string>PRETENDARD-EXTRABOLD.OTF</string>
+		<string>PRETENDARD-EXTRALIGHT.OTF</string>
+		<string>PRETENDARD-LIGHT.OTF</string>
+		<string>PRETENDARD-MEDIUM.OTF</string>
+		<string>PRETENDARD-REGULAR.OTF</string>
+		<string>PRETENDARD-SEMIBOLD.OTF</string>
+		<string>PRETENDARD-THIN.OTF</string>
+	</array>
 </dict>
 </plist>
