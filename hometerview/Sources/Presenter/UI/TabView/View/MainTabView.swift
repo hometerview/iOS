@@ -8,27 +8,37 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @State private var selection: Int = 0
+
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             HomeView()
                 .tabItem {
-                    Image(systemName: "house")
+                    Image("icon_home")
+                    Text("홈")
                 }
+                .tag(0)
 
             MapView()
                 .tabItem {
-                    Image(systemName: "map")
+                    Image("icon_map")
+                    Text("지도")
                 }
+                .tag(1)
 
             WishView()
                 .tabItem {
-                    Image(systemName: "heart.fill")
+                    Image("icon_heart")
+                    Text("찜하기")
                 }
+                .tag(2)
 
             MyPageView()
                 .tabItem {
-                    Image(systemName: "person.fill")
+                    Image("icon_user")
+                    Text("MY")
                 }
+                .tag(3)
         }
     }
 }
