@@ -242,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				FCEB3BED2892C55300E35F97 /* Base */,
+				FCEB3BEE2892C55C00E35F97 /* TabView */,
 				FC7AB42F287ABC8800DF03E5 /* Main */,
 				FCEB3BF12892C5EC00E35F97 /* Home */,
 				FCEB3BF22892C63D00E35F97 /* Map */,
@@ -367,7 +368,6 @@
 		FCEB3BED2892C55300E35F97 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				FCEB3BEE2892C55C00E35F97 /* TabView */,
 			);
 			path = Base;
 			sourceTree = "<group>";

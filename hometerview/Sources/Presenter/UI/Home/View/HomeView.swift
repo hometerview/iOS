@@ -11,7 +11,15 @@ struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
 
     var body: some View {
-        Text("HomeView")
+        Button {
+            print("Hello")
+        } label: {
+            Text("Ho")
+
+                .frame(width: 100, height: 30)
+                .background(Color.gray)
+        }
+
     }
 }
 
