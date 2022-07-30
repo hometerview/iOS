@@ -52,6 +52,7 @@
 		FCEB3C2A2895055A00E35F97 /* PRETENDARD-MEDIUM.OTF in Resources */ = {isa = PBXBuildFile; fileRef = FCEB3C212895055A00E35F97 /* PRETENDARD-MEDIUM.OTF */; };
 		FCEB3C2B2895055A00E35F97 /* PRETENDARD-SEMIBOLD.OTF in Resources */ = {isa = PBXBuildFile; fileRef = FCEB3C222895055A00E35F97 /* PRETENDARD-SEMIBOLD.OTF */; };
 		FCEB3C2D289506C000E35F97 /* Font+PRETENDARD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C2C289506C000E35F97 /* Font+PRETENDARD.swift */; };
+		FCEB3C312895120100E35F97 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = FCEB3C302895120100E35F97 /* Introspect */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7AB4232879436C00DF03E5 /* Alamofire in Frameworks */,
+				FCEB3C312895120100E35F97 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +560,7 @@
 			name = hometerview;
 			packageProductDependencies = (
 				FC7AB4222879436C00DF03E5 /* Alamofire */,
+				FCEB3C302895120100E35F97 /* Introspect */,
 			);
 			productName = hometerview;
 			productReference = FC7AB3F4287942AD00DF03E5 /* hometerview.app */;
@@ -633,6 +636,7 @@
 			mainGroup = FC7AB3EB287942AD00DF03E5;
 			packageReferences = (
 				FC7AB4212879436C00DF03E5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FCEB3C2F2895120100E35F97 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = FC7AB3F5287942AD00DF03E5 /* Products */;
 			projectDirPath = "";
@@ -1053,6 +1057,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		FCEB3C2F2895120100E35F97 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1060,6 +1072,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC7AB4212879436C00DF03E5 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		FCEB3C302895120100E35F97 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCEB3C2F2895120100E35F97 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */
 
