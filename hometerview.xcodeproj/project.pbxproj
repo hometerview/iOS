@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A350AAD2890E493004EA957 /* AppleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A350AAC2890E493004EA957 /* AppleLoginView.swift */; };
+		6A350AAF2890E49A004EA957 /* KakaoLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A350AAE2890E49A004EA957 /* KakaoLoginView.swift */; };
 		FC7AB3F8287942AD00DF03E5 /* hometerviewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB3F7287942AD00DF03E5 /* hometerviewApp.swift */; };
 		FC7AB3FA287942AD00DF03E5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB3F9287942AD00DF03E5 /* MainView.swift */; };
 		FC7AB3FC287942AE00DF03E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7AB3FB287942AE00DF03E5 /* Assets.xcassets */; };
@@ -25,6 +27,19 @@
 		FC7AB44F28805A1400DF03E5 /* RequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB44E28805A1400DF03E5 /* RequestParams.swift */; };
 		FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDA2882533300E35F97 /* MainService.swift */; };
 		FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDC2882539600E35F97 /* HomeRequest.swift */; };
+		FCEB3BF02892C56B00E35F97 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BEF2892C56B00E35F97 /* MainTabView.swift */; };
+		FCEB3BF62892C69400E35F97 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BF52892C69400E35F97 /* HomeView.swift */; };
+		FCEB3BF82892C69B00E35F97 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BF72892C69B00E35F97 /* MapView.swift */; };
+		FCEB3BFA2892C6A500E35F97 /* WishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BF92892C6A500E35F97 /* WishView.swift */; };
+		FCEB3BFC2892C6AD00E35F97 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BFB2892C6AD00E35F97 /* MyPageView.swift */; };
+		FCEB3C072892C75F00E35F97 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C062892C75F00E35F97 /* HomeViewModel.swift */; };
+		FCEB3C092892C77E00E35F97 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C082892C77E00E35F97 /* MapViewModel.swift */; };
+		FCEB3C0B2892C78C00E35F97 /* WishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C0A2892C78C00E35F97 /* WishViewModel.swift */; };
+		FCEB3C0D2892C7C900E35F97 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C0C2892C7C900E35F97 /* MyPageViewModel.swift */; };
+		FCEB3C122892C8B400E35F97 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C112892C8B400E35F97 /* User.swift */; };
+		FCEB3C142892CF2B00E35F97 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C132892CF2B00E35F97 /* Logger.swift */; };
+		FCEB3C1628942C3900E35F97 /* Color+colorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C1528942C3900E35F97 /* Color+colorStyle.swift */; };
+		FCEB3C1828942D1800E35F97 /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3C1728942D1800E35F97 /* Color+hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		243EAC0928914F7D003169EB /* hometerview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hometerview.entitlements; sourceTree = "<group>"; };
+		6A350AAC2890E493004EA957 /* AppleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginView.swift; sourceTree = "<group>"; };
+		6A350AAE2890E49A004EA957 /* KakaoLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginView.swift; sourceTree = "<group>"; };
 		FC7AB3F4287942AD00DF03E5 /* hometerview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hometerview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7AB3F7287942AD00DF03E5 /* hometerviewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hometerviewApp.swift; sourceTree = "<group>"; };
 		FC7AB3F9287942AD00DF03E5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -66,6 +84,19 @@
 		FC7AB44E28805A1400DF03E5 /* RequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParams.swift; sourceTree = "<group>"; };
 		FCEB3BDA2882533300E35F97 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		FCEB3BDC2882539600E35F97 /* HomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequest.swift; sourceTree = "<group>"; };
+		FCEB3BEF2892C56B00E35F97 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		FCEB3BF52892C69400E35F97 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FCEB3BF72892C69B00E35F97 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		FCEB3BF92892C6A500E35F97 /* WishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishView.swift; sourceTree = "<group>"; };
+		FCEB3BFB2892C6AD00E35F97 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		FCEB3C062892C75F00E35F97 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FCEB3C082892C77E00E35F97 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		FCEB3C0A2892C78C00E35F97 /* WishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishViewModel.swift; sourceTree = "<group>"; };
+		FCEB3C0C2892C7C900E35F97 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		FCEB3C112892C8B400E35F97 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FCEB3C132892CF2B00E35F97 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		FCEB3C1528942C3900E35F97 /* Color+colorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+colorStyle.swift"; sourceTree = "<group>"; };
+		FCEB3C1728942D1800E35F97 /* Color+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +146,7 @@
 		FC7AB3F6287942AD00DF03E5 /* hometerview */ = {
 			isa = PBXGroup;
 			children = (
+				243EAC0928914F7D003169EB /* hometerview.entitlements */,
 				FC7AB43F287ACC7400DF03E5 /* Info.plist */,
 				FC7AB439287ABDAD00DF03E5 /* App */,
 				FC7AB427287ABBEB00DF03E5 /* Resources */,
@@ -200,6 +232,8 @@
 		FC7AB42D287ABC7700DF03E5 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				FCEB3C1528942C3900E35F97 /* Color+colorStyle.swift */,
+				FCEB3C1728942D1800E35F97 /* Color+hex.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -207,7 +241,13 @@
 		FC7AB42E287ABC7D00DF03E5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FCEB3BED2892C55300E35F97 /* Base */,
+				FCEB3BEE2892C55C00E35F97 /* TabView */,
 				FC7AB42F287ABC8800DF03E5 /* Main */,
+				FCEB3BF12892C5EC00E35F97 /* Home */,
+				FCEB3BF22892C63D00E35F97 /* Map */,
+				FCEB3BF32892C64500E35F97 /* Wish */,
+				FCEB3BF42892C66E00E35F97 /* MyPage */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -225,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				FC7AB3F9287942AD00DF03E5 /* MainView.swift */,
+				6A350AAC2890E493004EA957 /* AppleLoginView.swift */,
+				6A350AAE2890E49A004EA957 /* KakaoLoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				FC7AB3F7287942AD00DF03E5 /* hometerviewApp.swift */,
+				FCEB3C112892C8B400E35F97 /* User.swift */,
+				FCEB3C132892CF2B00E35F97 /* Logger.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -319,6 +363,129 @@
 				FCEB3BDA2882533300E35F97 /* MainService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		FCEB3BED2892C55300E35F97 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FCEB3BEE2892C55C00E35F97 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3C0E2892C7EF00E35F97 /* View */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		FCEB3BF12892C5EC00E35F97 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3BFF2892C70500E35F97 /* View */,
+				FCEB3BFE2892C70100E35F97 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FCEB3BF22892C63D00E35F97 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3C012892C70C00E35F97 /* View */,
+				FCEB3C002892C70700E35F97 /* ViewModel */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		FCEB3BF32892C64500E35F97 /* Wish */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3C032892C71100E35F97 /* View */,
+				FCEB3C022892C70F00E35F97 /* ViewModel */,
+			);
+			path = Wish;
+			sourceTree = "<group>";
+		};
+		FCEB3BF42892C66E00E35F97 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3C052892C71600E35F97 /* View */,
+				FCEB3C042892C71400E35F97 /* ViewModel */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		FCEB3BFE2892C70100E35F97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3C062892C75F00E35F97 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FCEB3BFF2892C70500E35F97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3BF52892C69400E35F97 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCEB3C002892C70700E35F97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3C082892C77E00E35F97 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FCEB3C012892C70C00E35F97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3BF72892C69B00E35F97 /* MapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCEB3C022892C70F00E35F97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3C0A2892C78C00E35F97 /* WishViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FCEB3C032892C71100E35F97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3BF92892C6A500E35F97 /* WishView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCEB3C042892C71400E35F97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3C0C2892C7C900E35F97 /* MyPageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FCEB3C052892C71600E35F97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3BFB2892C6AD00E35F97 /* MyPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCEB3C0E2892C7EF00E35F97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3BEF2892C56B00E35F97 /* MainTabView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,17 +625,32 @@
 			files = (
 				FC7AB44D288059E900DF03E5 /* HTTPFields.swift in Sources */,
 				FC7AB4472880598500DF03E5 /* extension+Encodable.swift in Sources */,
+				6A350AAF2890E49A004EA957 /* KakaoLoginView.swift in Sources */,
+				FCEB3C122892C8B400E35F97 /* User.swift in Sources */,
+				FCEB3BF02892C56B00E35F97 /* MainTabView.swift in Sources */,
 				FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */,
+				FCEB3BF62892C69400E35F97 /* HomeView.swift in Sources */,
 				FC7AB449288059AB00DF03E5 /* Requestable.swift in Sources */,
+				FCEB3BF82892C69B00E35F97 /* MapView.swift in Sources */,
+				FCEB3C142892CF2B00E35F97 /* Logger.swift in Sources */,
+				FCEB3C0B2892C78C00E35F97 /* WishViewModel.swift in Sources */,
 				FC7AB3FA287942AD00DF03E5 /* MainView.swift in Sources */,
 				FC7AB44F28805A1400DF03E5 /* RequestParams.swift in Sources */,
+				FCEB3C1828942D1800E35F97 /* Color+hex.swift in Sources */,
+				FCEB3C1628942C3900E35F97 /* Color+colorStyle.swift in Sources */,
 				FC7AB3F8287942AD00DF03E5 /* hometerviewApp.swift in Sources */,
+				FCEB3BFA2892C6A500E35F97 /* WishView.swift in Sources */,
 				FC7AB438287ABD3000DF03E5 /* MainUseCase.swift in Sources */,
 				FC7AB4452880596F00DF03E5 /* extension+Dictionary.swift in Sources */,
 				FC7AB433287ABCBA00DF03E5 /* MainViewModel.swift in Sources */,
 				FC7AB43E287ABE8F00DF03E5 /* BaseNetwork.swift in Sources */,
+				FCEB3C072892C75F00E35F97 /* HomeViewModel.swift in Sources */,
+				FCEB3C092892C77E00E35F97 /* MapViewModel.swift in Sources */,
+				6A350AAD2890E493004EA957 /* AppleLoginView.swift in Sources */,
+				FCEB3BFC2892C6AD00E35F97 /* MyPageView.swift in Sources */,
 				FC7AB44B288059D500DF03E5 /* HTTPHeaderType.swift in Sources */,
 				FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */,
+				FCEB3C0D2892C7C900E35F97 /* MyPageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,9 +806,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = hometerview/hometerview.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hometerview/Info.plist;
@@ -640,7 +824,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tenants.hometerview;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.tenants.hometerview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -653,9 +837,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = hometerview/hometerview.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hometerview/Info.plist;
@@ -669,7 +855,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tenants.hometerview;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.tenants.hometerview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
