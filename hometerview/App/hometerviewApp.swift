@@ -9,12 +9,16 @@ import SwiftUI
 
 @main
 struct hometerviewApp: App {
+    @StateObject private var user = User.shared
+
     var body: some Scene {
         WindowGroup {
-            switch User.shared.status {
+            switch user.status {
                 case .unAuthenticated:
                     MainView()
                 case .authenticated:
+                    MainTabView()
+                case .guest:
                     MainTabView()
             }
         }

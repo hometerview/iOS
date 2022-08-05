@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-class User {
+class User: ObservableObject {
     enum Status {
         case unAuthenticated
         case authenticated
+        case guest
     }
 
     static var shared = User()
@@ -19,12 +20,11 @@ class User {
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
 
-    open var status: User.Status = .unAuthenticated
+    @Published open var status: User.Status = .unAuthenticated
     open var memberToken: MemberToken? = nil
 
     private init() {
         // User Default에 Token 유효성 검사
-        status = .authenticated
     }
 }
 
