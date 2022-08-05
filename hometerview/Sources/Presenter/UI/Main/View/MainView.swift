@@ -9,10 +9,41 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
+    @State private var selectedIndex = 0
     
     var body: some View {
-        Text("Hello, hometerview")
-            .padding()
+        VStack {
+            TabView(selection: $selectedIndex) {
+                VStack {
+                    Text("나랑 같은 지역으로 출근하는 사람들은\n어디에 살고있을까?")
+                        .font(.pretendard(size: 20))
+                        .multilineTextAlignment(.center)
+
+                    Image("image416")
+                        .frame(width: 243, height: 228)
+                }
+                .tag(0)
+
+                VStack {
+                    Text("직장 정보만 입력하면\n살만한 동네를 추천해드려요!")
+                        .font(.pretendard(size: 20))
+                        .multilineTextAlignment(.center)
+
+                    Image("image417")
+                        .frame(width: 243, height: 228)
+                }
+                .tag(1)
+            }
+            .tabViewStyle(.page)
+            .indexViewStyle(.page(backgroundDisplayMode: .always))
+            .frame(height: 405)
+
+            Button {
+                User.shared.status = .guest
+            } label: {
+                Text("건너뛰기")
+            }
+        }
     }
 }
 
