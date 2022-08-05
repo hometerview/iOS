@@ -11,6 +11,8 @@ import Introspect
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
+    @State private var stickyHeaderSelectedIndex = 0
+    @Namespace private var bottomLine
 
     var body: some View {
         NavigationView {
@@ -18,12 +20,18 @@ struct HomeView: View {
                 header
 
                 Section {
-                    ForEach(0..<2, id: \..self) { _ in
-                        HomeListCell()
+                    ForEach(0..<10, id: \..self) { _ in
+                        VStack {
+                            HomeListCell()
+                            Divider()
+                                .padding(.vertical)
+                        }
                     }
                 } header: {
                     stickyHeader
                 }
+
+
                 .listRowBackground(Color.white)
 
 
@@ -43,45 +51,60 @@ struct HomeView: View {
 
     var header: some View {
         Section {
-            VStack(alignment: .leading) {
-                Spacer()
+            ZStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    Spacer()
 
-                Text("삼성전자")
-                    .font(.pretendard(weight: .bold, size: 24))
-                    .padding(.bottom, 8)
+                    Text("삼성전자")
+                        .font(.pretendard(weight: .bold, size: 24))
+                        .padding(.bottom, 8)
 
-                Text("통근러에게 추천하는 동네")
-                    .font(.pretendard(weight: .medium, size: 24))
-                    .padding(.bottom, 8)
+                    Text("통근러에게 추천하는 동네")
+                        .font(.pretendard(weight: .medium, size: 24))
+                        .padding(.bottom, 8)
 
-                Text("동탄역 직장인들이 많이 사는 동네의 리뷰입니다")
-                    .font(.pretendard(size: 14))
-                    .padding(.bottom, 32)
+                    Text("동탄역 직장인들이 많이 사는 동네의 리뷰입니다")
+                        .font(.pretendard(size: 14))
+                        .padding(.bottom, 32)
+                }
+                .foregroundColor(.white)
+                .frame(height: 180)
             }
-            .foregroundColor(.white)
-            .frame(height: 201)
         }
         .listRowBackground(Color.colorStyle(.blue300))
+
     }
 
     var stickyHeader: some View {
-        HStack {
-            Text("강남구")
-                .font(.pretendard(size: 14))
-                .padding(.leading)
+        ScrollView(.horizontal) {
+            HStack(alignment: .center, spacing: 16) {
+                ForEach(0..<3, id: \.self) { index in
+                    ZStack(alignment: .center) {
+                        Button {
+                            withAnimation(.spring()) {
+                                stickyHeaderSelectedIndex = index
+                            }
+                        } label: {
+                            Text("갱냄구")
+                                .font(.pretendard(size: 14))
+                                .foregroundColor(stickyHeaderSelectedIndex == index ? .black : .colorStyle(.gray500))
+                        }
 
-            Text("서초구")
-                .font(.pretendard(size: 14))
-                .padding(.leading)
-
-            Text("중구")
-                .font(.pretendard(size: 14))
-                .padding(.leading)
-
-            Spacer()
+                        if stickyHeaderSelectedIndex == index {
+                            VStack {
+                                Spacer(minLength: 1)
+                                Rectangle()
+                                    .frame(height: 2)
+                            }
+                            .matchedGeometryEffect(id: "bottomLine", in: bottomLine)
+                        }
+                    }
+                }
+            }
         }
-        .frame(height: 50)
-        .background(Color.gray)
+        .frame(height: 40)
+        .foregroundColor(.black)
+        .padding(.leading)
         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
 }
