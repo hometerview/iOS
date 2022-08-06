@@ -11,9 +11,12 @@
 		6A350AAB288B0956004EA957 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A350AA9288B0956004EA957 /* CoreDataStorage.xcdatamodeld */; };
 		6A350AAD2890E493004EA957 /* AppleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A350AAC2890E493004EA957 /* AppleLoginView.swift */; };
 		6A350AAF2890E49A004EA957 /* KakaoLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A350AAE2890E49A004EA957 /* KakaoLoginView.swift */; };
+		FC0087B2289D7C7200E93045 /* BuildingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0087B1289D7C7200E93045 /* BuildingDetailView.swift */; };
 		FC373C46289D643000F10A4C /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC373C45289D643000F10A4C /* HomeListCell.swift */; };
 		FC373C48289D68DD00F10A4C /* View+if.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC373C47289D68DD00F10A4C /* View+if.swift */; };
 		FC373C4B289D6B4500F10A4C /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC373C4A289D6B4500F10A4C /* LikeButton.swift */; };
+		FC45F326289E0AB200C7B1CF /* BoldDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45F325289E0AB200C7B1CF /* BoldDivider.swift */; };
+		FC45F328289E0C6A00C7B1CF /* TotalStarred.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45F327289E0C6A00C7B1CF /* TotalStarred.swift */; };
 		FC7AB3F8287942AD00DF03E5 /* hometerviewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB3F7287942AD00DF03E5 /* hometerviewApp.swift */; };
 		FC7AB3FA287942AD00DF03E5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB3F9287942AD00DF03E5 /* MainView.swift */; };
 		FC7AB3FC287942AE00DF03E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7AB3FB287942AE00DF03E5 /* Assets.xcassets */; };
@@ -81,9 +84,12 @@
 		6A350AAA288B0956004EA957 /* CoreDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStorage.xcdatamodel; sourceTree = "<group>"; };
 		6A350AAC2890E493004EA957 /* AppleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginView.swift; sourceTree = "<group>"; };
 		6A350AAE2890E49A004EA957 /* KakaoLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginView.swift; sourceTree = "<group>"; };
+		FC0087B1289D7C7200E93045 /* BuildingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDetailView.swift; sourceTree = "<group>"; };
 		FC373C45289D643000F10A4C /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
 		FC373C47289D68DD00F10A4C /* View+if.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+if.swift"; sourceTree = "<group>"; };
 		FC373C4A289D6B4500F10A4C /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		FC45F325289E0AB200C7B1CF /* BoldDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldDivider.swift; sourceTree = "<group>"; };
+		FC45F327289E0C6A00C7B1CF /* TotalStarred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalStarred.swift; sourceTree = "<group>"; };
 		FC7AB3F4287942AD00DF03E5 /* hometerview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hometerview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7AB3F7287942AD00DF03E5 /* hometerviewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hometerviewApp.swift; sourceTree = "<group>"; };
 		FC7AB3F9287942AD00DF03E5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -166,10 +172,20 @@
 			path = CoreDataStorage;
 			sourceTree = "<group>";
 		};
+		FC0087B0289D7C6800E93045 /* BuildingDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FC0087B1289D7C7200E93045 /* BuildingDetailView.swift */,
+			);
+			path = BuildingDetail;
+			sourceTree = "<group>";
+		};
 		FC373C49289D6B3800F10A4C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				FC373C4A289D6B4500F10A4C /* LikeButton.swift */,
+				FC45F325289E0AB200C7B1CF /* BoldDivider.swift */,
+				FC45F327289E0C6A00C7B1CF /* TotalStarred.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,6 +499,7 @@
 			children = (
 				FCEB3BF52892C69400E35F97 /* HomeView.swift */,
 				FC373C45289D643000F10A4C /* HomeListCell.swift */,
+				FC0087B0289D7C6800E93045 /* BuildingDetail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -708,6 +725,7 @@
 				FC7AB44D288059E900DF03E5 /* HTTPFields.swift in Sources */,
 				FC7AB4472880598500DF03E5 /* extension+Encodable.swift in Sources */,
 				6A350AAF2890E49A004EA957 /* KakaoLoginView.swift in Sources */,
+				FC0087B2289D7C7200E93045 /* BuildingDetailView.swift in Sources */,
 				FCEB3C122892C8B400E35F97 /* User.swift in Sources */,
 				FCEB3BF02892C56B00E35F97 /* MainTabView.swift in Sources */,
 				FC373C48289D68DD00F10A4C /* View+if.swift in Sources */,
@@ -716,6 +734,7 @@
 				FCEB3BF62892C69400E35F97 /* HomeView.swift in Sources */,
 				FC7AB449288059AB00DF03E5 /* Requestable.swift in Sources */,
 				FCEB3BF82892C69B00E35F97 /* MapView.swift in Sources */,
+				FC45F326289E0AB200C7B1CF /* BoldDivider.swift in Sources */,
 				FCEB3C142892CF2B00E35F97 /* Logger.swift in Sources */,
 				FCEB3C0B2892C78C00E35F97 /* WishViewModel.swift in Sources */,
 				FC7AB3FA287942AD00DF03E5 /* MainView.swift in Sources */,
@@ -736,6 +755,7 @@
 				FCEB3BFC2892C6AD00E35F97 /* MyPageView.swift in Sources */,
 				FC7AB44B288059D500DF03E5 /* HTTPHeaderType.swift in Sources */,
 				6A350AA8288B0674004EA957 /* CoreDataStorage.swift in Sources */,
+				FC45F328289E0C6A00C7B1CF /* TotalStarred.swift in Sources */,
 				FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */,
 				FC373C4B289D6B4500F10A4C /* LikeButton.swift in Sources */,
 				FCEB3C0D2892C7C900E35F97 /* MyPageViewModel.swift in Sources */,
