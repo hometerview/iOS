@@ -56,11 +56,11 @@ struct HomeView: View {
                     Spacer()
 
                     Text("삼성전자")
-                        .font(.pretendard(weight: .bold, size: 24))
+                        .font(.pretendard(size: 24, weight: .bold))
                         .padding(.bottom, 8)
 
                     Text("통근러에게 추천하는 동네")
-                        .font(.pretendard(weight: .medium, size: 24))
+                        .font(.pretendard(size: 24, weight: .medium))
                         .padding(.bottom, 8)
 
                     Text("동탄역 직장인들이 많이 사는 동네의 리뷰입니다")
