@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct HomeListCell: View {
+    //TODO: 뱃지 레이아웃 알아보고 추가
+    var isAuthCompany: Bool = false
+    var isAuthTown: Bool = false
+    var hasHelpfulButton: Bool = false
+
     var body: some View {
         LazyVStack(alignment: .leading, spacing: 16) {
             Text("아크로텔 오피스텔")
@@ -72,7 +77,14 @@ struct HomeListCell: View {
                     .font(.pretendard(size: 14, weight: .regular))
             }
 
-            LikeButton(isLike: true)
+            HStack {
+                if hasHelpfulButton {
+                    HelpfulButton(isHelpful: true)
+                }
+                
+                LikeButton(isLike: true)
+            }
+
 
         }
     }
@@ -80,7 +92,7 @@ struct HomeListCell: View {
 
 struct HomeListCell_Previews: PreviewProvider {
     static var previews: some View {
-        HomeListCell()
+        HomeListCell(isAuthCompany: true, isAuthTown: true)
             .previewLayout(.sizeThatFits)
     }
 }
