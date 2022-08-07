@@ -22,7 +22,12 @@ struct HomeView: View {
                 Section {
                     ForEach(0..<10, id: \..self) { _ in
                         VStack {
-                            HomeListCell()
+                            NavigationLink {
+                                BuildingDetailView()
+                            } label: {
+                                HomeListCell()
+                            }
+
                             Divider()
                                 .padding(.vertical)
                         }
