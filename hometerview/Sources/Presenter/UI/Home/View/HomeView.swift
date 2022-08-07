@@ -93,37 +93,7 @@ struct HomeView: View {
         .padding(.horizontal)
     }
 
-    var stickyHeader: some View {
-        ScrollView(.horizontal) {
-            HStack(alignment: .center, spacing: 16) {
-                ForEach(0..<3, id: \.self) { index in
-                    ZStack(alignment: .center) {
-                        Button {
-                            withAnimation(.spring()) {
-                                stickyHeaderSelectedIndex = index
-                            }
-                        } label: {
-                            Text("갱냄구")
-                                .font(.pretendard(size: 14))
-                                .foregroundColor(stickyHeaderSelectedIndex == index ? .black : .colorStyle(.gray500))
-                        }
-
-                        if stickyHeaderSelectedIndex == index {
-                            VStack {
-                                Spacer(minLength: 1)
-                                Rectangle()
-                                    .frame(height: 2)
-                            }
-                            .matchedGeometryEffect(id: "bottomLine", in: bottomLine)
-                        }
-                    }
-                }
-            }
-        }
-        .frame(height: 40)
-        .foregroundColor(.black)
-        .padding(.leading)
-    }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {
