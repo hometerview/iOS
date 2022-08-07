@@ -24,7 +24,7 @@ struct BuildingDetailView: View {
                     .padding()
 
                 ForEach(0...10, id: \.self) { index in
-                    HomeListCell()
+                    DetailListCell()
                         .padding(.horizontal)
 
                     Divider()

@@ -17,10 +17,7 @@ struct TotalStarred: View {
                 Image("icon_star")
                     .resizable()
                     .renderingMode(.template)
-                    .if(starIndex < count, transform: { image in
-                        image
-                            .foregroundColor(.colorStyle(.blue300))
-                    })
+                    .foregroundColor(starIndex < count ? .colorStyle(.blue300) : .colorStyle(.gray200))
                     .frame(width: width, height: width)
 
             }

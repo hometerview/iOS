@@ -1,5 +1,5 @@
 //
-//  Font+PRETENDARD.swift
+//  Font+Custom.swift
 //  hometerview
 //
 //  Created by Ok Hyeon Kim on 2022/07/30.
@@ -21,5 +21,13 @@ extension Font {
             case .black: return Font.custom("PRETENDARD-BLACK", size: size)
             default: return Font.custom("PRETENDARD-REGULAR", size: size)
         }
+    }
+
+    static func jalnan(size: CGFloat) -> Font {
+        return Font.custom("Jalnan", size: size)
+    }
+
+    static func jalnanOTF(size: CGFloat) -> Font {
+        return Font.custom("JalnanOTF", size: size)
     }
 }
