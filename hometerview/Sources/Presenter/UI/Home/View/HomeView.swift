@@ -16,22 +16,29 @@ struct HomeView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack(alignment: .leading) {
-                    header
+            ZStack {
+                Color.colorStyle(.blueGrey200)
+                    .ignoresSafeArea()
+                
+                ScrollView {
+                    LazyVStack(alignment: .leading) {
+                        header
 
-                    ForEach(0..<10, id: \..self) { _ in
-                        VStack {
-                            NavigationLink {
-                                BuildingDetailView()
-                            } label: {
-                                DetailListCell()
-                                    .padding()
+                        ForEach(0..<10, id: \..self) { _ in
+                            LazyVStack {
+                                NavigationLink {
+                                    BuildingDetailView()
+                                } label: {
+                                    HomeListCell()
+                                        .padding(.horizontal)
+                                        .padding(.vertical, 4)
+                                }
                             }
                         }
                     }
                 }
             }
+
             .navigationBarHidden(true)
             .navigationBarTitleDisplayMode(.inline)
         }

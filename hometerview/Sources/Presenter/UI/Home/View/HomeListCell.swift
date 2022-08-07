@@ -36,6 +36,7 @@ struct HomeListCell: View {
 
                 Text("역근처라 그런지 일단 인프라가 너무 좋아요!")
                     .font(.pretendard(size: 14, weight: .regular))
+                    .foregroundColor(.black)
             }
 
             VStack(alignment: .leading, spacing: 6) {
@@ -44,6 +45,7 @@ struct HomeListCell: View {
                     .foregroundColor(.colorStyle(.red500))
                 Text("창문이 많아서 냉난방비 많이나오고 커튼달기도 쉽지 않음...")
                     .font(.pretendard(size: 14, weight: .regular))
+                    .foregroundColor(.black)
             }
 
 
@@ -79,6 +81,7 @@ struct HomeListCell: View {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(Color.colorStyle(.gray200), lineWidth: 1)
         )
+        .background(Color.white)
     }
 }
 
