@@ -28,6 +28,7 @@
 		FC3CF02C289FE61F005D89AF /* DirectInputInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF029289FE61F005D89AF /* DirectInputInfoView.swift */; };
 		FC3CF02D289FE61F005D89AF /* DirectInputSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF02A289FE61F005D89AF /* DirectInputSearchView.swift */; };
 		FC3CF02E289FE61F005D89AF /* FakeDirectInputSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF02B289FE61F005D89AF /* FakeDirectInputSearchView.swift */; };
+		FC3CF030289FE9A2005D89AF /* CompanyNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF02F289FE9A2005D89AF /* CompanyNameInputView.swift */; };
 		FC45F326289E0AB200C7B1CF /* BoldDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45F325289E0AB200C7B1CF /* BoldDivider.swift */; };
 		FC45F328289E0C6A00C7B1CF /* TotalStarred.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45F327289E0C6A00C7B1CF /* TotalStarred.swift */; };
 		FC45F32A289E0F3B00C7B1CF /* HelpfulButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45F329289E0F3B00C7B1CF /* HelpfulButton.swift */; };
@@ -146,6 +147,7 @@
 		FC3CF029289FE61F005D89AF /* DirectInputInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectInputInfoView.swift; sourceTree = "<group>"; };
 		FC3CF02A289FE61F005D89AF /* DirectInputSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectInputSearchView.swift; sourceTree = "<group>"; };
 		FC3CF02B289FE61F005D89AF /* FakeDirectInputSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeDirectInputSearchView.swift; sourceTree = "<group>"; };
+		FC3CF02F289FE9A2005D89AF /* CompanyNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyNameInputView.swift; sourceTree = "<group>"; };
 		FC45F325289E0AB200C7B1CF /* BoldDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldDivider.swift; sourceTree = "<group>"; };
 		FC45F327289E0C6A00C7B1CF /* TotalStarred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalStarred.swift; sourceTree = "<group>"; };
 		FC45F329289E0F3B00C7B1CF /* HelpfulButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulButton.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				FC3CF029289FE61F005D89AF /* DirectInputInfoView.swift */,
 				FC3CF02A289FE61F005D89AF /* DirectInputSearchView.swift */,
 				FC3CF02B289FE61F005D89AF /* FakeDirectInputSearchView.swift */,
+				FC3CF02F289FE9A2005D89AF /* CompanyNameInputView.swift */,
 			);
 			path = DirectInput;
 			sourceTree = "<group>";
@@ -989,6 +992,7 @@
 				FC373C46289D643000F10A4C /* DetailListCell.swift in Sources */,
 				FCEB3BFA2892C6A500E35F97 /* WishView.swift in Sources */,
 				FC7AB438287ABD3000DF03E5 /* MainUseCase.swift in Sources */,
+				FC3CF030289FE9A2005D89AF /* CompanyNameInputView.swift in Sources */,
 				FC7AB4452880596F00DF03E5 /* extension+Dictionary.swift in Sources */,
 				FC7AB433287ABCBA00DF03E5 /* MainViewModel.swift in Sources */,
 				FCEDBD5F289F46F90020D276 /* HomeListCell.swift in Sources */,
