@@ -15,7 +15,8 @@ struct SimpleCancelButton: View {
             isActive = false
         } label: {
             Text("취소")
-                .foregroundColor(.black)
+                .foregroundColor(.colorStyle(.gray700))
+                .font(.pretendard(size: 14))
         }
     }
 }
