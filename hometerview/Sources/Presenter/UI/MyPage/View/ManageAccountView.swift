@@ -43,7 +43,7 @@ struct ManageAccountView: View {
                         .padding(.leading, 14)
                         .padding(.top, 16)
                     NavigationLink {
-                        
+                        TermsOfServiceView()
                     } label: {
                         HStack {
                             Text("서비스 이용약관")
@@ -61,7 +61,7 @@ struct ManageAccountView: View {
                         .padding(.horizontal, 14)
                     }
                     NavigationLink {
-                        
+                        WithdrawalView()
                     } label: {
                         HStack {
                             Text("회원탈퇴")

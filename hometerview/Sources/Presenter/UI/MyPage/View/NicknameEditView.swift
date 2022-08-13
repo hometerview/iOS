@@ -22,18 +22,20 @@ struct NicknameEditView: View {
                 .foregroundColor(.colorStyle(.gray400))
                 .padding(.trailing, 14)
             Spacer()
+            Button {
+                print("저장하기 누름")
+            } label: {
+                RoundedRectangle(cornerRadius: 8)
+                    .frame(height: 50)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.all, 14)
+                    .overlay(
+                        Text("저장하기")
+                            .font(.pretendard(size: 16, weight: .semibold))
+                            .foregroundColor(.white)
+                    )
+            }
         }
-        Button {
-            print("저장하기 누름")
-        } label: {
-            Text("저장하기")
-                .font(.pretendard(size: 16, weight: .semibold))
-                .foregroundColor(.white)
-        }
-        .frame(maxWidth: .infinity)
-        .frame(height: 50, alignment: .center)
-        .padding(.all, 14)
-        .background(Color.colorStyle(.blue300))
     }
 }
 

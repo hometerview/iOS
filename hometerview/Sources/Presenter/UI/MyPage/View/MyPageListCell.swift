@@ -25,6 +25,8 @@ enum MyPageCellType {
 }
 
 struct MyPageListCell: View {
+    @State private var showingAlert = false
+    
     let type: MyPageCellType
     
     struct NameCell: View {
@@ -105,18 +107,48 @@ struct MyPageListCell: View {
         switch type {
         case .myInfo:
             ForEach(0..<type.menus().count, id: \.self) { index in
-                if index == 0 {
+                switch index {
+                case 0:
                     NameCell()
-                } else if index == 1 {
+                case 1:
                     HomeCell()
-                } else {
+                default:
                     CompanyCell()
                 }
             }.padding(.vertical, 16)
-        case .account, .active:
+        case .active:
             ForEach(0..<type.menus().count, id: \.self) { index in
                 NavigationLink {
-                    ManageAccountView()
+                    EmptyView()
+                } label: {
+                    HStack {
+                        Text(type.menus()[index])
+                            .font(.pretendard(size: 14, weight: .regular))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(.black)
+                        Spacer()
+                        Button {
+
+                        } label: {
+                            Image("icon_navigation")
+                        }
+                    }
+                    .padding(.vertical, 16)
+                    .padding(.horizontal, 14)
+                }
+                if index < type.menus().count - 1 {
+                    Divider()
+                }
+            }
+        case .account:
+            ForEach(0..<type.menus().count, id: \.self) { index in
+                NavigationLink {
+                    switch index {
+                    case 0:
+                        ManageAccountView()
+                    default:
+                        EmptyView()
+                    }
                 } label: {
                     HStack {
                         Text(type.menus()[index])
