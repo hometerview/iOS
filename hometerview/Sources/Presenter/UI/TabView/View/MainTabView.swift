@@ -15,28 +15,24 @@ struct MainTabView: View {
             HomeView()
                 .tabItem {
                     Image("icon_home")
-                    Text("홈")
                 }
                 .tag(0)
 
             MapView()
                 .tabItem {
                     Image("icon_map")
-                    Text("지도")
                 }
                 .tag(1)
 
             WishView()
                 .tabItem {
                     Image("icon_heart")
-                    Text("찜하기")
                 }
                 .tag(2)
 
             MyPageView()
                 .tabItem {
                     Image("icon_user")
-                    Text("MY")
                 }
                 .tag(3)
         }
