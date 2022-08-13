@@ -20,19 +20,44 @@ struct MyPageView: View {
                         .font(.pretendard(size: 14, weight: .semibold))
                         .foregroundColor(.colorStyle(.blue300))
                         .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 )
                 .padding(.top, 12)
                 .padding(.horizontal, 14)
-            List {
-                Section(header: Text("내 정보").font(.pretendard(size: 14, weight: .semibold))) {
-                    MyPageListCell(menus: MyPageList.mypage.menus())
-                }.listStyle(.plain)
-                Section(header: Text("활동").font(.pretendard(size: 14, weight: .semibold))) {
-                    MyPageListCell(menus: MyPageList.active.menus())
-                }.listStyle(.plain)
-                Section(header: Text("계정").font(.pretendard(size: 14, weight: .semibold))) {
-                    MyPageListCell(menus: MyPageList.account.menus())
-                }.listStyle(.plain)
+            ScrollView {
+                VStack {
+                    Text("내 정보")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.pretendard(size: 12, weight: .semibold))
+                        .padding(.leading, 14)
+                    MyPageListCell(type: .mypage)
+                    BoldDivider()
+                    
+                    Text("활동")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.pretendard(size: 12, weight: .semibold))
+                        .padding(.leading, 14)
+                    MyPageListCell(type: .active)
+                    BoldDivider()
+
+                    Text("계정")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.pretendard(size: 12, weight: .semibold))
+                        .padding(.leading, 14)
+                    MyPageListCell(type: .account)
+                    BoldDivider()
+                    
+                    HStack {
+                        Text("현재 버전")
+                            .font(.pretendard(size: 14, weight: .regular))
+                        Spacer()
+                        Text("v0.0.1")
+                            .font(.pretendard(size: 14, weight: .regular))
+                            .foregroundColor(.colorStyle(.gray400))
+                    }
+                    .padding(.vertical, 16)
+                    .padding(.horizontal, 14)
+                }
             }
         }
     }
