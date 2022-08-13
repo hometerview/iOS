@@ -13,6 +13,8 @@ struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     @State private var stickyHeaderSelectedIndex = 0
     @State private var selectedRankIndex = 0
+    @State private var isToastShow: Bool = false
+    @State private var toastMessage: String = "HOHOHOHO"
     @Namespace private var bottomLine
 
     var body: some View {
@@ -45,6 +47,7 @@ struct HomeView: View {
             .navigationBarHidden(true)
             .navigationBarTitleDisplayMode(.inline)
         }
+        .modifier(ToastModifier(isShow: $isToastShow, toastString: $toastMessage))
     }
 
     var header: some View {

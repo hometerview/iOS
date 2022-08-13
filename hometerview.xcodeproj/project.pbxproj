@@ -34,6 +34,7 @@
 		FC3CF04128A77943005D89AF /* HomeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF04028A77943005D89AF /* HomeMapper.swift */; };
 		FC3CF04428A77989005D89AF /* HomeRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF04328A77989005D89AF /* HomeRequestDTO.swift */; };
 		FC3CF04928A779EC005D89AF /* HomeRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF04828A779EC005D89AF /* HomeRequestMapper.swift */; };
+		FC3CF04B28A781D5005D89AF /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF04A28A781D5005D89AF /* ToastView.swift */; };
 		FC45F326289E0AB200C7B1CF /* BoldDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45F325289E0AB200C7B1CF /* BoldDivider.swift */; };
 		FC45F328289E0C6A00C7B1CF /* TotalStarred.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45F327289E0C6A00C7B1CF /* TotalStarred.swift */; };
 		FC45F32A289E0F3B00C7B1CF /* HelpfulButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45F329289E0F3B00C7B1CF /* HelpfulButton.swift */; };
@@ -158,6 +159,7 @@
 		FC3CF04028A77943005D89AF /* HomeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapper.swift; sourceTree = "<group>"; };
 		FC3CF04328A77989005D89AF /* HomeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequestDTO.swift; sourceTree = "<group>"; };
 		FC3CF04828A779EC005D89AF /* HomeRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequestMapper.swift; sourceTree = "<group>"; };
+		FC3CF04A28A781D5005D89AF /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		FC45F325289E0AB200C7B1CF /* BoldDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldDivider.swift; sourceTree = "<group>"; };
 		FC45F327289E0C6A00C7B1CF /* TotalStarred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalStarred.swift; sourceTree = "<group>"; };
 		FC45F329289E0F3B00C7B1CF /* HelpfulButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulButton.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				FC45F329289E0F3B00C7B1CF /* HelpfulButton.swift */,
 				FC45F325289E0AB200C7B1CF /* BoldDivider.swift */,
 				FC45F327289E0C6A00C7B1CF /* TotalStarred.swift */,
+				FC3CF04A28A781D5005D89AF /* ToastView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1030,6 +1033,7 @@
 				FC45F326289E0AB200C7B1CF /* BoldDivider.swift in Sources */,
 				FC3CF04428A77989005D89AF /* HomeRequestDTO.swift in Sources */,
 				FC3CF04928A779EC005D89AF /* HomeRequestMapper.swift in Sources */,
+				FC3CF04B28A781D5005D89AF /* ToastView.swift in Sources */,
 				FCEB3C142892CF2B00E35F97 /* Logger.swift in Sources */,
 				FCEB3C0B2892C78C00E35F97 /* WishViewModel.swift in Sources */,
 				FC7AB3FA287942AD00DF03E5 /* MainView.swift in Sources */,
