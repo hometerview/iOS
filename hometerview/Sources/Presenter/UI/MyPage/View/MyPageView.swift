@@ -65,9 +65,10 @@ struct MyPageView: View {
                     }
                 }
             }
+            .navigationTitle("")
             .navigationBarHidden(true)
             .padding(.top, 1)
-        }
+        }.accentColor(.black)
     }
 }
 
