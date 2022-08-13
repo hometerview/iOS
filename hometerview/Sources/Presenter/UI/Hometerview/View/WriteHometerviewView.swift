@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WriteHometerviewView: View {
+    @StateObject private var viewModel = HometerviewViewModel()
     @State private var selectedTextField = false
     @State private var isTapFakeSearchBar = false
     @Binding var isShowFullCover: Bool
@@ -15,26 +16,45 @@ struct WriteHometerviewView: View {
 
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack(alignment: .top) {
                 Color.colorStyle(.blueGrey100)
                     .ignoresSafeArea()
 
-                Group {
-                    if isTapFakeSearchBar {
-                        DirectInputSearchView(isTapFakeSearchBar: $isTapFakeSearchBar, searchBarNamespace: searchBarNamespace)
-                    } else {
-                        FakeDirectInputSearchView(
-                            isTapFakeSearchBar: $isTapFakeSearchBar, isShowHeader: false,
-                            searchBarNamespace: searchBarNamespace
-                        )
+                ProgressView(value: 37, total: 100)
+
+                VStack {
+                    header
+
+                    Group {
+                        if isTapFakeSearchBar {
+                            DirectInputSearchView(isTapFakeSearchBar: $isTapFakeSearchBar, searchBarNamespace: searchBarNamespace)
+                        } else {
+                            FakeDirectInputSearchView(
+                                isTapFakeSearchBar: $isTapFakeSearchBar, isShowHeader: false,
+                                searchBarNamespace: searchBarNamespace
+                            )
+                        }
                     }
+
+                    Spacer()
                 }
             }
-            .navigationBarItems(trailing: SimpleCancelButton(isActive: $isShowFullCover))
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("집터뷰 작성")
+            .navigationBarHidden(true)
         }
+    }
 
+    var header: some View {
+        ZStack {
+            Text("집터뷰 작성")
+                .font(.pretendard(size: 15, weight: .medium))
+
+            HStack {
+                Spacer()
+
+                SimpleCancelButton(isActive: $isShowFullCover)
+            }
+        }
+        .padding()
     }
 }
 
