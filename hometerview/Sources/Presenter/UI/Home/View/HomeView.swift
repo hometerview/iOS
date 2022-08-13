@@ -93,7 +93,6 @@ struct HomeView: View {
         .padding(.horizontal)
     }
 
-    
 }
 
 struct HomeView_Previews: PreviewProvider {
