@@ -84,6 +84,7 @@
 		FCA699C9289EB31E0074AF29 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA699AD289EB31E0074AF29 /* DaumMap.framework */; };
 		FCA699CC289F43780074AF29 /* Jalnan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCA699CA289F41A80074AF29 /* Jalnan.ttf */; };
 		FCA699CD289F43780074AF29 /* JalnanOTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCA699CB289F41A80074AF29 /* JalnanOTF.otf */; };
+		FCAE859728A79D98002FC940 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE859628A79D98002FC940 /* BaseViewModel.swift */; };
 		FCE5DE9A289EB091004C4160 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCE5DE99289EB091004C4160 /* Alamofire */; };
 		FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDA2882533300E35F97 /* MainService.swift */; };
 		FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDC2882539600E35F97 /* HomeRequest.swift */; };
@@ -220,6 +221,7 @@
 		FCA699AD289EB31E0074AF29 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		FCA699CA289F41A80074AF29 /* Jalnan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Jalnan.ttf; sourceTree = "<group>"; };
 		FCA699CB289F41A80074AF29 /* JalnanOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JalnanOTF.otf; sourceTree = "<group>"; };
+		FCAE859628A79D98002FC940 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		FCE5DE97289EAB8B004C4160 /* KakaoMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCEB3BDA2882533300E35F97 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		FCEB3BDC2882539600E35F97 /* HomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequest.swift; sourceTree = "<group>"; };
@@ -749,6 +751,7 @@
 		FCEB3BFE2892C70100E35F97 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FCAE859628A79D98002FC940 /* BaseViewModel.swift */,
 				FCEB3C062892C75F00E35F97 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
@@ -1043,6 +1046,7 @@
 				FC3CF025289FA56A005D89AF /* FakeEnterCompanySearchView.swift in Sources */,
 				FC3CF04128A77943005D89AF /* HomeMapper.swift in Sources */,
 				FC7AB3F8287942AD00DF03E5 /* hometerviewApp.swift in Sources */,
+				FCAE859728A79D98002FC940 /* BaseViewModel.swift in Sources */,
 				6A350AAB288B0956004EA957 /* CoreDataStorage.xcdatamodeld in Sources */,
 				FC373C46289D643000F10A4C /* DetailListCell.swift in Sources */,
 				FCEB3BFA2892C6A500E35F97 /* WishView.swift in Sources */,

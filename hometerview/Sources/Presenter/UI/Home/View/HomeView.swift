@@ -11,20 +11,26 @@ import Introspect
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
-    @State private var stickyHeaderSelectedIndex = 0
     @State private var selectedRankIndex = 0
     @State private var isToastShow: Bool = false
+    @State private var isShowSegmentedControl: Bool = false
     @State private var toastMessage: String = "HOHOHOHO"
     @Namespace private var bottomLine
 
+    let headerHeight: CGFloat = 180
+    let rankHeaderHeight: CGFloat = 80
+    var fullHeaderHeight: CGFloat {
+        return headerHeight + rankHeaderHeight
+    }
+
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack(alignment: .top) {
                 Color.colorStyle(.blueGrey100)
                     .ignoresSafeArea()
                 
                 ScrollView {
-                    LazyVStack(alignment: .leading) {
+                    LazyVStack(alignment: .leading, spacing: 0) {
                         header
 
                         rankHeader
@@ -39,10 +45,63 @@ struct HomeView: View {
                                         .padding(.vertical, 4)
                                 }
                             }
+
+                        }
+                    }
+                    .background(GeometryReader {
+                        Color.clear.preference(key: ViewOffsetKey.self,
+                                               value: -$0.frame(in: .named("scroll")).origin.y)
+                    })
+                    .onPreferenceChange(ViewOffsetKey.self) { scrollOffsetY in
+                        withAnimation {
+                            isShowSegmentedControl = scrollOffsetY > fullHeaderHeight
                         }
                     }
                 }
+                .coordinateSpace(name: "scroll")
                 .padding(.top, 1)
+
+                if isShowSegmentedControl {
+                    Group {
+                        Picker("", selection: $selectedRankIndex) {
+                            ForEach(0..<3, id: \.self) { index in
+                                Text("갱냄구")
+                                    .tag(index)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .padding(.horizontal)
+                    }
+                    .background(Color.colorStyle(.blueGrey100))
+                    .animation(.easeInOut, value: isShowSegmentedControl)
+                    .transition(.opacity)
+
+                    VStack {
+                        Spacer()
+
+                        HStack {
+                            Image("icon_map")
+                                .resizable()
+                                .renderingMode(.template)
+                                .frame(width: 18, height: 18)
+                                .foregroundColor(.white)
+
+                            Text("\("갱냄구") 지도보기")
+                                .font(.pretendard(size: 14, weight: .medium))
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 143, height: 34, alignment: .center)
+                        .background(Color.colorStyle(.gray800))
+                        .cornerRadius(17)
+
+
+
+                    }
+                    .animation(.easeInOut, value: isShowSegmentedControl)
+                    .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
+                    .padding(.bottom, 20)
+                }
+
             }
 
             .navigationBarHidden(true)
@@ -72,7 +131,7 @@ struct HomeView: View {
                 .font(.pretendard(size: 14))
                 .padding(.bottom, 32)
         }
-        .padding(.vertical, 32)
+        .frame(height: headerHeight)
         .padding(.horizontal)
     }
 
@@ -87,6 +146,8 @@ struct HomeView: View {
             }
         }
         .padding(.horizontal)
+        .padding(.bottom, 16)
+        .frame(height: rankHeaderHeight)
     }
 
     @ViewBuilder func rankHeaderCell(index: Int) -> some View {
@@ -113,5 +174,13 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+struct ViewOffsetKey: PreferenceKey {
+    typealias Value = CGFloat
+    static var defaultValue = CGFloat.zero
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value += nextValue()
     }
 }
