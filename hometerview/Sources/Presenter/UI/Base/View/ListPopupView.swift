@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListPopupView: View {
     @Binding var isShowing: Bool
-    @Binding var selectedIndex: Int
+    @Binding var selectedIndex: Int?
     let list: [String]
 
     var body: some View {
@@ -29,6 +29,11 @@ struct ListPopupView: View {
                         isShowing = false
                     }
             }
+
+            Rectangle()
+                .frame(height: 30)
+                .foregroundColor(.clear)
+
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 14)
@@ -39,15 +44,23 @@ struct ListPopupView: View {
 }
 
 struct ListPopupModifier: ViewModifier {
-    @Binding var selectedIndex: Int
+    @Binding var selectedIndex: Int?
     @Binding var isShowing: Bool
     let listContents: [String]
 
     func body(content: Content) -> some View {
         ZStack(alignment: .bottom) {
             content
+                .onTapGesture {
+                    isShowing = false
+                }
 
             if isShowing {
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .ignoresSafeArea()
+                    .opacity(0.2)
+
                 ListPopupView(
                     isShowing: $isShowing,
                     selectedIndex: $selectedIndex,
@@ -55,7 +68,7 @@ struct ListPopupModifier: ViewModifier {
             }
         }
         .animation(.easeInOut, value: isShowing)
-        .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
+        .transition(AnyTransition.move(edge: .bottom))
 
     }
 }
