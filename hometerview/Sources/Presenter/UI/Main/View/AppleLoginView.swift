@@ -11,16 +11,21 @@ import AuthenticationServices
 struct AppleLoginView: View {
     var body: some View {
         SignInWithAppleButton(.continue) { request in
-            request.requestedScopes = [.fullName, .email]
+            
         } onCompletion: { result in
             switch result {
             case .success(let authResults):
-                print(authResults)
+                switch authResults.credential {
+                case let credential as ASAuthorizationAppleIDCredential:
+                    print(credential)
+                default:
+                    break
+                }
             case .failure(let error):
                 print(error)
             }
         }
-        .signInWithAppleButtonStyle(.whiteOutline)
+        .signInWithAppleButtonStyle(.black)
     }
 }
 
