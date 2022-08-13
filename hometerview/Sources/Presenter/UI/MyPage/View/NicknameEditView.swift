@@ -12,22 +12,37 @@ struct NicknameEditView: View {
 
     var body: some View {
         VStack {
-            TextField("김길동", text: $nickname)
-                .frame(height: 50)
+            VStack(spacing: 8) {
+                ZStack {
+                    HStack {
+                        TextField("이름을 입력하세요", text: $nickname)
+                            .introspectTextField { textField in
+                                textField.becomeFirstResponder()
+                            }
+                    }
+                    .padding()
+                    .foregroundColor(.gray)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .strokeBorder(Color.init(hex: "D4DBEB"))
+                            .frame(height: 50)
+                    )
+                }
                 .padding(.horizontal, 14)
-                .textFieldStyle(.roundedBorder)
-            Text("0/10 자")
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .font(.pretendard(size: 12, weight: .regular))
-                .foregroundColor(.colorStyle(.gray400))
-                .padding(.trailing, 14)
+                Text("0/10 자")
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .font(.pretendard(size: 12, weight: .regular))
+                    .foregroundColor(.colorStyle(.gray400))
+                    .padding(.trailing, 14)
+            }
             Spacer()
             Button {
-                print("저장하기 누름")
+                hideKeyboard()
             } label: {
                 RoundedRectangle(cornerRadius: 8)
                     .frame(height: 50)
                     .frame(maxWidth: .infinity, alignment: .center)
+                    .foregroundColor(Color.colorStyle(.blue300))
                     .padding(.all, 14)
                     .overlay(
                         Text("저장하기")
@@ -36,6 +51,8 @@ struct NicknameEditView: View {
                     )
             }
         }
+        .padding(.top, 24)
+        .navigationBarHidden(true)
     }
 }
 
@@ -44,3 +61,11 @@ struct NicknameEditView_Previews: PreviewProvider {
         NicknameEditView()
     }
 }
+
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif

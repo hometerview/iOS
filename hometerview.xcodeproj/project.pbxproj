@@ -15,7 +15,6 @@
 		6A82522328A80E5600081D38 /* ManageAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82522228A80E5600081D38 /* ManageAccountView.swift */; };
 		6A82522528A8148A00081D38 /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82522428A8148A00081D38 /* TermsOfServiceView.swift */; };
 		6A82522728A8170A00081D38 /* WithdrawalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82522628A8170A00081D38 /* WithdrawalView.swift */; };
-		6A82522A28A8225400081D38 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82522928A8225400081D38 /* SignOutView.swift */; };
 		6ADE0CD828A789F300E4F68D /* MyPageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0CD728A789F300E4F68D /* MyPageListCell.swift */; };
 		FC0087B2289D7C7200E93045 /* BuildingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0087B1289D7C7200E93045 /* BuildingDetailView.swift */; };
 		FC373C46289D643000F10A4C /* DetailListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC373C45289D643000F10A4C /* DetailListCell.swift */; };
@@ -145,7 +144,6 @@
 		6A82522228A80E5600081D38 /* ManageAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccountView.swift; sourceTree = "<group>"; };
 		6A82522428A8148A00081D38 /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
 		6A82522628A8170A00081D38 /* WithdrawalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalView.swift; sourceTree = "<group>"; };
-		6A82522928A8225400081D38 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		6ADE0CD728A789F300E4F68D /* MyPageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageListCell.swift; sourceTree = "<group>"; };
 		FC0087B1289D7C7200E93045 /* BuildingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDetailView.swift; sourceTree = "<group>"; };
 		FC373C45289D643000F10A4C /* DetailListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListCell.swift; sourceTree = "<group>"; };
@@ -822,7 +820,6 @@
 				6A82522228A80E5600081D38 /* ManageAccountView.swift */,
 				6A82522428A8148A00081D38 /* TermsOfServiceView.swift */,
 				6A82522628A8170A00081D38 /* WithdrawalView.swift */,
-				6A82522928A8225400081D38 /* SignOutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1072,7 +1069,6 @@
 				FC7AB43E287ABE8F00DF03E5 /* BaseNetwork.swift in Sources */,
 				FCEB3C072892C75F00E35F97 /* HomeViewModel.swift in Sources */,
 				FCEB3C092892C77E00E35F97 /* MapViewModel.swift in Sources */,
-				6A82522A28A8225400081D38 /* SignOutView.swift in Sources */,
 				6A350AAD2890E493004EA957 /* AppleLoginView.swift in Sources */,
 				FCEB3BFC2892C6AD00E35F97 /* MyPageView.swift in Sources */,
 				6A82522528A8148A00081D38 /* TermsOfServiceView.swift in Sources */,
