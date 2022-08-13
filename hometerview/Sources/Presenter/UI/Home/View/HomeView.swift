@@ -15,6 +15,7 @@ struct HomeView: View {
     @State private var isToastShow: Bool = false
     @State private var isShowSegmentedControl: Bool = false
     @State private var toastMessage: String = "HOHOHOHO"
+    @State private var isShowFullCover: Bool = false
     @Namespace private var bottomLine
 
     let headerHeight: CGFloat = 180
@@ -105,11 +106,13 @@ struct HomeView: View {
             }
 
             .navigationBarHidden(true)
-            .navigationBarTitleDisplayMode(.inline)
+
+        }
+        .fullScreenCover(isPresented: $isShowFullCover) {
+            EnterCompanyInfoView(isShowFullCover: $isShowFullCover)
         }
         .modifier(ToastModifier(isShow: $isToastShow, toastString: $toastMessage))
     }
-
     var header: some View {
         VStack(alignment: .leading) {
             HStack {

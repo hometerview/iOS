@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct EnterCompanySearchView: View {
-    @Binding var isTapFakeSearchBar: Bool
     @State private var searchText: String = ""
     @State private var isShowContents: Bool = false
+    @Binding var isTapFakeSearchBar: Bool
+    @Binding var isShowFullCover: Bool
     let searchBarNamespace: Namespace.ID
 
     var body: some View {
@@ -85,8 +86,12 @@ struct EnterCompanySearchView: View {
                 .font(.pretendard(size: 11, weight: .semibold))
                 .foregroundColor(.colorStyle(.blue300))
 
-            Text("내가 찾는 회사가 없어요")
-                .font(.pretendard(size: 12, weight: .semibold))
+            NavigationLink {
+                DirectInputInfoView(isShowFullCover: $isShowFullCover)
+            } label: {
+                Text("내가 찾는 회사가 없어요")
+                    .font(.pretendard(size: 12, weight: .semibold))
+            }
         }
         .padding(.horizontal, 32)
         .padding(.bottom, 32)
@@ -118,6 +123,6 @@ struct EnterCompanySearchViewPreview: PreviewProvider {
     @Namespace static var test
 
     static var previews: some View {
-        EnterCompanySearchView(isTapFakeSearchBar: .constant(false), searchBarNamespace: test)
+        EnterCompanySearchView(isTapFakeSearchBar: .constant(false), isShowFullCover: .constant(true), searchBarNamespace: test)
     }
 }

@@ -85,6 +85,7 @@
 		FCA699CC289F43780074AF29 /* Jalnan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCA699CA289F41A80074AF29 /* Jalnan.ttf */; };
 		FCA699CD289F43780074AF29 /* JalnanOTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCA699CB289F41A80074AF29 /* JalnanOTF.otf */; };
 		FCAE859728A79D98002FC940 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE859628A79D98002FC940 /* BaseViewModel.swift */; };
+		FCAE859B28A7BEAA002FC940 /* SimpleCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE859A28A7BEAA002FC940 /* SimpleCancelButton.swift */; };
 		FCE5DE9A289EB091004C4160 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCE5DE99289EB091004C4160 /* Alamofire */; };
 		FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDA2882533300E35F97 /* MainService.swift */; };
 		FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDC2882539600E35F97 /* HomeRequest.swift */; };
@@ -222,6 +223,7 @@
 		FCA699CA289F41A80074AF29 /* Jalnan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Jalnan.ttf; sourceTree = "<group>"; };
 		FCA699CB289F41A80074AF29 /* JalnanOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JalnanOTF.otf; sourceTree = "<group>"; };
 		FCAE859628A79D98002FC940 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		FCAE859A28A7BEAA002FC940 /* SimpleCancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCancelButton.swift; sourceTree = "<group>"; };
 		FCE5DE97289EAB8B004C4160 /* KakaoMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCEB3BDA2882533300E35F97 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		FCEB3BDC2882539600E35F97 /* HomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequest.swift; sourceTree = "<group>"; };
@@ -333,10 +335,9 @@
 		FC3CF021289F9ECC005D89AF /* CompanyInfo */ = {
 			isa = PBXGroup;
 			children = (
-				FC3CF022289F9EF5005D89AF /* EnterCompanyInfoView.swift */,
-				FC3CF026289FA89E005D89AF /* EnterCompanySearchView.swift */,
-				FC3CF024289FA56A005D89AF /* FakeEnterCompanySearchView.swift */,
+				FCAE859828A7BE91002FC940 /* EnterCompany */,
 				FC3CF028289FE5FF005D89AF /* DirectInput */,
+				FCAE859A28A7BEAA002FC940 /* SimpleCancelButton.swift */,
 			);
 			path = CompanyInfo;
 			sourceTree = "<group>";
@@ -686,6 +687,16 @@
 				FCA699A0289EB31E0074AF29 /* MTMapCircle.h */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		FCAE859828A7BE91002FC940 /* EnterCompany */ = {
+			isa = PBXGroup;
+			children = (
+				FC3CF022289F9EF5005D89AF /* EnterCompanyInfoView.swift */,
+				FC3CF026289FA89E005D89AF /* EnterCompanySearchView.swift */,
+				FC3CF024289FA56A005D89AF /* FakeEnterCompanySearchView.swift */,
+			);
+			path = EnterCompany;
 			sourceTree = "<group>";
 		};
 		FCEB3BD82882532200E35F97 /* Service */ = {
@@ -1069,6 +1080,7 @@
 				FC3CF02D289FE61F005D89AF /* DirectInputSearchView.swift in Sources */,
 				FC373C4B289D6B4500F10A4C /* LikeButton.swift in Sources */,
 				FCEB3C0D2892C7C900E35F97 /* MyPageViewModel.swift in Sources */,
+				FCAE859B28A7BEAA002FC940 /* SimpleCancelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
