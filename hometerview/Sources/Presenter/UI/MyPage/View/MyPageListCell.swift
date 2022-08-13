@@ -34,9 +34,7 @@ struct MyPageListCell: View {
                     .font(.pretendard(size: 14, weight: .regular))
                 Spacer()
                 HStack {
-                    Button {
-                        print("닉네임 버튼")
-                    } label: {
+                    NavigationLink(destination: NicknameEditView()) {
                         Image("icon_edit")
                             .resizable()
                             .frame(width: 14, height: 14)
