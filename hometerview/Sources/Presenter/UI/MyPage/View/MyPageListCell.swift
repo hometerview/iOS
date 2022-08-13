@@ -27,6 +27,82 @@ enum MyPageCellType {
 struct MyPageListCell: View {
     let type: MyPageCellType
     
+    struct NameCell: View {
+        var body: some View {
+            HStack {
+                Text("닉네임")
+                    .font(.pretendard(size: 14, weight: .regular))
+                Spacer()
+                HStack {
+                    Button {
+                        print("닉네임 버튼")
+                    } label: {
+                        Image("icon_edit")
+                            .resizable()
+                            .frame(width: 14, height: 14)
+                    }
+                    Text("김길동")
+                        .foregroundColor(.colorStyle(.gray800))
+                        .font(.pretendard(size: 14, weight: .regular))
+                }
+            }.padding(.horizontal, 14)
+        }
+    }
+
+    struct HomeCell: View {
+        var body: some View {
+            HStack {
+                Text("집")
+                    .font(.pretendard(size: 14, weight: .regular))
+                Spacer()
+                VStack(alignment: .trailing, spacing: 8) {
+                    RoundedRectangle(cornerRadius: 2)
+                        .frame(width: 72, height: 16)
+                        .foregroundColor(.colorStyle(.gray100))
+                        .overlay(
+                            Text("동네인증 미완료")
+                                .foregroundColor(Color.colorStyle(.gray500))
+                                .font(.pretendard(size: 10, weight: .regular))
+                                .padding(.vertical, 2)
+                                .padding(.horizontal, 4)
+                        )
+                    Text("경기도 평택동")
+                        .foregroundColor(.colorStyle(.gray800))
+                        .font(.pretendard(size: 14, weight: .regular))
+                    Text("평택역")
+                        .foregroundColor(.colorStyle(.gray400))
+                        .font(.pretendard(size: 12, weight: .regular))
+                }
+            }.padding(.horizontal, 14)
+        }
+    }
+
+    struct CompanyCell: View {
+        var body: some View {
+            HStack {
+                Text("직장")
+                    .font(.pretendard(size: 14, weight: .regular))
+                Spacer()
+                VStack(alignment: .trailing, spacing: 8) {
+                    Text("삼성전자 서울 R&D캠퍼스")
+                        .foregroundColor(.colorStyle(.gray800))
+                        .font(.pretendard(size: 14, weight: .regular))
+                    HStack {
+                        Text("서울특별시 서초구 성촌길 56")
+                            .foregroundColor(.colorStyle(.gray400))
+                            .font(.pretendard(size: 12, weight: .regular))
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(.colorStyle(.gray400))
+                            .font(.system(size: 2))
+                        Text("동탄역")
+                            .foregroundColor(.colorStyle(.gray400))
+                            .font(.pretendard(size: 12, weight: .regular))
+                    }
+                }
+            }.padding(.horizontal, 14)
+        }
+    }
+
     var body: some View {
         switch type {
         case .myInfo:
@@ -64,82 +140,6 @@ struct MyPageListCell: View {
                 }
             }
         }
-    }
-}
-
-struct NameCell: View {
-    var body: some View {
-        HStack {
-            Text("닉네임")
-                .font(.pretendard(size: 14, weight: .regular))
-            Spacer()
-            HStack {
-                Button {
-                    print("닉네임 버튼")
-                } label: {
-                    Image("icon_edit")
-                        .resizable()
-                        .frame(width: 14, height: 14)
-                }
-                Text("김길동")
-                    .foregroundColor(.colorStyle(.gray800))
-                    .font(.pretendard(size: 14, weight: .regular))
-            }
-        }.padding(.horizontal, 14)
-    }
-}
-
-struct HomeCell: View {
-    var body: some View {
-        HStack {
-            Text("집")
-                .font(.pretendard(size: 14, weight: .regular))
-            Spacer()
-            VStack(alignment: .trailing, spacing: 8) {
-                RoundedRectangle(cornerRadius: 2)
-                    .frame(width: 72, height: 16)
-                    .foregroundColor(.colorStyle(.gray100))
-                    .overlay(
-                        Text("동네인증 미완료")
-                            .foregroundColor(Color.colorStyle(.gray500))
-                            .font(.pretendard(size: 10, weight: .regular))
-                            .padding(.vertical, 2)
-                            .padding(.horizontal, 4)
-                    )
-                Text("경기도 평택동")
-                    .foregroundColor(.colorStyle(.gray800))
-                    .font(.pretendard(size: 14, weight: .regular))
-                Text("평택역")
-                    .foregroundColor(.colorStyle(.gray400))
-                    .font(.pretendard(size: 12, weight: .regular))
-            }
-        }.padding(.horizontal, 14)
-    }
-}
-
-struct CompanyCell: View {
-    var body: some View {
-        HStack {
-            Text("직장")
-                .font(.pretendard(size: 14, weight: .regular))
-            Spacer()
-            VStack(alignment: .trailing, spacing: 8) {
-                Text("삼성전자 서울 R&D캠퍼스")
-                    .foregroundColor(.colorStyle(.gray800))
-                    .font(.pretendard(size: 14, weight: .regular))
-                HStack {
-                    Text("서울특별시 서초구 성촌길 56")
-                        .foregroundColor(.colorStyle(.gray400))
-                        .font(.pretendard(size: 12, weight: .regular))
-                    Image(systemName: "circle.fill")
-                        .foregroundColor(.colorStyle(.gray400))
-                        .font(.system(size: 2))
-                    Text("동탄역")
-                        .foregroundColor(.colorStyle(.gray400))
-                        .font(.pretendard(size: 12, weight: .regular))
-                }
-            }
-        }.padding(.horizontal, 14)
     }
 }
 
