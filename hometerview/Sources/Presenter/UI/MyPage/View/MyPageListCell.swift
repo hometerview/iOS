@@ -116,7 +116,7 @@ struct MyPageListCell: View {
         case .account, .active:
             ForEach(0..<type.menus().count, id: \.self) { index in
                 NavigationLink {
-                    
+                    ManageAccountView()
                 } label: {
                     HStack {
                         Text(type.menus()[index])
