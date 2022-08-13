@@ -7,8 +7,8 @@
 
 import Foundation
 
-protocol MainUseCaseInterface { }
+protocol HomeUseCaseInterface { }
 
-class MainUseCase: MainUseCaseInterface {
+class HomeUseCase: HomeUseCaseInterface {
 
 }

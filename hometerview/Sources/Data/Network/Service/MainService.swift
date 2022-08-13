@@ -1,5 +1,5 @@
 //
-//  MainService.swift
+//  HomeService.swift
 //  hometerview
 //
 //  Created by Ok Hyeon Kim on 2022/07/16.
@@ -9,7 +9,7 @@ import Foundation
 
 import Alamofire
 
-struct MainService {
+struct HomeService {
     let session = AF
 
     func request(request: HomeRequest) {
