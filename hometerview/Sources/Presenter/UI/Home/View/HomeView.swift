@@ -42,6 +42,7 @@ struct HomeView: View {
                         }
                     }
                 }
+                .padding(.top, 1)
             }
 
             .navigationBarHidden(true)
@@ -81,19 +82,30 @@ struct HomeView: View {
                 Button {
                     selectedRankIndex = index
                 } label: {
-                    RoundedRectangle(cornerRadius: 8)
-                        .frame(maxWidth: .infinity, minHeight: 80)
-                        .foregroundColor(index == selectedRankIndex ? .colorStyle(.blue300) : .colorStyle(.blueGrey200))
-                        .overlay(
-                            Text("갱냄구")
-                                .font(.pretendard(size: 16, weight: .semibold))
-                                .foregroundColor(index == selectedRankIndex ? .white : .colorStyle(.gray600))
-
-                        )
+                    rankHeaderCell(index: index)
                 }
             }
         }
         .padding(.horizontal)
+    }
+
+    @ViewBuilder func rankHeaderCell(index: Int) -> some View {
+        ZStack(alignment: .top) {
+            RoundedRectangle(cornerRadius: 8)
+                .frame(maxWidth: .infinity, minHeight: 80)
+                .foregroundColor(index == selectedRankIndex ? .colorStyle(.gray700) : .colorStyle(.blueGrey200))
+                .overlay(
+                    Text("갱냄구")
+                        .font(.pretendard(size: 16, weight: .semibold))
+                        .foregroundColor(index == selectedRankIndex ? .white : .colorStyle(.gray600))
+
+                )
+
+            if index == 0 {
+                Image("badge")
+                    .offset(x: 0, y: -10)
+            }
+        }
     }
 
 }
