@@ -1,0 +1,71 @@
+//
+//  HalfPopupView.swift
+//  hometerview
+//
+//  Created by Ok Hyeon Kim on 2022/08/13.
+//
+
+import SwiftUI
+
+struct ListPopupView: View {
+    @Binding var isShowing: Bool
+    @Binding var selectedIndex: Int
+    let list: [String]
+
+    var body: some View {
+        LazyVStack(spacing: 0) {
+            Rectangle()
+                .foregroundColor(.colorStyle(.gray200))
+                .cornerRadius(4)
+                .frame(width: 40, height: 4)
+
+            ForEach(list.indices, id: \.self) { index in
+                Text(list[index])
+                    .font(.pretendard(size: 14))
+                    .frame(maxWidth: .infinity, minHeight: 50, alignment: .leading)
+                    .padding(.leading, 14)
+                    .onTapGesture {
+                        selectedIndex = index
+                        isShowing = false
+                    }
+            }
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 14)
+        .background(Color.white)
+        .cornerRadius(15, corners: .topLeft)
+        .cornerRadius(15, corners: .topRight)
+    }
+}
+
+struct ListPopupModifier: ViewModifier {
+    @Binding var selectedIndex: Int
+    @Binding var isShowing: Bool
+    let listContents: [String]
+
+    func body(content: Content) -> some View {
+        ZStack(alignment: .bottom) {
+            content
+
+            if isShowing {
+                ListPopupView(
+                    isShowing: $isShowing,
+                    selectedIndex: $selectedIndex,
+                    list: listContents)
+            }
+        }
+        .animation(.easeInOut, value: isShowing)
+        .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
+
+    }
+}
+
+struct HalfPopupView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.colorStyle(.blueGrey200)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .modifier(ListPopupModifier(selectedIndex: .constant(1), isShowing: .constant(true), listContents: ["A", "B", "C"]))
+        }
+    }
+}
