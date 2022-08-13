@@ -10,7 +10,7 @@ import Foundation
 class HometerviewViewModel: BaseViewModel,
                             ObservableObject {
     
-    let livingFloorModelTitles: [String] = LivingFloowModel.allCases.map({ $0.description })
+    let livingFloorModelTitles: [String] = LivingFloorModel.allCases.map({ $0.description })
     let lengthResidenceTitles: [String] = LengthResidenceModel.popupListTitles
 
     @Published var selectedLivingFloorTitle: String? = nil
@@ -27,8 +27,8 @@ class HometerviewViewModel: BaseViewModel,
         }
     }
     
-    func assignSelectedLivingFloowTitle(index: Int) {
-        selectedLivingFloorTitle = LivingFloowModel.allCases[index].description
+    func assignSelectedLivingFloorTitle(index: Int) {
+        selectedLivingFloorTitle = LivingFloorModel.allCases[index].description
     }
 
     func assignLengthResidenceTitle(index: Int) {

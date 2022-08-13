@@ -1331,8 +1331,8 @@
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/okstring/Dropbox/swift/hometerview/KakaoMap-Bridging-Header.h",
-					"$(PROJECT_DIR)/hometerview/DaumMap.embeddedframework",
+					"./KakaoMap-Bridging-Header.h",
+					./hometerview/DaumMap.embeddedframework,
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hometerview/Info.plist;
@@ -1369,13 +1369,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = H92U9KV5T2;
+				DEVELOPMENT_TEAM = NY37VGJ3HF;
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"/Users/okstring/Dropbox/swift/hometerview/KakaoMap-Bridging-Header.h",
-					"$(PROJECT_DIR)/hometerview/DaumMap.embeddedframework",
+					./hometerview/DaumMap.embeddedframework,
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hometerview/Info.plist;

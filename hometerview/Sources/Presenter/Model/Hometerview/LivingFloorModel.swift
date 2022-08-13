@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LivingFloowModel: String, CustomStringConvertible ,CaseIterable {
+enum LivingFloorModel: String, CustomStringConvertible ,CaseIterable {
     case high = "고층"
     case middle = "중층"
     case low = "저층"

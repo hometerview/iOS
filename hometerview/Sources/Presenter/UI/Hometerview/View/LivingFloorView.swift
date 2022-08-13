@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LivingFloorView: View {
     @ObservedObject var viewModel: HometerviewViewModel
-    @State private var isShowLivingFloowList: Bool = false
+    @State private var isShowLivingFloorList: Bool = false
     @State private var selectedIndex: Int? = nil
     @Binding var isShowFullCover: Bool
 
@@ -38,11 +38,11 @@ struct LivingFloorView: View {
         .modifier(
             ListPopupModifier(
                 selectedIndex: $selectedIndex,
-                isShowing: $isShowLivingFloowList,
+                isShowing: $isShowLivingFloorList,
                 listContents: viewModel.livingFloorModelTitles))
         .onChange(of: selectedIndex) { newValue in
             if let index = newValue {
-                viewModel.assignSelectedLivingFloowTitle(index: index)
+                viewModel.assignSelectedLivingFloorTitle(index: index)
             }
         }
     }
@@ -98,7 +98,7 @@ struct LivingFloorView: View {
                         .frame(height: 50)
                 )
                 .onTapGesture {
-                    isShowLivingFloowList = true
+                    isShowLivingFloorList = true
                 }
             }
         }
