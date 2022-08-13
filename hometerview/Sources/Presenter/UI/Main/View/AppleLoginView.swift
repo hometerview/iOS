@@ -9,32 +9,23 @@ import SwiftUI
 import AuthenticationServices
 
 struct AppleLoginView: View {
-    @AppStorage("email") var email: String = ""
-    
     var body: some View {
-        if email.isEmpty {
-            SignInWithAppleButton(.continue) { request in
-                request.requestedScopes = [.fullName, .email]
-            } onCompletion: { result in
-                switch result {
-                case .success(let authResults):
-                    switch authResults.credential {
-                    case let credential as ASAuthorizationAppleIDCredential:
-                        if let email = credential.email {
-                            self.email = email
-                            print(email)
-                        }
-                    default:
-                        break
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }
-            .signInWithAppleButtonStyle(.black)
-        } else {
+        SignInWithAppleButton(.continue) { request in
             
+        } onCompletion: { result in
+            switch result {
+            case .success(let authResults):
+                switch authResults.credential {
+                case let credential as ASAuthorizationAppleIDCredential:
+                    print(credential)
+                default:
+                    break
+                }
+            case .failure(let error):
+                print(error)
+            }
         }
+        .signInWithAppleButtonStyle(.black)
     }
 }
 
