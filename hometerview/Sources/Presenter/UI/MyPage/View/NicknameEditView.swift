@@ -52,7 +52,7 @@ struct NicknameEditView: View {
             }
         }
         .padding(.top, 24)
-        .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
