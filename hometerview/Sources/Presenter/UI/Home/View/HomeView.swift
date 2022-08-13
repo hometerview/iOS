@@ -15,7 +15,8 @@ struct HomeView: View {
     @State private var isToastShow: Bool = false
     @State private var isShowSegmentedControl: Bool = false
     @State private var toastMessage: String = "HOHOHOHO"
-    @State private var isShowFullCover: Bool = false
+    @State private var isShowEnterCompanyFullCover: Bool = false
+    @State private var isShowHometerviewFullCover: Bool = false
     @Namespace private var bottomLine
 
     let headerHeight: CGFloat = 180
@@ -32,6 +33,12 @@ struct HomeView: View {
                 
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 0) {
+                        Button {
+                            isShowHometerviewFullCover = true
+                        } label: {
+                            Text("Test Button")
+                        }
+
                         header
 
                         rankHeader
@@ -108,9 +115,12 @@ struct HomeView: View {
             .navigationBarHidden(true)
 
         }
-        .fullScreenCover(isPresented: $isShowFullCover) {
-            EnterCompanyInfoView(isShowFullCover: $isShowFullCover)
+        .fullScreenCover(isPresented: $isShowEnterCompanyFullCover) {
+            EnterCompanyInfoView(isShowFullCover: $isShowEnterCompanyFullCover)
         }
+        .fullScreenCover(isPresented: $isShowHometerviewFullCover, content: {
+            WriteHometerviewView(isShowFullCover: $isShowHometerviewFullCover)
+        })
         .modifier(ToastModifier(isShow: $isToastShow, toastString: $toastMessage))
     }
     var header: some View {

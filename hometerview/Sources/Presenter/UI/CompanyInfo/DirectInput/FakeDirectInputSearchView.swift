@@ -9,14 +9,16 @@ import SwiftUI
 
 struct FakeDirectInputSearchView: View {
     @Binding var isTapFakeSearchBar: Bool
+    var isShowHeader: Bool = true
     let searchBarNamespace: Namespace.ID
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("검색 정보가 뜨지 않는다면\n주소를 입력해주세요.")
-                .font(.pretendard(size: 20, weight: .medium))
-                .padding(.bottom, 35)
-
+            if isShowHeader {
+                Text("검색 정보가 뜨지 않는다면\n주소를 입력해주세요.")
+                    .font(.pretendard(size: 20, weight: .medium))
+                    .padding(.bottom, 35)
+            }
 
             fakeSearchBar
 
