@@ -10,10 +10,10 @@ import SwiftUI
 struct EnterCompanyInfoView: View {
     @State private var selectedTextField = false
     @State private var isTapFakeSearchBar = false
+    @Binding var isShowFullCover: Bool
     @Namespace private var searchBarNamespace
 
     var body: some View {
-
         NavigationView {
             ZStack {
                 Color.colorStyle(.blueGrey100)
@@ -21,7 +21,7 @@ struct EnterCompanyInfoView: View {
                 
                 Group {
                     if isTapFakeSearchBar {
-                        EnterCompanySearchView(isTapFakeSearchBar: $isTapFakeSearchBar, searchBarNamespace: searchBarNamespace)
+                        EnterCompanySearchView(isTapFakeSearchBar: $isTapFakeSearchBar, isShowFullCover: $isShowFullCover, searchBarNamespace: searchBarNamespace)
                     } else {
                         FakeEnterCompanySearchView(
                             isTapFakeSearchBar: $isTapFakeSearchBar,
@@ -32,23 +32,13 @@ struct EnterCompanyInfoView: View {
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: cancelButton)
+            .navigationBarItems(trailing: SimpleCancelButton(isActive: $isShowFullCover))
         }
-    }
-
-    var cancelButton: some View {
-        Button {
-
-        } label: {
-            Text("취소")
-                .foregroundColor(.black)
-        }
-
     }
 }
 
 struct EnterCompanyInfo_Previews: PreviewProvider {
     static var previews: some View {
-        EnterCompanyInfoView()
+        EnterCompanyInfoView(isShowFullCover: .constant(true))
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CompanyNameInputView: View {
     @State private var companyNameText: String = ""
+    @Binding var isShowFullCover: Bool
 
     var body: some View {
         ZStack {
@@ -51,7 +52,7 @@ struct CompanyNameInputView: View {
                         .foregroundColor(.white)
                         .font(.pretendard(size: 16, weight: .medium))
                         .frame(maxWidth: .infinity, minHeight: 50)
-                        .background(Color.colorStyle(.blue300))
+                        .background(companyNameText == "" ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
                         .disabled(true)
                         .cornerRadius(8)
 
@@ -62,11 +63,12 @@ struct CompanyNameInputView: View {
 
         }
         .padding()
+        .navigationBarItems(trailing: SimpleCancelButton(isActive: $isShowFullCover))
     }
 }
 
 struct DirectInputAddressView_Previews: PreviewProvider {
     static var previews: some View {
-        CompanyNameInputView()
+        CompanyNameInputView(isShowFullCover: .constant(true))
     }
 }
