@@ -20,10 +20,8 @@ struct WriteHometerviewView: View {
                 Color.colorStyle(.blueGrey100)
                     .ignoresSafeArea()
 
-                ProgressView(value: 37, total: 100)
-
                 VStack {
-                    header
+                    HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 37)
 
                     Group {
                         if isTapFakeSearchBar {
@@ -41,20 +39,6 @@ struct WriteHometerviewView: View {
             }
             .navigationBarHidden(true)
         }
-    }
-
-    var header: some View {
-        ZStack {
-            Text("집터뷰 작성")
-                .font(.pretendard(size: 15, weight: .medium))
-
-            HStack {
-                Spacer()
-
-                SimpleCancelButton(isActive: $isShowFullCover)
-            }
-        }
-        .padding()
     }
 }
 

@@ -93,6 +93,7 @@
 		FCAE85B128A7D27A002FC940 /* LivingFloorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85B028A7D27A002FC940 /* LivingFloorView.swift */; };
 		FCAE85B428A7D72B002FC940 /* HometerviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85B328A7D72B002FC940 /* HometerviewViewModel.swift */; };
 		FCAE85B628A7DB67002FC940 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85B528A7DB67002FC940 /* StarRatingView.swift */; };
+		FCAE85B928A7E5E9002FC940 /* HometerviewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85B828A7E5E9002FC940 /* HometerviewHeader.swift */; };
 		FCE5DE9A289EB091004C4160 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCE5DE99289EB091004C4160 /* Alamofire */; };
 		FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDA2882533300E35F97 /* MainService.swift */; };
 		FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDC2882539600E35F97 /* HomeRequest.swift */; };
@@ -238,6 +239,7 @@
 		FCAE85B028A7D27A002FC940 /* LivingFloorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingFloorView.swift; sourceTree = "<group>"; };
 		FCAE85B328A7D72B002FC940 /* HometerviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HometerviewViewModel.swift; sourceTree = "<group>"; };
 		FCAE85B528A7DB67002FC940 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		FCAE85B828A7E5E9002FC940 /* HometerviewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HometerviewHeader.swift; sourceTree = "<group>"; };
 		FCE5DE97289EAB8B004C4160 /* KakaoMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCEB3BDA2882533300E35F97 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		FCEB3BDC2882539600E35F97 /* HomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequest.swift; sourceTree = "<group>"; };
@@ -732,6 +734,7 @@
 				FCAE85A228A7C316002FC940 /* WriteHometerviewView.swift */,
 				FCAE85B028A7D27A002FC940 /* LivingFloorView.swift */,
 				FCAE85B528A7DB67002FC940 /* StarRatingView.swift */,
+				FCAE85B828A7E5E9002FC940 /* HometerviewHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1136,6 +1139,7 @@
 				FC3CF03F28A77935005D89AF /* Home.swift in Sources */,
 				FC45F32A289E0F3B00C7B1CF /* HelpfulButton.swift in Sources */,
 				FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */,
+				FCAE85B928A7E5E9002FC940 /* HometerviewHeader.swift in Sources */,
 				FC3CF02D289FE61F005D89AF /* DirectInputSearchView.swift in Sources */,
 				FC373C4B289D6B4500F10A4C /* LikeButton.swift in Sources */,
 				FCEB3C0D2892C7C900E35F97 /* MyPageViewModel.swift in Sources */,

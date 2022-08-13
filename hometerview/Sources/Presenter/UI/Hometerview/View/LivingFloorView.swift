@@ -19,23 +19,20 @@ struct LivingFloorView: View {
             Color.colorStyle(.blueGrey100)
                 .ignoresSafeArea()
 
-            ProgressView(value: 37, total: 100)
-
             VStack(alignment: .leading) {
-                header
+                HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 37)
 
-                companyAddress
+                Group {
+                    companyAddress
 
-                livingFloor
+                    livingFloor
 
-                Spacer()
+                    Spacer()
 
-                nextButton
+                    nextButton
+                }
+                .padding()
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding()
-            .padding(.bottom, 48)
-
         }
         .navigationBarItems(trailing: SimpleCancelButton(isActive: $isShowFullCover))
         .modifier(
