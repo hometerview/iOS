@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NicknameEditView: View {
-    @State var nickname: String = ""
+    @State private var nickname: String = ""
 
     var body: some View {
         VStack {
