@@ -10,6 +10,7 @@ import SwiftUI
 struct EnterCompanySearchView: View {
     @Binding var isTapFakeSearchBar: Bool
     @State private var searchText: String = ""
+    @State private var isShowContents: Bool = false
     let searchBarNamespace: Namespace.ID
 
     var body: some View {
@@ -21,41 +22,60 @@ struct EnterCompanySearchView: View {
                 LazyVStack(alignment: .leading, spacing: 10) {
                     companySearchBar
 
-                    notFoundCompanyButton
+                    if isShowContents {
+                        Group {
+                            notFoundCompanyButton
 
-                    companyList
+                            companyList
+                        }
+                        .transition(.opacity.animation(.easeInOut(duration: 0.2)))
+                    }
                 }
             }
         }
         .padding()
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                isShowContents = true
+            }
+        }
+        .onDisappear {
+            isShowContents = false
+        }
     }
 
     var companyList: some View {
         ForEach(0..<5, id: \.self) { index in
             LazyVStack(alignment: .leading, spacing: 10) {
-                Text("삼성전자")
-                    .font(.pretendard(size: 16, weight: .semibold))
-
-
-                HStack {
-                    Text("서울시 마포구 흥정로 32, 34")
-                        .font(.pretendard(size: 13, weight: .medium))
-
-                    Spacer()
-
-                    Text("삼성전자")
-                        .font(.pretendard(size: 11, weight: .medium))
-                        .foregroundColor(.colorStyle(.blue300))
-                    Image(systemName: "chevron.right")
-                        .font(.pretendard(size: 9, weight: .medium))
-                        .foregroundColor(.colorStyle(.blue300))
-                }
+                companyListCell(index: index)
             }
+        }
+        .padding(.horizontal, 32)
+        .padding(.vertical, 16)
+        .background(Color.white)
+        .cornerRadius(4)
+    }
 
-            .padding(.horizontal, 32)
-            .padding(.vertical, 16)
-            .background(Color.white)
-            .cornerRadius(4)
+
+    @ViewBuilder func companyListCell(index: Int) -> some View {
+        Group {
+            Text("삼성전자")
+                .font(.pretendard(size: 16, weight: .semibold))
+
+
+            HStack {
+                Text("서울시 마포구 흥정로 32, 34")
+                    .font(.pretendard(size: 13, weight: .medium))
+
+                Spacer()
+
+                Text("삼성전자")
+                    .font(.pretendard(size: 11, weight: .medium))
+                    .foregroundColor(.colorStyle(.blue300))
+                Image(systemName: "chevron.right")
+                    .font(.pretendard(size: 9, weight: .medium))
+                    .foregroundColor(.colorStyle(.blue300))
+            }
         }
     }
 

@@ -51,7 +51,7 @@ struct CompanyNameInputView: View {
                         .foregroundColor(.white)
                         .font(.pretendard(size: 16, weight: .medium))
                         .frame(maxWidth: .infinity, minHeight: 50)
-                        .background(Color.colorStyle(.blue300))
+                        .background(companyNameText == "" ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
                         .disabled(true)
                         .cornerRadius(8)
 

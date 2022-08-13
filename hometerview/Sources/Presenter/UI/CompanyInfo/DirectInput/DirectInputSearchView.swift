@@ -10,6 +10,7 @@ import SwiftUI
 struct DirectInputSearchView: View {
     @Binding var isTapFakeSearchBar: Bool
     @State private var searchText: String = ""
+    @State private var isShowContents: Bool = false
     let searchBarNamespace: Namespace.ID
 
     var body: some View {
@@ -21,11 +22,22 @@ struct DirectInputSearchView: View {
                 LazyVStack(alignment: .leading, spacing: 10) {
                     customSearchBar
 
-                    companyList
+                    if isShowContents {
+                        companyList
+                        .transition(.opacity.animation(.easeInOut(duration: 0.2)))
+                    }
                 }
             }
         }
         .padding()
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                isShowContents = true
+            }
+        }
+        .onDisappear {
+            isShowContents = false
+        }
     }
 
     var companyList: some View {
