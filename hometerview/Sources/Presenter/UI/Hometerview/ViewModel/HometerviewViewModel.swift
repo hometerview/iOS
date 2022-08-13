@@ -15,6 +15,9 @@ class HometerviewViewModel: BaseViewModel,
 
     @Published var selectedLivingFloorTitle: String? = nil
     @Published var selectedLengthResidenceTitle: String? = nil
+    @Published var meritContents: String = ""
+    @Published var weaknessContents: String = ""
+
     @Published var starCount: Int = 0
     var rateStarTitle: String {
         if let rateStarTitleModel = RateStarTitleModel(rawValue: starCount) {
