@@ -31,7 +31,7 @@ struct AppleLoginView: View {
                     print(error)
                 }
             }
-            .signInWithAppleButtonStyle(.whiteOutline)
+            .signInWithAppleButtonStyle(.black)
         } else {
             
         }
