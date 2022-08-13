@@ -30,7 +30,7 @@ struct MyPageView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.pretendard(size: 12, weight: .semibold))
                         .padding(.leading, 14)
-                    MyPageListCell(type: .mypage)
+                    MyPageListCell(type: .myInfo)
                     BoldDivider()
                     
                     Text("활동")

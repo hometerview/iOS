@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-enum MyPageList {
-    case mypage
+enum MyPageCellType {
+    case myInfo
     case account
     case active
     
     func menus() -> [String] {
         switch self {
-        case .mypage:
+        case .myInfo:
             return ["닉네임", "집", "직장"]
         case .account:
             return ["계정 관리", "로그아웃"]
@@ -25,11 +25,11 @@ enum MyPageList {
 }
 
 struct MyPageListCell: View {
-    let type: MyPageList
+    let type: MyPageCellType
     
     var body: some View {
         switch type {
-        case .mypage:
+        case .myInfo:
             ForEach(0..<type.menus().count, id: \.self) { index in
                 if index == 0 {
                     NameCell()
@@ -42,14 +42,22 @@ struct MyPageListCell: View {
         case .account, .active:
             ForEach(0..<type.menus().count, id: \.self) { index in
                 NavigationLink {
-                    Text(type.menus()[index])
+                    
                 } label: {
-                    Text(type.menus()[index])
-                        .font(.pretendard(size: 14, weight: .regular))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.black)
-                        .padding(.vertical, 16)
-                        .padding(.horizontal, 14)
+                    HStack {
+                        Text(type.menus()[index])
+                            .font(.pretendard(size: 14, weight: .regular))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(.black)
+                        Spacer()
+                        Button {
+
+                        } label: {
+                            Image("icon_navigation")
+                        }
+                    }
+                    .padding(.vertical, 16)
+                    .padding(.horizontal, 14)
                 }
                 if index < type.menus().count - 1 {
                     Divider()
@@ -137,6 +145,6 @@ struct CompanyCell: View {
 
 struct MyPageListCell_Previews: PreviewProvider {
     static var previews: some View {
-        MyPageListCell(type: .mypage)
+        MyPageListCell(type: .myInfo)
     }
 }
