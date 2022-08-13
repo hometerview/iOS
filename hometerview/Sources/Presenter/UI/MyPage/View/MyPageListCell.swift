@@ -142,28 +142,48 @@ struct MyPageListCell: View {
             }
         case .account:
             ForEach(0..<type.menus().count, id: \.self) { index in
-                NavigationLink {
-                    switch index {
-                    case 0:
+                switch index {
+                case 0:
+                    NavigationLink {
                         ManageAccountView()
-                    default:
-                        EmptyView()
-                    }
-                } label: {
-                    HStack {
-                        Text(type.menus()[index])
-                            .font(.pretendard(size: 14, weight: .regular))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(.black)
-                        Spacer()
-                        Button {
+                    } label: {
+                        HStack {
+                            Text(type.menus()[index])
+                                .font(.pretendard(size: 14, weight: .regular))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .foregroundColor(.black)
+                            Spacer()
+                            Button {
 
+                            } label: {
+                                Image("icon_navigation")
+                            }
+                        }
+                        .padding(.vertical, 16)
+                        .padding(.horizontal, 14)
+                    }
+                case 1:
+                    HStack {
+                        Button {
+                            showingAlert.toggle()
                         } label: {
+                            Text(type.menus()[index])
+                                .font(.pretendard(size: 14, weight: .regular))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .foregroundColor(.black)
+                            Spacer()
                             Image("icon_navigation")
                         }
                     }
+                    .alert(isPresented: $showingAlert) {
+                        Alert(title: Text("로그아웃 하시겠습니까?"), primaryButton: .destructive(Text("확인"), action: {
+                            print("확인 눌렀음")
+                        }), secondaryButton: .cancel(Text("취소")))
+                    }
                     .padding(.vertical, 16)
                     .padding(.horizontal, 14)
+                default:
+                    EmptyView()
                 }
                 if index < type.menus().count - 1 {
                     Divider()
