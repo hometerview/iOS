@@ -94,6 +94,9 @@
 		FCAE85B428A7D72B002FC940 /* HometerviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85B328A7D72B002FC940 /* HometerviewViewModel.swift */; };
 		FCAE85B628A7DB67002FC940 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85B528A7DB67002FC940 /* StarRatingView.swift */; };
 		FCAE85B928A7E5E9002FC940 /* HometerviewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85B828A7E5E9002FC940 /* HometerviewHeader.swift */; };
+		FCAE85BB28A7E807002FC940 /* RateStarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85BA28A7E807002FC940 /* RateStarModel.swift */; };
+		FCAE85BD28A7F544002FC940 /* RateStarTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85BC28A7F544002FC940 /* RateStarTitleModel.swift */; };
+		FCAE85BF28A7FB89002FC940 /* LengthResidenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85BE28A7FB89002FC940 /* LengthResidenceModel.swift */; };
 		FCE5DE9A289EB091004C4160 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCE5DE99289EB091004C4160 /* Alamofire */; };
 		FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDA2882533300E35F97 /* MainService.swift */; };
 		FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDC2882539600E35F97 /* HomeRequest.swift */; };
@@ -240,6 +243,9 @@
 		FCAE85B328A7D72B002FC940 /* HometerviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HometerviewViewModel.swift; sourceTree = "<group>"; };
 		FCAE85B528A7DB67002FC940 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		FCAE85B828A7E5E9002FC940 /* HometerviewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HometerviewHeader.swift; sourceTree = "<group>"; };
+		FCAE85BA28A7E807002FC940 /* RateStarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateStarModel.swift; sourceTree = "<group>"; };
+		FCAE85BC28A7F544002FC940 /* RateStarTitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateStarTitleModel.swift; sourceTree = "<group>"; };
+		FCAE85BE28A7FB89002FC940 /* LengthResidenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthResidenceModel.swift; sourceTree = "<group>"; };
 		FCE5DE97289EAB8B004C4160 /* KakaoMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCEB3BDA2882533300E35F97 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		FCEB3BDC2882539600E35F97 /* HomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequest.swift; sourceTree = "<group>"; };
@@ -743,6 +749,9 @@
 			isa = PBXGroup;
 			children = (
 				FCAE85AC28A7CCF4002FC940 /* LivingFloorModel.swift */,
+				FCAE85BA28A7E807002FC940 /* RateStarModel.swift */,
+				FCAE85BC28A7F544002FC940 /* RateStarTitleModel.swift */,
+				FCAE85BE28A7FB89002FC940 /* LengthResidenceModel.swift */,
 			);
 			path = Hometerview;
 			sourceTree = "<group>";
@@ -1088,12 +1097,14 @@
 				FC3CF023289F9EF5005D89AF /* EnterCompanyInfoView.swift in Sources */,
 				FC3CF03D28A7791D005D89AF /* HomeDTO.swift in Sources */,
 				FCAE85B428A7D72B002FC940 /* HometerviewViewModel.swift in Sources */,
+				FCAE85BB28A7E807002FC940 /* RateStarModel.swift in Sources */,
 				6A350AAF2890E49A004EA957 /* KakaoLoginView.swift in Sources */,
 				FCAE85AF28A7CDD7002FC940 /* View+cornerRadius.swift in Sources */,
 				FC3CF02E289FE61F005D89AF /* FakeDirectInputSearchView.swift in Sources */,
 				FC0087B2289D7C7200E93045 /* BuildingDetailView.swift in Sources */,
 				FCEB3C122892C8B400E35F97 /* User.swift in Sources */,
 				FCAE85AA28A7C962002FC940 /* ListPopupView.swift in Sources */,
+				FCAE85BD28A7F544002FC940 /* RateStarTitleModel.swift in Sources */,
 				FCEB3BF02892C56B00E35F97 /* MainTabView.swift in Sources */,
 				FC373C48289D68DD00F10A4C /* View+if.swift in Sources */,
 				FC3CF02C289FE61F005D89AF /* DirectInputInfoView.swift in Sources */,
@@ -1104,6 +1115,7 @@
 				FC7AB449288059AB00DF03E5 /* Requestable.swift in Sources */,
 				FCEB3BF82892C69B00E35F97 /* MapView.swift in Sources */,
 				FC45F326289E0AB200C7B1CF /* BoldDivider.swift in Sources */,
+				FCAE85BF28A7FB89002FC940 /* LengthResidenceModel.swift in Sources */,
 				FC3CF04428A77989005D89AF /* HomeRequestDTO.swift in Sources */,
 				FC3CF04928A779EC005D89AF /* HomeRequestMapper.swift in Sources */,
 				FC3CF04B28A781D5005D89AF /* ToastView.swift in Sources */,

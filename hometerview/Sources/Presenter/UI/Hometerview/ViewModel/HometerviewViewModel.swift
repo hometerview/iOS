@@ -10,12 +10,36 @@ import Foundation
 class HometerviewViewModel: BaseViewModel,
                             ObservableObject {
     
-    let livingFloorModelTitle: [String] = LivingFloowModel.allCases.map({ $0.description })
+    let livingFloorModelTitles: [String] = LivingFloowModel.allCases.map({ $0.description })
+    let lengthResidenceTitles: [String] = LengthResidenceModel.popupListTitles
 
     @Published var selectedLivingFloorTitle: String? = nil
+    @Published var selectedLengthResidenceTitle: String? = nil
+    @Published var starCount: Int = 0
+    var rateStarTitle: String {
+        if let rateStarTitleModel = RateStarTitleModel(rawValue: starCount) {
+            return rateStarTitleModel.description
+        } else {
+            return "별점을 입력해주세요"
+        }
+    }
     
     func assignSelectedLivingFloowTitle(index: Int) {
         selectedLivingFloorTitle = LivingFloowModel.allCases[index].description
+    }
+
+    func assignLengthResidenceTitle(index: Int) {
+        selectedLengthResidenceTitle = LengthResidenceModel.popupListTitles[index]
+    }
+
+    func assignStarCount(starIndex: Int) {
+        let star = starIndex + 1
+
+        if starCount == star {
+            starCount = 0
+        } else {
+            starCount = starIndex + 1
+        }
     }
 
 }

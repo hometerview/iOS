@@ -39,7 +39,7 @@ struct LivingFloorView: View {
             ListPopupModifier(
                 selectedIndex: $selectedIndex,
                 isShowing: $isShowLivingFloowList,
-                listContents: viewModel.livingFloorModelTitle ))
+                listContents: viewModel.livingFloorModelTitles))
         .onChange(of: selectedIndex) { newValue in
             if let index = newValue {
                 viewModel.assignSelectedLivingFloowTitle(index: index)
@@ -77,6 +77,7 @@ struct LivingFloorView: View {
         VStack {
             Text("거주층")
                 .font(.pretendard(size: 14, weight: .medium))
+                .frame(maxWidth: .infinity, alignment: .leading)
 
             ZStack {
                 HStack {
