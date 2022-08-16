@@ -12,12 +12,6 @@ struct MainView: View {
     @State private var selectedIndex = 0
     
     var body: some View {
-        Button {
-            User.shared.status = .guest
-        } label: {
-            Text("건너뛰기")
-        }
-        
         VStack {
             TabView(selection: $selectedIndex) {
                 VStack {
@@ -44,11 +38,20 @@ struct MainView: View {
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             .frame(height: 405)
 
-            VStack {
-                AppleLoginView()
-                    .frame(width: 347, height: 50)
-                KakaoLoginView()
-                    .frame(width: 347, height: 50)
+            VStack(spacing: 24) {
+                VStack(spacing: 8) {
+                    AppleLoginView()
+                        .frame(width: 347, height: 50)
+                    KakaoLoginView()
+                        .frame(width: 347, height: 50)
+                }
+                Button {
+                    User.shared.status = .guest
+                } label: {
+                    Text("건너뛰기")
+                        .font(.pretendard(size: 14, weight: .regular))
+                        .foregroundColor(.colorStyle(.gray400))
+                }
             }
         }
     }

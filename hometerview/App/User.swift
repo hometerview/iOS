@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import KakaoSDKCommon
+import KakaoSDKAuth
 
 class User: ObservableObject {
     enum Status {
@@ -25,6 +27,7 @@ class User: ObservableObject {
 
     private init() {
         // User Default에 Token 유효성 검사
+        KakaoSDKCommon.KakaoSDK.initSDK(appKey: "a398d16e3a17230bba6065628e65aac4")
     }
 }
 
