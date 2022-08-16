@@ -15,22 +15,24 @@ struct MainView: View {
         VStack {
             TabView(selection: $selectedIndex) {
                 VStack {
-                    Text("나랑 같은 지역으로 출근하는 사람들은\n어디에 살고있을까?")
-                        .font(.pretendard(size: 20))
+                    Image("onboarding1")
+                        .frame(width: 240, height: 200)
+                    
+                    Text("같은 지역으로 출근하는 사람들은\n어디에 살고있을까?")
+                        .font(.pretendard(size: 20, weight: .semibold))
                         .multilineTextAlignment(.center)
 
-                    Image("image416")
-                        .frame(width: 243, height: 228)
                 }
                 .tag(0)
 
                 VStack {
-                    Text("직장 정보만 입력하면\n살만한 동네를 추천해드려요!")
-                        .font(.pretendard(size: 20))
+                    Image("onboarding2")
+                        .frame(width: 240, height: 200)
+                    
+                    Text("직장 정보를 입력하면\n동네를 추천해드려요!")
+                        .font(.pretendard(size: 20, weight: .semibold))
                         .multilineTextAlignment(.center)
 
-                    Image("image417")
-                        .frame(width: 243, height: 228)
                 }
                 .tag(1)
             }
@@ -41,8 +43,10 @@ struct MainView: View {
             VStack(spacing: 24) {
                 VStack(spacing: 8) {
                     AppleLoginView()
+                        .cornerRadius(8)
                         .frame(width: 347, height: 50)
                     KakaoLoginView()
+                        .cornerRadius(8)
                         .frame(width: 347, height: 50)
                 }
                 Button {

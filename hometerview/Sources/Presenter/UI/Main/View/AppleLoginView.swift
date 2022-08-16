@@ -10,7 +10,7 @@ import AuthenticationServices
 
 struct AppleLoginView: View {
     var body: some View {
-        SignInWithAppleButton(.continue) { request in
+        SignInWithAppleButton(.signIn) { request in
             
         } onCompletion: { result in
             switch result {
