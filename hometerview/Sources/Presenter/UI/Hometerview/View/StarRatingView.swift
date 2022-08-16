@@ -41,6 +41,7 @@ struct StarRatingView: View {
                 }
             }
         }
+        .navigationBarHidden(true)
         .modifier(
             ListPopupModifier(
                 selectedIndex: $selectedListIndex,

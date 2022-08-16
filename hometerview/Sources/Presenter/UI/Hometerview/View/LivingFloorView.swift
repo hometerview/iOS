@@ -34,6 +34,7 @@ struct LivingFloorView: View {
                 .padding()
             }
         }
+        .navigationBarHidden(true)
         .navigationBarItems(trailing: SimpleCancelButton(isActive: $isShowFullCover))
         .modifier(
             ListPopupModifier(
@@ -49,14 +50,14 @@ struct LivingFloorView: View {
 
     var nextButton: some View {
         NavigationLink {
-
+            StarRatingView(viewModel: viewModel, isShowFullCover: $isShowFullCover)
         } label: {
             Text("다음")
                 .foregroundColor(.white)
                 .font(.pretendard(size: 16, weight: .medium))
                 .frame(maxWidth: .infinity, minHeight: 50)
-                .background(selectedIndex == nil ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
-                .disabled(selectedIndex == nil)
+                .background(viewModel.selectedLivingFloorTitle == "" ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
+                .disabled(viewModel.selectedLivingFloorTitle == "")
                 .cornerRadius(8)
 
         }
@@ -97,9 +98,9 @@ struct LivingFloorView: View {
                         .strokeBorder(Color.init(hex: "D4DBEB"))
                         .frame(height: 50)
                 )
-                .onTapGesture {
-                    isShowLivingFloorList = true
-                }
+            }
+            .onTapGesture {
+                isShowLivingFloorList = true
             }
         }
     }

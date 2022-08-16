@@ -21,11 +21,15 @@ struct WriteHometerviewView: View {
                     .ignoresSafeArea()
 
                 VStack {
-                    HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 37)
+                    HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 37, showBackButton: false)
 
                     Group {
                         if isTapFakeSearchBar {
-                            DirectInputSearchView(isTapFakeSearchBar: $isTapFakeSearchBar, searchBarNamespace: searchBarNamespace)
+                            WriteInputSearchView(
+                                viewModel: viewModel,
+                                isTapFakeSearchBar: $isTapFakeSearchBar,
+                                isShowFullCover: $isShowFullCover,
+                                searchBarNamespace: searchBarNamespace)
                         } else {
                             FakeDirectInputSearchView(
                                 isTapFakeSearchBar: $isTapFakeSearchBar, isShowHeader: false,
