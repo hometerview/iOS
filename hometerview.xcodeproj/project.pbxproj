@@ -102,6 +102,7 @@
 		FCAE85BB28A7E807002FC940 /* RateStarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85BA28A7E807002FC940 /* RateStarModel.swift */; };
 		FCAE85BD28A7F544002FC940 /* RateStarTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85BC28A7F544002FC940 /* RateStarTitleModel.swift */; };
 		FCAE85BF28A7FB89002FC940 /* LengthResidenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85BE28A7FB89002FC940 /* LengthResidenceModel.swift */; };
+		FCD611A028ABBCF20096F514 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD6119F28ABBCF20096F514 /* BackButton.swift */; };
 		FCE5DE9A289EB091004C4160 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCE5DE99289EB091004C4160 /* Alamofire */; };
 		FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDA2882533300E35F97 /* MainService.swift */; };
 		FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDC2882539600E35F97 /* HomeRequest.swift */; };
@@ -256,6 +257,7 @@
 		FCAE85BA28A7E807002FC940 /* RateStarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateStarModel.swift; sourceTree = "<group>"; };
 		FCAE85BC28A7F544002FC940 /* RateStarTitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateStarTitleModel.swift; sourceTree = "<group>"; };
 		FCAE85BE28A7FB89002FC940 /* LengthResidenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthResidenceModel.swift; sourceTree = "<group>"; };
+		FCD6119F28ABBCF20096F514 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		FCE5DE97289EAB8B004C4160 /* KakaoMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCEB3BDA2882533300E35F97 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		FCEB3BDC2882539600E35F97 /* HomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequest.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				FC373C4A289D6B4500F10A4C /* LikeButton.swift */,
+				FCD6119F28ABBCF20096F514 /* BackButton.swift */,
 				FC45F329289E0F3B00C7B1CF /* HelpfulButton.swift */,
 				FC45F325289E0AB200C7B1CF /* BoldDivider.swift */,
 				FC45F327289E0C6A00C7B1CF /* TotalStarred.swift */,
@@ -1170,6 +1173,7 @@
 				FC45F328289E0C6A00C7B1CF /* TotalStarred.swift in Sources */,
 				FC3CF03F28A77935005D89AF /* Home.swift in Sources */,
 				FC45F32A289E0F3B00C7B1CF /* HelpfulButton.swift in Sources */,
+				FCD611A028ABBCF20096F514 /* BackButton.swift in Sources */,
 				FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */,
 				FCAE85B928A7E5E9002FC940 /* HometerviewHeader.swift in Sources */,
 				FC3CF02D289FE61F005D89AF /* DirectInputSearchView.swift in Sources */,
