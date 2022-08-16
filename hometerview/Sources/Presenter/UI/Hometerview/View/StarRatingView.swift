@@ -23,10 +23,10 @@ struct StarRatingView: View {
 
     var body: some View {
         ZStack(alignment: .top) {
+            HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 70)
+
             ScrollView {
                 VStack {
-                    HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 70)
-
                     starRatingSection
 
                     lengthResidence
@@ -40,6 +40,7 @@ struct StarRatingView: View {
                     nextButton
                 }
             }
+            .padding(.top, 50)
         }
         .navigationBarHidden(true)
         .modifier(

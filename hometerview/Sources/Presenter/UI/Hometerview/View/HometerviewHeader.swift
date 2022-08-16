@@ -41,5 +41,6 @@ struct HometerviewHeader: View {
                 .frame(maxWidth: .infinity, maxHeight: 1)
                 .foregroundColor(.colorStyle(.gray200))
         }
+        .frame(height: 50)
     }
 }
