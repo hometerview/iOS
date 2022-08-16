@@ -6,10 +6,30 @@
 //
 
 import SwiftUI
+import KakaoSDKAuth
+import KakaoSDKCommon
+import KakaoSDKUser
 
 struct KakaoLoginView: View {
     var body: some View {
-        Text("Kakao Login")
+        Button {
+            if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                    print(oauthToken)
+                    print(error)
+                }
+            } else {
+                UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                    print(oauthToken)
+                print(error)
+                }
+            }
+        } label : {
+            Image("kakao_login_large_wide")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width : UIScreen.main.bounds.width * 0.9)
+        }
     }
 }
 
