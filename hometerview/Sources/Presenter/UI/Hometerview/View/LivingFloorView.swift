@@ -56,8 +56,8 @@ struct LivingFloorView: View {
                 .foregroundColor(.white)
                 .font(.pretendard(size: 16, weight: .medium))
                 .frame(maxWidth: .infinity, minHeight: 50)
-                .background(viewModel.selectedLivingFloorTitle == "" ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
-                .disabled(viewModel.selectedLivingFloorTitle == "")
+                .background(viewModel.selectedLivingFloorTitle == nil ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
+                .disabled(viewModel.selectedLivingFloorTitle == nil)
                 .cornerRadius(8)
 
         }
