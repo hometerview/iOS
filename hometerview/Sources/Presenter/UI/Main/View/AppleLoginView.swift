@@ -11,13 +11,18 @@ import AuthenticationServices
 struct AppleLoginView: View {
     var body: some View {
         SignInWithAppleButton(.signIn) { request in
-            
+            request.requestedScopes = [.email]
         } onCompletion: { result in
             switch result {
             case .success(let authResults):
                 switch authResults.credential {
                 case let credential as ASAuthorizationAppleIDCredential:
                     print(credential)
+
+                    if let identityToken = credential.identityToken {
+                        let identityTokenString = String(data: identityToken, encoding: .utf8)
+                        print(identityTokenString)
+                    }
                 default:
                     break
                 }
