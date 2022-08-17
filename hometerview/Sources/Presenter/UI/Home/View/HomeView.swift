@@ -21,8 +21,9 @@ struct HomeView: View {
 
     let headerHeight: CGFloat = 180
     let rankHeaderHeight: CGFloat = 80
+    let bannerHeight: CGFloat = 229
     var fullHeaderHeight: CGFloat {
-        return headerHeight + rankHeaderHeight
+        return headerHeight + rankHeaderHeight + bannerHeight
     }
 
     var body: some View {
@@ -40,7 +41,9 @@ struct HomeView: View {
                         }
 
                         header
-
+                        
+                        banner
+                        
                         rankHeader
 
                         ForEach(0..<10, id: \..self) { _ in
@@ -161,6 +164,45 @@ struct HomeView: View {
         .padding(.horizontal)
         .padding(.bottom, 16)
         .frame(height: rankHeaderHeight)
+    }
+    
+    var banner: some View {
+        VStack {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.colorStyle(.blue100))
+                .frame(maxWidth: .infinity, minHeight: 80)
+                .overlay(
+                    VStack(spacing: 16) {
+                        Image("icon_pin")
+                            .frame(height: 59)
+                        
+                        VStack(spacing: 24) {
+                            Text("회사 주소만 있으면\n맞춤 정보를 추천해드려요!")
+                                .frame(alignment: .center)
+                                .font(.pretendard(size: 16, weight: .semibold))
+                                .foregroundColor(.colorStyle(.gray800))
+
+                            Button {
+                                
+                            } label: {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .frame(height: 50)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .foregroundColor(Color.colorStyle(.blue300))
+                                    .padding(.all, 14)
+                                    .overlay(
+                                        Text("입력하고 추천받기")
+                                            .font(.pretendard(size: 14, weight: .semibold))
+                                            .foregroundColor(.white)
+                                    )
+                            }
+                        }
+                    }
+                )
+        }
+        .frame(height: bannerHeight)
+        .padding(.horizontal, 24)
+        .padding(.bottom, 14)
     }
 
     @ViewBuilder func rankHeaderCell(index: Int) -> some View {
