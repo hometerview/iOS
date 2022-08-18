@@ -13,7 +13,9 @@ class HometerviewViewModel: BaseViewModel,
     let livingFloorModelTitles: [String] = LivingFloorModel.allCases.map({ $0.description })
     let lengthResidenceTitles: [String] = LengthResidenceModel.popupListTitles
 
+    // 거주층
     @Published var selectedLivingFloorTitle: String? = nil
+    
     @Published var selectedLengthResidenceTitle: String? = nil
     @Published var meritContents: String = ""
     @Published var weaknessContents: String = ""

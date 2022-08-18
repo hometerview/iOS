@@ -104,6 +104,7 @@
 		FCAE85BF28A7FB89002FC940 /* LengthResidenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE85BE28A7FB89002FC940 /* LengthResidenceModel.swift */; };
 		FCD611A028ABBCF20096F514 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD6119F28ABBCF20096F514 /* BackButton.swift */; };
 		FCD611A228ABC1BC0096F514 /* WriteInputSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD611A128ABC1BC0096F514 /* WriteInputSearchView.swift */; };
+		FCD611A428AE24510096F514 /* Environment+SafeAreaInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD611A328AE24510096F514 /* Environment+SafeAreaInsets.swift */; };
 		FCE5DE9A289EB091004C4160 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCE5DE99289EB091004C4160 /* Alamofire */; };
 		FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDA2882533300E35F97 /* MainService.swift */; };
 		FCEB3BDD2882539600E35F97 /* HomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BDC2882539600E35F97 /* HomeRequest.swift */; };
@@ -260,6 +261,7 @@
 		FCAE85BE28A7FB89002FC940 /* LengthResidenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthResidenceModel.swift; sourceTree = "<group>"; };
 		FCD6119F28ABBCF20096F514 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		FCD611A128ABC1BC0096F514 /* WriteInputSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteInputSearchView.swift; sourceTree = "<group>"; };
+		FCD611A328AE24510096F514 /* Environment+SafeAreaInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+SafeAreaInsets.swift"; sourceTree = "<group>"; };
 		FCE5DE97289EAB8B004C4160 /* KakaoMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCEB3BDA2882533300E35F97 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		FCEB3BDC2882539600E35F97 /* HomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequest.swift; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 			children = (
 				FCEB3C1528942C3900E35F97 /* Color+colorStyle.swift */,
 				FCEB3C1728942D1800E35F97 /* Color+hex.swift */,
+				FCD611A328AE24510096F514 /* Environment+SafeAreaInsets.swift */,
 				FCEB3C2C289506C000E35F97 /* Font+Custom.swift */,
 				FC373C47289D68DD00F10A4C /* View+if.swift */,
 				FCAE85AE28A7CDD7002FC940 /* View+cornerRadius.swift */,
@@ -1138,6 +1141,7 @@
 				6A82522728A8170A00081D38 /* WithdrawalView.swift in Sources */,
 				FC7AB449288059AB00DF03E5 /* Requestable.swift in Sources */,
 				FCEB3BF82892C69B00E35F97 /* MapView.swift in Sources */,
+				FCD611A428AE24510096F514 /* Environment+SafeAreaInsets.swift in Sources */,
 				6A82522328A80E5600081D38 /* ManageAccountView.swift in Sources */,
 				FC45F326289E0AB200C7B1CF /* BoldDivider.swift in Sources */,
 				FCAE85BF28A7FB89002FC940 /* LengthResidenceModel.swift in Sources */,
@@ -1346,10 +1350,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = NY37VGJ3HF;
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
-				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"./KakaoMap-Bridging-Header.h",
 					./hometerview/DaumMap.embeddedframework,
@@ -1392,7 +1395,6 @@
 				DEVELOPMENT_TEAM = NY37VGJ3HF;
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
-				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"/Users/okstring/Dropbox/swift/hometerview/KakaoMap-Bridging-Header.h",
 					./hometerview/DaumMap.embeddedframework,

@@ -99,6 +99,7 @@ struct LivingFloorView: View {
                         .frame(height: 50)
                 )
             }
+            .contentShape(Rectangle())
             .onTapGesture {
                 isShowLivingFloorList = true
             }
