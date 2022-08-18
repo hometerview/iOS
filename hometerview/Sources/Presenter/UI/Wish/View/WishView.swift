@@ -11,22 +11,28 @@ struct WishView: View {
     @State private var selectedTab: PickerTabType = .review
 
     var body: some View {
-        VStack {
-            picker
+        NavigationView {
+            VStack {
+                picker
 
-            ScrollView {
-                LazyVStack(alignment: .leading) {
-                    ForEach(0...10, id: \.self) { index in
-                        DetailListCell()
-                            .padding(.horizontal)
+                ScrollView {
+                    LazyVStack(alignment: .leading) {
+                        ForEach(0...10, id: \.self) { index in
+                            NavigationLink {
+                                BuildingDetailView()
+                            } label: {
+                                DetailListCell()
+                                    .padding(.horizontal)
+                            }
 
-                        Divider()
-                            .padding()
+                            Divider()
+                                .padding()
+                        }
                     }
+                    .navigationBarHidden(true)
                 }
-                .navigationBarHidden(true)
+                .ignoresSafeArea()
             }
-            .ignoresSafeArea()
         }
     }
 
