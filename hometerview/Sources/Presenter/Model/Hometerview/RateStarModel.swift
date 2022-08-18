@@ -8,7 +8,7 @@
 import Foundation
 
 enum RateStarModel: Int {
-    static let starCount: Int = 5
+    static let maxStarCount: Int = 5
 
     case none = 0
     case one = 1

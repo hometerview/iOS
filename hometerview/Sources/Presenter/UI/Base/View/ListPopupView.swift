@@ -25,10 +25,8 @@ struct ListPopupView: View {
                     .frame(maxWidth: .infinity, minHeight: 50, alignment: .leading)
                     .padding(.leading, 14)
                     .onTapGesture {
-                        withAnimation {
-                            selectedIndex = index
-                            isShowing = false
-                        }
+                        selectedIndex = index
+                        isShowing = false
                     }
             }
 
@@ -75,7 +73,6 @@ struct ListPopupModifier: ViewModifier {
                     list: listContents)
             }
         }
-        .animation(.easeInOut, value: isShowing)
         .transition(AnyTransition.move(edge: .bottom))
 
     }

@@ -12,7 +12,7 @@ struct BackButton: View {
 
     var body: some View {
         Button {
-            presentationMode.wrappedValue.dismiss()
+             presentationMode.wrappedValue.dismiss()
         } label: {
             ZStack(alignment: .center) {
                 Circle()

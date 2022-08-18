@@ -11,14 +11,22 @@ struct StarRatingView: View {
     @ObservedObject var viewModel: HometerviewViewModel
     @Binding var isShowFullCover: Bool
     @State private var isShowLengthResidenceList: Bool = false
+
+    // 별점
+    @State private var starCount: Int = 0
+    // 거주기간
     @State private var selectedListIndex: Int? = nil
+    @State private var selectedLengthResidenceTitle: String? = nil
+    // 장점
     @State private var meritContents: String = ""
+    // 단점
     @State private var weaknessContents: String = ""
+
     var isEnableNextButton: Bool {
         return meritContents.count > 30 &&
         weaknessContents.count > 30 &&
         selectedListIndex != nil &&
-        viewModel.starCount != 0
+        starCount > 0
     }
 
     var body: some View {
@@ -48,16 +56,11 @@ struct StarRatingView: View {
                 selectedIndex: $selectedListIndex,
                 isShowing: $isShowLengthResidenceList,
                 listContents: viewModel.lengthResidenceTitles ))
-        .onChange(of: selectedListIndex) { newValue in
-            if let index = newValue {
-                viewModel.assignLengthResidenceTitle(index: index)
-            }
-        }
     }
 
     var nextButton: some View {
         NavigationLink {
-
+            Text("직장 검색")
         } label: {
             Text("다음")
                 .foregroundColor(.white)
@@ -67,7 +70,9 @@ struct StarRatingView: View {
                 .disabled(!isEnableNextButton)
                 .cornerRadius(8)
                 .padding(.horizontal)
-        }
+        }.simultaneousGesture(TapGesture().onEnded({
+
+        }))
     }
 
     var merit: some View {
@@ -84,6 +89,7 @@ struct StarRatingView: View {
                     .padding(.vertical, 14)
                     .padding(.horizontal, 12)
                     .font(.pretendard(size: 14))
+                    .zIndex(0)
 
                 RoundedRectangle(cornerRadius: 8)
                     .strokeBorder(Color.init(hex: "D4DBEB"))
@@ -150,7 +156,7 @@ struct StarRatingView: View {
 
             ZStack {
                 HStack {
-                    Text(viewModel.selectedLengthResidenceTitle ?? "")
+                    Text(selectedLengthResidenceTitle ?? "")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .overlay(
                             HStack {
@@ -166,8 +172,14 @@ struct StarRatingView: View {
                         .strokeBorder(Color.init(hex: "D4DBEB"))
                         .frame(height: 50)
                 )
-                .onTapGesture {
-                    isShowLengthResidenceList = true
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                isShowLengthResidenceList = true
+            }
+            .onChange(of: selectedListIndex) { newValue in
+                if let index = newValue {
+                    selectedLengthResidenceTitle =  viewModel.assignLengthResidenceTitle(index: index)
                 }
             }
         }
@@ -182,19 +194,19 @@ struct StarRatingView: View {
                 .foregroundColor(.colorStyle(.gray800))
                 .padding(.bottom)
 
-            Text(viewModel.rateStarTitle)
+            Text(assignRateStarTitle(starCount: starCount))
                 .font(.pretendard(size: 14))
                 .foregroundColor(.colorStyle(.gray600))
 
             HStack(spacing: 0) {
-                ForEach(1...RateStarModel.starCount, id: \.self) { starIndex in
+                ForEach(1...RateStarModel.maxStarCount, id: \.self) { starIndex in
                     Image("icon_star")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(starIndex < viewModel.starCount ? .colorStyle(.blue300) : .colorStyle(.gray200))
+                        .foregroundColor(starIndex <= starCount ? .colorStyle(.blue300) : .colorStyle(.gray200))
                         .frame(width: 40, height: 40)
                         .onTapGesture {
-                            viewModel.assignStarCount(starIndex: starIndex)
+                            starCount = assignStarCount(starIndex)
                         }
                 }
             }
@@ -214,6 +226,18 @@ struct StarRatingView: View {
             }
         }
         .padding()
+    }
+
+    func assignStarCount(_ count: Int) -> Int {
+        return starCount == count ? 0 : count
+    }
+
+    func assignRateStarTitle(starCount: Int) -> String {
+        if let rateStarTitleModel = RateStarTitleModel(rawValue: starCount) {
+            return rateStarTitleModel.description
+        } else {
+            return "별점을 입력해주세요"
+        }
     }
 }
 

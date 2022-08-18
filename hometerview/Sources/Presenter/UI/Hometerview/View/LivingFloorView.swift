@@ -11,6 +11,7 @@ struct LivingFloorView: View {
     @ObservedObject var viewModel: HometerviewViewModel
     @State private var isShowLivingFloorList: Bool = false
     @State private var selectedIndex: Int? = nil
+    @State private var selectedLivingFloorTitle: String? = nil
     @Binding var isShowFullCover: Bool
 
 
@@ -42,8 +43,8 @@ struct LivingFloorView: View {
                 isShowing: $isShowLivingFloorList,
                 listContents: viewModel.livingFloorModelTitles))
         .onChange(of: selectedIndex) { newValue in
-            if let index = newValue {
-                viewModel.assignSelectedLivingFloorTitle(index: index)
+            if let index = selectedIndex {
+                selectedLivingFloorTitle =  viewModel.assignSelectedLivingFloorTitle(index: index)
             }
         }
     }
@@ -56,11 +57,14 @@ struct LivingFloorView: View {
                 .foregroundColor(.white)
                 .font(.pretendard(size: 16, weight: .medium))
                 .frame(maxWidth: .infinity, minHeight: 50)
-                .background(viewModel.selectedLivingFloorTitle == nil ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
-                .disabled(viewModel.selectedLivingFloorTitle == nil)
+                .background(selectedIndex == nil ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
+                .disabled(selectedIndex == nil)
                 .cornerRadius(8)
-
-        }
+        }.simultaneousGesture(TapGesture().onEnded({
+            if let index = selectedIndex {
+                viewModel.selectedLivingFloorTitle =  viewModel.assignSelectedLivingFloorTitle(index: index)
+            }
+        }))
     }
 
     var companyAddress: some View {
@@ -82,7 +86,7 @@ struct LivingFloorView: View {
 
             ZStack {
                 HStack {
-                    Text(viewModel.selectedLivingFloorTitle ?? "")
+                    Text(selectedLivingFloorTitle ?? "")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .overlay(
                             HStack {
