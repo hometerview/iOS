@@ -37,9 +37,16 @@ struct BuildingDetailView: View {
     }
 
     var mapSection: some View {
-        Rectangle()
-            .frame(height: 180)
-            .foregroundColor(.blue)
+        ZStack(alignment: .topLeading) {
+            Rectangle()
+                .foregroundColor(.blue)
+
+            BackButton()
+                .padding(.top, 48)
+                .padding(.leading, 10)
+        }
+        .frame(height: 180)
+
     }
 
     var infoSection: some View {

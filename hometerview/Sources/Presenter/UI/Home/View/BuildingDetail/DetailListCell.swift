@@ -17,6 +17,7 @@ struct DetailListCell: View {
         LazyVStack(alignment: .leading, spacing: 16) {
             Text("아크로텔 오피스텔")
                 .font(.pretendard(size: 20, weight: .bold))
+                .foregroundColor(.colorStyle(.gray900))
 
 
             VStack(alignment: .leading) {
@@ -28,6 +29,7 @@ struct DetailListCell: View {
                         .frame(width: 16, height: 16)
                     Text("인천 남동구 구월남로 125")
                         .font(.pretendard(size: 14))
+                        .foregroundColor(.colorStyle(.gray900))
                 }
 
                 HStack {
@@ -38,6 +40,7 @@ struct DetailListCell: View {
                         .frame(width: 16, height: 16)
                     Text("오피스텔")
                         .font(.pretendard(size: 14))
+                        .foregroundColor(.colorStyle(.gray900))
                 }
             }
 
@@ -67,6 +70,7 @@ struct DetailListCell: View {
 
                 Text("역근처라 그런지 일단 인프라가 너무 좋아요!")
                     .font(.pretendard(size: 14, weight: .regular))
+                    .foregroundColor(.colorStyle(.gray900))
             }
 
             VStack(alignment: .leading, spacing: 6) {
@@ -75,6 +79,7 @@ struct DetailListCell: View {
                     .foregroundColor(.colorStyle(.red500))
                 Text("창문이 많아서 냉난방비 많이나오고 커튼달기도 쉽지 않음...")
                     .font(.pretendard(size: 14, weight: .regular))
+                    .foregroundColor(.colorStyle(.gray900))
             }
 
             HStack {

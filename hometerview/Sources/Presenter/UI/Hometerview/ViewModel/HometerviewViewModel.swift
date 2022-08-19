@@ -13,36 +13,32 @@ class HometerviewViewModel: BaseViewModel,
     let livingFloorModelTitles: [String] = LivingFloorModel.allCases.map({ $0.description })
     let lengthResidenceTitles: [String] = LengthResidenceModel.popupListTitles
 
-    @Published var selectedLivingFloorTitle: String? = nil
-    @Published var selectedLengthResidenceTitle: String? = nil
-    @Published var meritContents: String = ""
-    @Published var weaknessContents: String = ""
+    // 주소(추가 필요)
+    
+    // 거주층
+    var selectedLivingFloorTitle: String? = nil
+    // 거주기간
+    var selectedLengthResidenceTitle: String? = nil
+    // 장점
+    var meritContents: String = ""
+    // 단점
+    var weaknessContents: String = ""
 
     @Published var starCount: Int = 0
-    var rateStarTitle: String {
-        if let rateStarTitleModel = RateStarTitleModel(rawValue: starCount) {
-            return rateStarTitleModel.description
-        } else {
-            return "별점을 입력해주세요"
-        }
-    }
     
-    func assignSelectedLivingFloorTitle(index: Int) {
-        selectedLivingFloorTitle = LivingFloorModel.allCases[index].description
+    func assignSelectedLivingFloorTitle(index: Int) -> String {
+        return LivingFloorModel.allCases[index].description
     }
 
-    func assignLengthResidenceTitle(index: Int) {
-        selectedLengthResidenceTitle = LengthResidenceModel.popupListTitles[index]
+    func assignLengthResidenceTitle(index: Int) -> String {
+        return LengthResidenceModel.popupListTitles[index]
     }
 
-    func assignStarCount(starIndex: Int) {
-        let star = starIndex + 1
-
-        if starCount == star {
-            starCount = 0
-        } else {
-            starCount = starIndex + 1
-        }
-    }
-
+//    func assignStarCount(_ count: Int) -> Int {
+//        if starCount == count {
+//            return 0
+//        } else {
+//            starCount = count
+//        }
+//    }
 }

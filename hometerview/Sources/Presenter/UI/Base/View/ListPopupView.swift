@@ -44,6 +44,7 @@ struct ListPopupView: View {
 }
 
 struct ListPopupModifier: ViewModifier {
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
     @Binding var selectedIndex: Int?
     @Binding var isShowing: Bool
     let listContents: [String]
@@ -51,15 +52,20 @@ struct ListPopupModifier: ViewModifier {
     func body(content: Content) -> some View {
         ZStack(alignment: .bottom) {
             content
-                .onTapGesture {
-                    isShowing = false
-                }
 
             if isShowing {
                 Rectangle()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .ignoresSafeArea()
                     .opacity(0.2)
+                    .onTapGesture {
+                        isShowing = false
+                    }
+
+                Rectangle()
+                    .ignoresSafeArea()
+                    .frame(maxWidth: .infinity, maxHeight: safeAreaInsets.bottom)
+                    .foregroundColor(.white)
 
                 ListPopupView(
                     isShowing: $isShowing,
@@ -67,7 +73,6 @@ struct ListPopupModifier: ViewModifier {
                     list: listContents)
             }
         }
-        .animation(.easeInOut, value: isShowing)
         .transition(AnyTransition.move(edge: .bottom))
 
     }
