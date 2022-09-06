@@ -34,15 +34,11 @@ struct HomeView: View {
                 
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 0) {
-                        Button {
-                            isShowHometerviewFullCover = true
-                        } label: {
-                            Text("Hometerview")
-                        }
-
                         header
                         
-                        banner
+                        companyBanner
+                        
+                        hometerViewBanner
                         
                         rankHeader
 
@@ -166,7 +162,7 @@ struct HomeView: View {
         .frame(height: rankHeaderHeight)
     }
     
-    var banner: some View {
+    var companyBanner: some View {
         VStack {
             RoundedRectangle(cornerRadius: 8)
                 .fill(Color.colorStyle(.blue100))
@@ -191,6 +187,44 @@ struct HomeView: View {
                                     .padding(.all, 14)
                                     .overlay(
                                         Text("입력하고 추천받기")
+                                            .font(.pretendard(size: 14, weight: .semibold))
+                                            .foregroundColor(.white)
+                                    )
+                            }
+                        }
+                    }
+                )
+        }
+        .frame(height: bannerHeight)
+        .padding(.horizontal)
+        .padding(.bottom, 40)
+    }
+    
+    var hometerViewBanner: some View {
+        VStack {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.colorStyle(.blue100))
+                .frame(maxWidth: .infinity, minHeight: 80)
+                .overlay(
+                    VStack(spacing: 16) {
+                        Image("icon_pin")
+                            .frame(height: 59)
+                        
+                        VStack(spacing: 24) {
+                            Text("집터뷰를 작성하면\n모든 집터뷰를 볼 수 있어요!")
+                                .multilineTextAlignment(.center)
+                                .font(.pretendard(size: 16, weight: .semibold))
+                                .foregroundColor(.colorStyle(.gray800))
+                            Button {
+                                isShowHometerviewFullCover = true
+                            } label: {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .frame(height: 50)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .foregroundColor(Color.colorStyle(.blue300))
+                                    .padding(.all, 14)
+                                    .overlay(
+                                        Text("집터뷰 진행하기")
                                             .font(.pretendard(size: 14, weight: .semibold))
                                             .foregroundColor(.white)
                                     )
