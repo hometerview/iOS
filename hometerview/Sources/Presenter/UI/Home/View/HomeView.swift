@@ -21,7 +21,7 @@ struct HomeView: View {
 
     let headerHeight: CGFloat = 180
     let rankHeaderHeight: CGFloat = 80
-    let bannerHeight: CGFloat = 229
+    let bannerHeight: CGFloat = 253
     var fullHeaderHeight: CGFloat {
         return headerHeight + rankHeaderHeight + bannerHeight
     }
@@ -38,12 +38,6 @@ struct HomeView: View {
                             isShowHometerviewFullCover = true
                         } label: {
                             Text("Hometerview")
-                        }
-
-                        Button {
-                            isShowEnterCompanyFullCover = true
-                        } label: {
-                            Text("Enter Company")
                         }
 
                         header
@@ -184,12 +178,11 @@ struct HomeView: View {
                         
                         VStack(spacing: 24) {
                             Text("회사 주소만 있으면\n맞춤 정보를 추천해드려요!")
-                                .frame(alignment: .center)
+                                .multilineTextAlignment(.center)
                                 .font(.pretendard(size: 16, weight: .semibold))
                                 .foregroundColor(.colorStyle(.gray800))
-
                             Button {
-                                
+                                isShowEnterCompanyFullCover = true
                             } label: {
                                 RoundedRectangle(cornerRadius: 8)
                                     .frame(height: 50)
@@ -207,8 +200,8 @@ struct HomeView: View {
                 )
         }
         .frame(height: bannerHeight)
-        .padding(.horizontal, 24)
-        .padding(.bottom, 14)
+        .padding(.horizontal)
+        .padding(.bottom, 40)
     }
 
     @ViewBuilder func rankHeaderCell(index: Int) -> some View {
