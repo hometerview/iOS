@@ -17,13 +17,19 @@ struct HomeView: View {
     @State private var toastMessage: String = "HOHOHOHO"
     @State private var isShowEnterCompanyFullCover: Bool = false
     @State private var isShowHometerviewFullCover: Bool = false
+    @State private var isZoomed: Bool = false
+
     @Namespace private var bottomLine
+    @Namespace private var animation
 
     let headerHeight: CGFloat = 180
     let rankHeaderHeight: CGFloat = 80
     let bannerHeight: CGFloat = 253
     var fullHeaderHeight: CGFloat {
         return headerHeight + rankHeaderHeight + bannerHeight
+    }
+    var bannerFrame: Double {
+        isZoomed ? 253 : 0
     }
 
     var body: some View {
@@ -38,7 +44,7 @@ struct HomeView: View {
                         
                         companyBanner
                         
-                        hometerViewBanner
+//                        hometerViewBanner
                         
                         rankHeader
 
@@ -121,6 +127,11 @@ struct HomeView: View {
             WriteHometerviewView(isShowFullCover: $isShowHometerviewFullCover)
         })
         .modifier(ToastModifier(isShow: $isToastShow, toastString: $toastMessage))
+        .onAppear {
+            withAnimation(.spring()) {
+                isZoomed.toggle()
+            }
+        }
     }
     var header: some View {
         VStack(alignment: .leading) {
@@ -195,7 +206,7 @@ struct HomeView: View {
                     }
                 )
         }
-        .frame(height: bannerHeight)
+        .frame(height: bannerFrame)
         .padding(.horizontal)
         .padding(.bottom, 40)
     }
@@ -233,7 +244,7 @@ struct HomeView: View {
                     }
                 )
         }
-        .frame(height: bannerHeight)
+        .frame(height: bannerFrame)
         .padding(.horizontal)
         .padding(.bottom, 40)
     }
