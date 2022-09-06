@@ -10,12 +10,21 @@ import SwiftUI
 struct HometerviewHeader: View {
     @Binding var isShowFullCover: Bool
     let progressValue: CGFloat
+    var showBackButton: Bool = true
 
     var body: some View {
         VStack(spacing: 0) {
             ProgressView(value: progressValue, total: 100)
 
             ZStack {
+                HStack {
+                    if showBackButton {
+                        BackButton()
+                            .padding(.leading, 14)
+                    }
+
+                    Spacer()
+                }
 
                 Text("집터뷰 작성")
                     .font(.pretendard(size: 15, weight: .medium))
@@ -32,5 +41,6 @@ struct HometerviewHeader: View {
                 .frame(maxWidth: .infinity, maxHeight: 1)
                 .foregroundColor(.colorStyle(.gray200))
         }
+        .frame(height: 50)
     }
 }

@@ -37,7 +37,13 @@ struct HomeView: View {
                         Button {
                             isShowHometerviewFullCover = true
                         } label: {
-                            Text("Test Button")
+                            Text("Hometerview")
+                        }
+
+                        Button {
+                            isShowEnterCompanyFullCover = true
+                        } label: {
+                            Text("Enter Company")
                         }
 
                         header
