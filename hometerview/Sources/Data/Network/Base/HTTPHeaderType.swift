@@ -19,8 +19,7 @@ public enum HTTPHeaderType {
             case .multiPartFormData:
                 return "multipart/form-data"
             case .authorization:
-                // 멤버 토큰
-                return ""
+                return "kangseunghyun"
         }
     }
 }

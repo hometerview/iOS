@@ -1,24 +1,27 @@
 //
-//  HomeRequest.swift
+//  MyReviewRequest.swift
 //  hometerview
 //
-//  Created by Ok Hyeon Kim on 2022/07/16.
+//  Created by Ok Hyeon Kim on 2022/09/12.
 //
 
 import Foundation
 
 import Alamofire
-struct HomeRequest: Encodable {
 
+struct MyReviewRequest: Encodable {
+    let offset: Int?
+    let pageNumber: Int?
+    let pageSize: Int?
 }
 
-enum HomeTarget: Requestable {
-    case home(HomeRequest)
+enum MyReviewTarget: Requestable {
+    case myReview(MyReviewRequest)
 }
 
-extension HomeTarget {
+extension MyReviewTarget {
     var path: String {
-        return "/home"
+        return "/review/my"
     }
 
     var baseURL: String {
@@ -31,7 +34,7 @@ extension HomeTarget {
 
     var requestParameters: RequestParams {
         switch self {
-            case .home(let request): return .query(request)
+            case .myReview(let request): return .query(request)
         }
     }
 

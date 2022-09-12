@@ -10,9 +10,9 @@ import Foundation
 struct BaseNetwork {
     public static var baseURL: String {
         guard let baseURLString = Bundle.main.object(forInfoDictionaryKey: "BaseURL") as? String else {
-            return "https://" + "" // 주소
+            return "https://" + "13.125.75.159:8080/api/v1/"
         }
 
-        return "https://" + baseURLString
+        return baseURLString
     }
 }

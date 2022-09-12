@@ -10,4 +10,6 @@ import Foundation
 class BaseViewModel {
     var isToastShow: Bool = false
     var toastMessage: String = ""
+
+    var cancellable = Set<AnyCancellable>()
 }
