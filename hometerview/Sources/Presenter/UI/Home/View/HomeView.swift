@@ -17,12 +17,19 @@ struct HomeView: View {
     @State private var toastMessage: String = "HOHOHOHO"
     @State private var isShowEnterCompanyFullCover: Bool = false
     @State private var isShowHometerviewFullCover: Bool = false
+    @State private var isZoomed: Bool = false
+
     @Namespace private var bottomLine
+    @Namespace private var animation
 
     let headerHeight: CGFloat = 180
     let rankHeaderHeight: CGFloat = 80
+    let bannerHeight: CGFloat = 253
     var fullHeaderHeight: CGFloat {
-        return headerHeight + rankHeaderHeight
+        return headerHeight + rankHeaderHeight + bannerHeight
+    }
+    var bannerFrame: Double {
+        isZoomed ? 253 : 0
     }
 
     var body: some View {
@@ -33,20 +40,12 @@ struct HomeView: View {
                 
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 0) {
-                        Button {
-                            isShowHometerviewFullCover = true
-                        } label: {
-                            Text("Hometerview")
-                        }
-
-                        Button {
-                            isShowEnterCompanyFullCover = true
-                        } label: {
-                            Text("Enter Company")
-                        }
-
                         header
-
+                        
+                        companyBanner
+                        
+//                        hometerViewBanner
+                        
                         rankHeader
 
                         ForEach(0..<10, id: \..self) { _ in
@@ -128,6 +127,11 @@ struct HomeView: View {
             WriteHometerviewView(isShowFullCover: $isShowHometerviewFullCover)
         })
         .modifier(ToastModifier(isShow: $isToastShow, toastString: $toastMessage))
+        .onAppear {
+            withAnimation(.spring()) {
+                isZoomed.toggle()
+            }
+        }
     }
     var header: some View {
         VStack(alignment: .leading) {
@@ -167,6 +171,82 @@ struct HomeView: View {
         .padding(.horizontal)
         .padding(.bottom, 16)
         .frame(height: rankHeaderHeight)
+    }
+    
+    var companyBanner: some View {
+        VStack {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.colorStyle(.blue100))
+                .frame(maxWidth: .infinity, minHeight: 80)
+                .overlay(
+                    VStack(spacing: 16) {
+                        Image("icon_pin")
+                            .frame(height: 59)
+                        
+                        VStack(spacing: 24) {
+                            Text("회사 주소만 있으면\n맞춤 정보를 추천해드려요!")
+                                .multilineTextAlignment(.center)
+                                .font(.pretendard(size: 16, weight: .semibold))
+                                .foregroundColor(.colorStyle(.gray800))
+                            Button {
+                                isShowEnterCompanyFullCover = true
+                            } label: {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .frame(height: 50)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .foregroundColor(Color.colorStyle(.blue300))
+                                    .padding(.all, 14)
+                                    .overlay(
+                                        Text("입력하고 추천받기")
+                                            .font(.pretendard(size: 14, weight: .semibold))
+                                            .foregroundColor(.white)
+                                    )
+                            }
+                        }
+                    }
+                )
+        }
+        .frame(height: bannerFrame)
+        .padding(.horizontal)
+        .padding(.bottom, 40)
+    }
+    
+    var hometerViewBanner: some View {
+        VStack {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.colorStyle(.blue100))
+                .frame(maxWidth: .infinity, minHeight: 80)
+                .overlay(
+                    VStack(spacing: 16) {
+                        Image("icon_pin")
+                            .frame(height: 59)
+                        
+                        VStack(spacing: 24) {
+                            Text("집터뷰를 작성하면\n모든 집터뷰를 볼 수 있어요!")
+                                .multilineTextAlignment(.center)
+                                .font(.pretendard(size: 16, weight: .semibold))
+                                .foregroundColor(.colorStyle(.gray800))
+                            Button {
+                                isShowHometerviewFullCover = true
+                            } label: {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .frame(height: 50)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .foregroundColor(Color.colorStyle(.blue300))
+                                    .padding(.all, 14)
+                                    .overlay(
+                                        Text("집터뷰 진행하기")
+                                            .font(.pretendard(size: 14, weight: .semibold))
+                                            .foregroundColor(.white)
+                                    )
+                            }
+                        }
+                    }
+                )
+        }
+        .frame(height: bannerFrame)
+        .padding(.horizontal)
+        .padding(.bottom, 40)
     }
 
     @ViewBuilder func rankHeaderCell(index: Int) -> some View {
