@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class BaseViewModel {
     var isToastShow: Bool = false
