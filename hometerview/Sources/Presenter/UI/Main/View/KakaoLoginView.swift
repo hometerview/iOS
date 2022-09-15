@@ -9,7 +9,18 @@ import SwiftUI
 
 struct KakaoLoginView: View {
     var body: some View {
-        Text("Kakao Login")
+        Button {
+
+            
+        } label : {
+            Text("카카오로 시작하기")
+                .font(.pretendard(size: 14, weight: .semibold))
+                .foregroundColor(.init(hex: "#191919"))
+                .padding()
+        }
+        .frame(height: 50)
+        .frame(maxWidth: .infinity)
+        .background(Color.init(hex: "#FAE64C"))
     }
 }
 

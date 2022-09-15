@@ -180,8 +180,8 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity, minHeight: 80)
                 .overlay(
                     VStack(spacing: 16) {
-                        Image("icon_pin")
-                            .frame(height: 59)
+                        Image("banner2")
+                            .frame(height: 83)
                         
                         VStack(spacing: 24) {
                             Text("회사 주소만 있으면\n맞춤 정보를 추천해드려요!")
