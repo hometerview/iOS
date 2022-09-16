@@ -132,19 +132,26 @@ struct HomeView: View {
                 isZoomed.toggle()
             }
         }
+        .onDisappear {
+            isZoomed.toggle()
+        }
     }
     var header: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text("넥슨코리아")
-                    .font(.jalnanOTF(size: 24))
-                Image("icon_triangle")
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 20, height: 20)
+            Button {
+                
+            } label: {
+                HStack {
+                    Text("넥슨코리아")
+                        .font(.jalnanOTF(size: 24))
+                    Image("icon_triangle")
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                .padding(.bottom, 4)
+                .foregroundColor(.colorStyle(.blue300))
             }
-            .padding(.bottom, 4)
-            .foregroundColor(.colorStyle(.blue300))
 
             Text("통근러에게 추천하는 동네")
                 .font(.jalnanOTF(size: 24))

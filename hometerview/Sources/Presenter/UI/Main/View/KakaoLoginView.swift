@@ -13,6 +13,8 @@ struct KakaoLoginView: View {
 
             
         } label : {
+            Image("kakao")
+                .padding(.leading, 14)
             Text("카카오로 시작하기")
                 .font(.pretendard(size: 14, weight: .semibold))
                 .foregroundColor(.init(hex: "#191919"))
