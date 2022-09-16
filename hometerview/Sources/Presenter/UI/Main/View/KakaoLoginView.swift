@@ -8,21 +8,27 @@
 import SwiftUI
 
 struct KakaoLoginView: View {
-    var body: some View {
-        Button {
+    private var buttonSize: CGFloat = 36
 
-            
-        } label : {
-            Image("kakao")
-                .padding(.leading, 14)
-            Text("카카오로 시작하기")
-                .font(.pretendard(size: 14, weight: .semibold))
-                .foregroundColor(.init(hex: "#191919"))
-                .padding()
+    var body: some View {
+        HStack {
+            Button {
+
+                
+            } label : {
+                Image("kakao")
+                    .padding(.leading, 14)
+                Spacer()
+                Text("카카오로 시작하기")
+                    .font(.pretendard(size: 14, weight: .semibold))
+                    .foregroundColor(.init(hex: "#191919"))
+                    .padding(.leading, -buttonSize)
+                Spacer()
+            }
+            .frame(height: 50)
+            .frame(maxWidth: .infinity)
+            .background(Color.init(hex: "#FAE64C"))
         }
-        .frame(height: 50)
-        .frame(maxWidth: .infinity)
-        .background(Color.init(hex: "#FAE64C"))
     }
 }
 

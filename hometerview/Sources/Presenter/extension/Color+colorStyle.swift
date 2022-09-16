@@ -20,7 +20,7 @@ extension Color {
         case white
         case blue100
         case blue300
-        case bleu600
+        case blue600
         case yellow500
         case red500
         case blueGrey100
@@ -39,7 +39,7 @@ extension Color {
                 case .white: return "#FFFFFF"
                 case .blue100: return "#EAF3FE"
                 case .blue300: return "#4880EE"
-                case .bleu600: return "#2B5FC3"
+                case .blue600: return "#2B5FC3"
                 case .yellow500: return "#F7CF6C"
                 case .red500: return "#E25848"
                 case .blueGrey100: return "#F8FAFD"
