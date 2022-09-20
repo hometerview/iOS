@@ -27,7 +27,8 @@ struct MapView: View {
                     .padding(.trailing, 14)
                 Spacer()
             }
-
+        }.onAppear {
+            print("permission alert")
         }
     }
     
