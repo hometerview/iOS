@@ -21,8 +21,13 @@ struct WishView: View {
                             NavigationLink {
                                 BuildingDetailView()
                             } label: {
-                                DetailListCell()
-                                    .padding(.horizontal)
+                                if selectedTab == .building {
+                                    BuildingListCell()
+                                        .padding(.horizontal)
+                                } else {
+                                    DetailListCell()
+                                        .padding(.horizontal)
+                                }
                             }
 
                             Divider()
