@@ -16,24 +16,23 @@ struct MainView: View {
             Spacer()
 
             TabView(selection: $selectedIndex) {
-                VStack {
-                    Image("companyyy")
-                        .frame(width: 240, height: 184)
+                VStack(spacing: 12) {
+                    Image("onboarding1")
+                        .frame(width: 240, height: 200)
 
-                    Text("나랑 같은 지역으로 출근하는 사람들은\n어디에 살고있을까?")
-                        .font(.pretendard(size: 20))
+                    Text("같은 지역으로 출근하는 사람들은\n어디에 살고있을까?")
+                        .font(.pretendard(size: 20, weight: .semibold))
                         .multilineTextAlignment(.center)
                 }
                 .tag(0)
 
-                VStack {
-                    Image("map")
-                        .frame(width: 226, height: 190)
+                VStack(spacing: 12) {
+                    Image("onboarding2")
+                        .frame(width: 226, height: 200)
 
-                    Text("직장 정보만 입력하면\n살만한 동네를 추천해드려요!")
-                        .font(.pretendard(size: 20))
+                    Text("직장 정보를 입력하면\n동네를 추천해드려요!")
+                        .font(.pretendard(size: 20, weight: .semibold))
                         .multilineTextAlignment(.center)
-
                 }
                 .tag(1)
             }
@@ -43,17 +42,22 @@ struct MainView: View {
 
             Spacer()
 
-            VStack {
-                KakaoLoginView()
-                    .frame(width: 347, height: 50)
-                AppleLoginView()
-                    .frame(width: 347, height: 50)
-
-                Button {
-                    User.shared.status = .guest
-                } label: {
-                    Text("건너뛰기")
+            VStack(spacing: 24) {
+                VStack(spacing: 8) {
+                    KakaoLoginView()
+                        .cornerRadius(8)
                         .frame(width: 347, height: 50)
+                    AppleLoginView()
+                        .cornerRadius(8)
+                        .frame(width: 347, height: 50)
+                    Button {
+                        
+                        User.shared.status = .guest
+                    } label: {
+                        Text("건너뛰기")
+                            .font(.pretendard(size: 14, weight: .regular))
+                            .foregroundColor(.colorStyle(.gray400))
+                    }
                 }
             }
             .padding(.bottom, 30)

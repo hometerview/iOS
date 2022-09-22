@@ -132,19 +132,26 @@ struct HomeView: View {
                 isZoomed.toggle()
             }
         }
+        .onDisappear {
+            isZoomed.toggle()
+        }
     }
     var header: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text("넥슨코리아")
-                    .font(.jalnanOTF(size: 24))
-                Image("icon_triangle")
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 20, height: 20)
+            Button {
+                
+            } label: {
+                HStack {
+                    Text("넥슨코리아")
+                        .font(.jalnanOTF(size: 24))
+                    Image("icon_triangle")
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                .padding(.bottom, 4)
+                .foregroundColor(.colorStyle(.blue300))
             }
-            .padding(.bottom, 4)
-            .foregroundColor(.colorStyle(.blue300))
 
             Text("통근러에게 추천하는 동네")
                 .font(.jalnanOTF(size: 24))
@@ -180,8 +187,8 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity, minHeight: 80)
                 .overlay(
                     VStack(spacing: 16) {
-                        Image("icon_pin")
-                            .frame(height: 59)
+                        Image("banner2")
+                            .frame(height: 83)
                         
                         VStack(spacing: 24) {
                             Text("회사 주소만 있으면\n맞춤 정보를 추천해드려요!")

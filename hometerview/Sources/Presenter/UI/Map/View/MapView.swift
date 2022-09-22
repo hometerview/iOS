@@ -9,11 +9,44 @@ import SwiftUI
 
 struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
+    @State private var searchText: String = ""
 
     var body: some View {
-        KakaoMapView()
-            .ignoresSafeArea()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        ZStack {
+            KakaoMapView()
+                .ignoresSafeArea()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            VStack {
+                mapSearchBar
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .strokeBorder(Color.init(hex: "D4DBEB"))
+                            .frame(height: 50)
+                    )
+                    .padding(.leading, 14)
+                    .padding(.trailing, 14)
+                Spacer()
+            }
+        }.onAppear {
+            print("permission alert")
+        }
+    }
+    
+    var mapSearchBar: some View {
+        ZStack {
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.init(hex: "#4754F0"))
+                TextField("지하철 역이나 건물명 검색하기", text: $searchText)
+                    .introspectTextField { textField in
+                        textField.becomeFirstResponder()
+                    }
+            }
+            .padding()
+            .background(Color.white)
+            .cornerRadius(8)
+        }
+        .foregroundColor(.gray)
     }
 }
 
