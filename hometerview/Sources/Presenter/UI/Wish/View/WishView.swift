@@ -21,11 +21,11 @@ struct WishView: View {
                             NavigationLink {
                                 BuildingDetailView()
                             } label: {
-                                if selectedTab == .building {
-                                    BuildingListCell()
+                                if selectedTab == .review {
+                                    DetailListCell()
                                         .padding(.horizontal)
                                 } else {
-                                    DetailListCell()
+                                    BuildingListCell()
                                         .padding(.horizontal)
                                 }
                             }

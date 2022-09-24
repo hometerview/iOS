@@ -14,7 +14,7 @@ struct DetailListCell: View {
     var hasHelpfulButton: Bool = false
 
     var body: some View {
-        LazyVStack(alignment: .leading, spacing: 16) {
+        LazyVStack(alignment: .leading, spacing: 14) {
             Text("아크로텔 오피스텔")
                 .font(.pretendard(size: 20, weight: .bold))
                 .foregroundColor(.colorStyle(.gray900))

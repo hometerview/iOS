@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct BuildingListCell: View {
-    var hasHelpfulButton: Bool = false
-
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 24) {
-            VStack(alignment: .leading ,spacing: 8) {
+        LazyVStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading) {
                 Text("아크로텔 오피스텔")
                     .foregroundColor(.colorStyle(.gray900))
                     .font(.pretendard(size: 18, weight: .bold))
@@ -32,11 +31,8 @@ struct BuildingListCell: View {
             }
             
             HStack {
-                if hasHelpfulButton {
-                    HelpfulButton(isHelpful: true)
-                }
-                
-                LikeButton(isLike: true)
+                SaveButton(isSaved: true)
+                    .frame(height: 26)
                 
                 Spacer()
                 
@@ -49,8 +45,6 @@ struct BuildingListCell: View {
                 .font(.pretendard(size: 12))
             }
         }
-        .padding(.leading, 14)
-        .padding(.trailing, 14)
     }
 }
 
