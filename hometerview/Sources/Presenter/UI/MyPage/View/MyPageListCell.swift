@@ -119,7 +119,14 @@ struct MyPageListCell: View {
         case .active:
             ForEach(0..<type.menus().count, id: \.self) { index in
                 NavigationLink {
-                    EmptyView()
+                    switch index {
+                    case 0:
+                        MyReviewView()
+                    case 1:
+                        RecentReviewView()
+                    default:
+                        EmptyView()
+                    }
                 } label: {
                     HStack {
                         Text(type.menus()[index])

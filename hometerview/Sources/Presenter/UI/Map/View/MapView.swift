@@ -16,16 +16,29 @@ struct MapView: View {
             KakaoMapView()
                 .ignoresSafeArea()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-            VStack {
-                mapSearchBar
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .strokeBorder(Color.init(hex: "D4DBEB"))
-                            .frame(height: 50)
-                    )
-                    .padding(.leading, 14)
-                    .padding(.trailing, 14)
-                Spacer()
+            ZStack {
+                VStack {
+                    mapSearchBar
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .strokeBorder(Color.init(hex: "D4DBEB"))
+                                .frame(height: 50)
+                        )
+                        .padding(.leading, 14)
+                        .padding(.trailing, 14)
+                    Spacer()
+                }
+                VStack(alignment: .trailing) {
+                    Spacer()
+                    Button {
+                        
+                    } label: {
+                        
+                    }
+                    .cornerRadius(45/2)
+                    .frame(width: 45, height: 45)
+                    .background(Color.gray)
+                }
             }
         }.onAppear {
             print("permission alert")
