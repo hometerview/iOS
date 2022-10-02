@@ -19,6 +19,7 @@ struct HomeView: View {
     @State private var isShowHometerviewFullCover: Bool = false
     @State private var isZoomed: Bool = false
     @State private var selectedSegmentIndex: Int = 0
+    @State private var isShowSpeechBubble: Bool = true
 
     @Namespace private var bottomLine
     @Namespace private var animation
@@ -49,18 +50,7 @@ struct HomeView: View {
                         
                         rankHeader
 
-                        ForEach(0..<10, id: \..self) { _ in
-                            LazyVStack {
-                                NavigationLink {
-                                    BuildingDetailView()
-                                } label: {
-                                    HomeListCell()
-                                        .padding(.horizontal)
-                                        .padding(.vertical, 4)
-                                }
-                            }
-
-                        }
+                        contentsList
                     }
                     .background(GeometryReader {
                         Color.clear.preference(key: ViewOffsetKey.self,
@@ -93,37 +83,49 @@ struct HomeView: View {
         .modifier(ToastModifier(isShow: $isToastShow, toastString: $toastMessage))
         .onAppear {
             withAnimation(.spring()) {
-                isZoomed.toggle()
+                isZoomed = true
             }
-        }
-        .onDisappear {
-            isZoomed.toggle()
         }
     }
     var header: some View {
-        VStack(alignment: .leading) {
-            Button {
-                
-            } label: {
-                HStack {
-                    Text("넥슨코리아")
-                        .font(.jalnanOTF(size: 24))
-                    Image("icon_triangle")
-                        .renderingMode(.template)
-                        .resizable()
-                        .frame(width: 20, height: 20)
+        ZStack(alignment: .topLeading) {
+            VStack(alignment: .leading) {
+                Button {
+
+                } label: {
+                    HStack {
+                        Text("넥슨코리아")
+                            .font(.jalnanOTF(size: 24))
+                        Image("icon_triangle")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }
+                    .padding(.bottom, 4)
+                    .foregroundColor(.colorStyle(.blue300))
                 }
-                .padding(.bottom, 4)
-                .foregroundColor(.colorStyle(.blue300))
+
+                Text("통근러에게 추천하는 동네")
+                    .font(.jalnanOTF(size: 24))
+                    .padding(.bottom, 8)
+
+                Text("동탄역 직장인들이 많이 사는 동네의 리뷰입니다")
+                    .font(.pretendard(size: 14))
+                    .padding(.bottom, 32)
             }
 
-            Text("통근러에게 추천하는 동네")
-                .font(.jalnanOTF(size: 24))
-                .padding(.bottom, 8)
-
-            Text("동탄역 직장인들이 많이 사는 동네의 리뷰입니다")
-                .font(.pretendard(size: 14))
-                .padding(.bottom, 32)
+            if isShowSpeechBubble {
+                ZStack {
+                    SpeechBubble(radius: 17)
+                        .frame(width: 231, height: 34)
+                        .foregroundColor(.colorStyle(.blue300))
+                        .shadow(color: .gray, radius: 10, x: 0, y: 6)
+                    Text("다른 회사의 정보로 알아보시겠어요?")
+                        .foregroundColor(.white)
+                        .font(.pretendard(size: 14))
+                }
+                .offset(x: 0, y: 40)
+            }
         }
         .frame(height: headerHeight)
         .padding(.horizontal)
@@ -271,6 +273,20 @@ struct HomeView: View {
         .animation(.easeInOut, value: isShowSegmentedControl)
         .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
         .padding(.bottom, 20)
+    }
+
+    var contentsList: some View {
+        ForEach(0..<10, id: \..self) { _ in
+            LazyVStack {
+                NavigationLink {
+                    BuildingDetailView()
+                } label: {
+                    HomeListCell()
+                        .padding(.horizontal)
+                        .padding(.vertical, 4)
+                }
+            }
+        }
     }
 
 }

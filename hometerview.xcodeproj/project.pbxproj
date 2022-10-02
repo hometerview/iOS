@@ -50,6 +50,7 @@
 		FC45F32A289E0F3B00C7B1CF /* HelpfulButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC45F329289E0F3B00C7B1CF /* HelpfulButton.swift */; };
 		FC4F086A28E97F150094D911 /* HometerviewTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4F086928E97F150094D911 /* HometerviewTabType.swift */; };
 		FC4F086D28E98ACB0094D911 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4F086C28E98ACB0094D911 /* SegmentView.swift */; };
+		FC4F086F28E996890094D911 /* SpeechBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4F086E28E996890094D911 /* SpeechBubbleView.swift */; };
 		FC5CD7B2289EB17800776D0D /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = FC5CD7B1289EB17800776D0D /* Introspect */; };
 		FC7AB3F8287942AD00DF03E5 /* hometerviewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB3F7287942AD00DF03E5 /* hometerviewApp.swift */; };
 		FC7AB3FA287942AD00DF03E5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB3F9287942AD00DF03E5 /* MainView.swift */; };
@@ -214,6 +215,7 @@
 		FC45F329289E0F3B00C7B1CF /* HelpfulButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulButton.swift; sourceTree = "<group>"; };
 		FC4F086928E97F150094D911 /* HometerviewTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HometerviewTabType.swift; sourceTree = "<group>"; };
 		FC4F086C28E98ACB0094D911 /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
+		FC4F086E28E996890094D911 /* SpeechBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubbleView.swift; sourceTree = "<group>"; };
 		FC7AB3F4287942AD00DF03E5 /* hometerview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hometerview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7AB3F7287942AD00DF03E5 /* hometerviewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hometerviewApp.swift; sourceTree = "<group>"; };
 		FC7AB3F9287942AD00DF03E5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				FCAE85A928A7C962002FC940 /* ListPopupView.swift */,
 				6A37EDDE28DEFAAD00DA63C3 /* SaveButton.swift */,
 				FC4F086C28E98ACB0094D911 /* SegmentView.swift */,
+				FC4F086E28E996890094D911 /* SpeechBubbleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1190,6 +1193,7 @@
 				FCAE85AF28A7CDD7002FC940 /* View+cornerRadius.swift in Sources */,
 				FC3CF02E289FE61F005D89AF /* FakeDirectInputSearchView.swift in Sources */,
 				FC0087B2289D7C7200E93045 /* BuildingDetailView.swift in Sources */,
+				FC4F086F28E996890094D911 /* SpeechBubbleView.swift in Sources */,
 				FCEB3C122892C8B400E35F97 /* User.swift in Sources */,
 				FCAE85AA28A7C962002FC940 /* ListPopupView.swift in Sources */,
 				FCAE85BD28A7F544002FC940 /* RateStarTitleModel.swift in Sources */,
