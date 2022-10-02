@@ -18,6 +18,7 @@ struct HomeView: View {
     @State private var isShowEnterCompanyFullCover: Bool = false
     @State private var isShowHometerviewFullCover: Bool = false
     @State private var isZoomed: Bool = false
+    @State private var selectedSegmentIndex: Int = 0
 
     @Namespace private var bottomLine
     @Namespace private var animation
@@ -239,19 +240,10 @@ struct HomeView: View {
     }
 
     var segmentedControl: some View {
-        Group {
-            Picker("", selection: $selectedRankIndex) {
-                ForEach(0..<3, id: \.self) { index in
-                    Text("갱냄구")
-                        .tag(index)
-                }
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal)
-        }
-        .background(Color.colorStyle(.blueGrey100))
-        .animation(.easeInOut, value: isShowSegmentedControl)
-        .transition(.opacity)
+        SegmentView(
+            selectedIndex: $selectedSegmentIndex,
+            titles: ["강남구", "서초구", "시흥시"]
+        )
     }
 
     var bottomFloatingMapButton: some View {
