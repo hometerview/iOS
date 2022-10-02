@@ -75,48 +75,11 @@ struct HomeView: View {
                 .padding(.top, 1)
 
                 if isShowSegmentedControl {
-                    Group {
-                        Picker("", selection: $selectedRankIndex) {
-                            ForEach(0..<3, id: \.self) { index in
-                                Text("갱냄구")
-                                    .tag(index)
-                            }
-                        }
-                        .pickerStyle(.segmented)
-                        .padding(.horizontal)
-                    }
-                    .background(Color.colorStyle(.blueGrey100))
-                    .animation(.easeInOut, value: isShowSegmentedControl)
-                    .transition(.opacity)
+                    segmentedControl
 
-                    VStack {
-                        Spacer()
-
-                        HStack {
-                            Image("icon_map")
-                                .resizable()
-                                .renderingMode(.template)
-                                .frame(width: 18, height: 18)
-                                .foregroundColor(.white)
-
-                            Text("\("갱냄구") 지도보기")
-                                .font(.pretendard(size: 14, weight: .medium))
-                                .foregroundColor(.white)
-                        }
-                        .frame(width: 143, height: 34, alignment: .center)
-                        .background(Color.colorStyle(.gray800))
-                        .cornerRadius(17)
-
-
-
-                    }
-                    .animation(.easeInOut, value: isShowSegmentedControl)
-                    .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
-                    .padding(.bottom, 20)
+                    bottomFloatingMapButton
                 }
-
             }
-
             .navigationBarHidden(true)
 
         }
@@ -273,6 +236,49 @@ struct HomeView: View {
                     .offset(x: 0, y: -10)
             }
         }
+    }
+
+    var segmentedControl: some View {
+        Group {
+            Picker("", selection: $selectedRankIndex) {
+                ForEach(0..<3, id: \.self) { index in
+                    Text("갱냄구")
+                        .tag(index)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding(.horizontal)
+        }
+        .background(Color.colorStyle(.blueGrey100))
+        .animation(.easeInOut, value: isShowSegmentedControl)
+        .transition(.opacity)
+    }
+
+    var bottomFloatingMapButton: some View {
+        VStack {
+            Spacer()
+
+            HStack {
+                Image("icon_map")
+                    .resizable()
+                    .renderingMode(.template)
+                    .frame(width: 18, height: 18)
+                    .foregroundColor(.white)
+
+                Text("\("갱냄구") 지도보기")
+                    .font(.pretendard(size: 14, weight: .medium))
+                    .foregroundColor(.white)
+            }
+            .frame(width: 143, height: 34, alignment: .center)
+            .background(Color.colorStyle(.gray800))
+            .cornerRadius(17)
+
+
+
+        }
+        .animation(.easeInOut, value: isShowSegmentedControl)
+        .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
+        .padding(.bottom, 20)
     }
 
 }
