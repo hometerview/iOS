@@ -8,34 +8,24 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @State private var selection: Int = 0
+    @State private var selection: HometerviewTabType = .home
+
+    init() {
+        UITabBar.appearance().unselectedItemTintColor = UIColor(Color.colorStyle(.gray200))
+    }
 
     var body: some View {
         TabView(selection: $selection) {
-            HomeView()
-                .tabItem {
-                    Image("icon_home")
-                }
-                .tag(0)
-
-            MapView()
-                .tabItem {
-                    Image("icon_map")
-                }
-                .tag(1)
-
-            WishView()
-                .tabItem {
-                    Image("icon_heart")
-                }
-                .tag(2)
-
-            MyPageView()
-                .tabItem {
-                    Image("icon_user")
-                }
-                .tag(3)
+            ForEach(HometerviewTabType.allCases, id: \.self) { type in
+                type.view()
+                    .tabItem {
+                        Image(type.iconImageName)
+                            .renderingMode(.template)
+                    }
+                    .tag(type)
+            }
         }
+        .accentColor(.colorStyle(.gray800))
     }
 }
 
