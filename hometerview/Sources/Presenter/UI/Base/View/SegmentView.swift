@@ -17,22 +17,21 @@ struct SegmentView: View {
             GeometryReader { proxy in
                 Capsule()
                     .foregroundColor(.colorStyle(.blueGrey200))
-                HStack {
-                    Capsule().foregroundColor(.white)
-                        .frame(width: proxy.size.width / CGFloat(titles.count))
-                        .padding(6)
-                        .offset(x: culcurateSelectedCellOffsetX(proxy: proxy))
-                }
+
+                Capsule().foregroundColor(.white)
+                    .frame(width: proxy.size.width / CGFloat(titles.count))
+                    .padding(6)
+                    .offset(x: culcurateSelectedCellOffsetX(proxy: proxy))
+                    .transition(.slide)
+                    .animation(.easeInOut, value: selectedIndex)
 
                 HStack(spacing: 0) {
-                    ForEach(titles, id: \.self) { title in
+                    ForEach(titles.indices, id: \.self) { index in
                         Button {
-                            withAnimation(.spring()) {
-                                selectedIndex = findSelectedIndex(title: title)
-                            }
+                            selectedIndex = index
                         } label: {
-                            Text(title)
-                                .foregroundColor(.colorStyle(findSelectedIndex(title: title) == selectedIndex ? .gray900 : .gray600))
+                            Text(titles[index])
+                                .foregroundColor(.colorStyle(index == selectedIndex ? .gray900 : .gray600))
                                 .font(.system(size: 16, weight: .bold))
                                 .frame(width: proxy.size.width / CGFloat(titles.count), height: proxy.size.height)
                         }
