@@ -11,9 +11,8 @@ import Introspect
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
-    @State private var selectedRankIndex = 0
     @State private var isToastShow: Bool = false
-    @State private var isShowSegmentedControl: Bool = false
+    @State private var isShowSegmentedControl: Bool? = false
     @State private var toastMessage: String = "HOHOHOHO"
     @State private var isShowEnterCompanyFullCover: Bool = false
     @State private var isShowHometerviewFullCover: Bool = false
@@ -26,7 +25,9 @@ struct HomeView: View {
 
     let headerHeight: CGFloat = 180
     let rankHeaderHeight: CGFloat = 80
-    let bannerHeight: CGFloat = 253
+    var bannerHeight: CGFloat {
+        return isZoomed ? 253 : 0
+    }
     var fullHeaderHeight: CGFloat {
         return headerHeight + rankHeaderHeight + bannerHeight
     }
@@ -56,15 +57,13 @@ struct HomeView: View {
                                                value: -$0.frame(in: .named("scroll")).origin.y)
                     })
                     .onPreferenceChange(ViewOffsetKey.self) { scrollOffsetY in
-                        withAnimation {
-                            isShowSegmentedControl = scrollOffsetY > fullHeaderHeight
-                        }
+                        toggleShowSegmentedControl(offsetY: scrollOffsetY)
                     }
                 }
                 .coordinateSpace(name: "scroll")
                 .padding(.top, 1)
 
-                if isShowSegmentedControl {
+                if isShowSegmentedControl == true {
                     segmentedControl
 
                     bottomFloatingMapButton
@@ -82,12 +81,13 @@ struct HomeView: View {
         .modifier(ToastModifier(isShow: $isToastShow, toastString: $toastMessage))
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                withAnimation(.spring()) {
+                withAnimation {
                     isZoomed = true
                 }
             }
         }
     }
+
     var header: some View {
         ZStack(alignment: .topLeading) {
             VStack(alignment: .leading) {
@@ -136,7 +136,7 @@ struct HomeView: View {
         HStack {
             ForEach(0..<3, id: \.self) { index in
                 Button {
-                    selectedRankIndex = index
+                    selectedSegmentIndex = index
                 } label: {
                     rankHeaderCell(index: index)
                 }
@@ -227,11 +227,11 @@ struct HomeView: View {
         ZStack(alignment: .top) {
             RoundedRectangle(cornerRadius: 8)
                 .frame(maxWidth: .infinity, minHeight: 80)
-                .foregroundColor(index == selectedRankIndex ? .colorStyle(.gray700) : .colorStyle(.blueGrey200))
+                .foregroundColor(index == selectedSegmentIndex ? .colorStyle(.gray700) : .colorStyle(.blueGrey200))
                 .overlay(
                     Text("갱냄구")
                         .font(.pretendard(size: 16, weight: .semibold))
-                        .foregroundColor(index == selectedRankIndex ? .white : .colorStyle(.gray600))
+                        .foregroundColor(index == selectedSegmentIndex ? .white : .colorStyle(.gray600))
 
                 )
 
@@ -310,6 +310,15 @@ struct HomeView: View {
         }
     }
 
+    private func toggleShowSegmentedControl(offsetY: CGFloat) {
+        let tmpisShowSegmentedControl = offsetY > fullHeaderHeight
+
+        if isShowSegmentedControl != tmpisShowSegmentedControl {
+            withAnimation {
+                isShowSegmentedControl = offsetY > fullHeaderHeight
+            }
+        }
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {
