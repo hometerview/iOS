@@ -42,6 +42,9 @@ struct WishView: View {
 
     var picker: some View {
         SegmentView(selectedIndex: $selectedSegmentIndex, titles: PickerTabType.titles)
+            .padding(.horizontal)
+            .padding(.top, 12)
+            .padding(.bottom, 28)
     }
 }
 

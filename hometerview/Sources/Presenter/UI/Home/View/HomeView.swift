@@ -30,9 +30,6 @@ struct HomeView: View {
     var fullHeaderHeight: CGFloat {
         return headerHeight + rankHeaderHeight + bannerHeight
     }
-    var bannerFrame: Double {
-        isZoomed ? 253 : 0
-    }
 
     var body: some View {
         NavigationView {
@@ -43,10 +40,12 @@ struct HomeView: View {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 0) {
                         header
-                        
-                        companyBanner
-                        
-//                        hometerViewBanner
+
+                        if isZoomed {
+                            companyBanner
+
+    //                        hometerViewBanner
+                        }
                         
                         rankHeader
 
@@ -82,8 +81,10 @@ struct HomeView: View {
         })
         .modifier(ToastModifier(isShow: $isToastShow, toastString: $toastMessage))
         .onAppear {
-            withAnimation(.spring()) {
-                isZoomed = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                withAnimation(.spring()) {
+                    isZoomed = true
+                }
             }
         }
     }
@@ -179,7 +180,7 @@ struct HomeView: View {
                     }
                 )
         }
-        .frame(height: bannerFrame)
+        .frame(height: 253)
         .padding(.horizontal)
         .padding(.bottom, 40)
     }
@@ -217,7 +218,7 @@ struct HomeView: View {
                     }
                 )
         }
-        .frame(height: bannerFrame)
+        .frame(height: 253)
         .padding(.horizontal)
         .padding(.bottom, 40)
     }
@@ -242,10 +243,30 @@ struct HomeView: View {
     }
 
     var segmentedControl: some View {
-        SegmentView(
-            selectedIndex: $selectedSegmentIndex,
-            titles: ["강남구", "서초구", "시흥시"]
-        )
+        ZStack(alignment: .top) {
+            Color.colorStyle(.blueGrey100)
+                .ignoresSafeArea()
+                .mask(
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            .colorStyle(.blueGrey100),
+                            .colorStyle(.blueGrey100),
+                            .colorStyle(.blueGrey100),
+                            .clear
+                        ]),
+                        startPoint: .top,
+                        endPoint: .bottom))
+                .frame(maxWidth: .infinity, maxHeight: 80)
+
+
+            SegmentView(
+                selectedIndex: $selectedSegmentIndex,
+                titles: ["강남구", "서초구", "시흥시"]
+            )
+            .padding(.horizontal)
+        }
+        .frame(maxWidth: .infinity, maxHeight: 80)
+
     }
 
     var bottomFloatingMapButton: some View {
