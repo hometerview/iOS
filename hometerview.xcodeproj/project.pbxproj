@@ -376,9 +376,8 @@
 		FC0087B0289D7C6800E93045 /* BuildingDetail */ = {
 			isa = PBXGroup;
 			children = (
-				FC0087B1289D7C7200E93045 /* BuildingDetailView.swift */,
-				FC373C45289D643000F10A4C /* DetailListCell.swift */,
-				6A2845D228DA1BFF008FF21C /* BuildingListCell.swift */,
+				FC4F087228EAF2500094D911 /* ViewModel */,
+				FC4F087128EAF24B0094D911 /* View */,
 			);
 			path = BuildingDetail;
 			sourceTree = "<group>";
@@ -414,14 +413,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FC3CF021289F9ECC005D89AF /* CompanyInfo */ = {
+		FC3CF021289F9ECC005D89AF /* WriteCompanyInfo */ = {
 			isa = PBXGroup;
 			children = (
 				FCAE859828A7BE91002FC940 /* EnterCompany */,
 				FC3CF028289FE5FF005D89AF /* DirectInput */,
 				FCAE859A28A7BEAA002FC940 /* SimpleCancelButton.swift */,
 			);
-			path = CompanyInfo;
+			path = WriteCompanyInfo;
 			sourceTree = "<group>";
 		};
 		FC3CF028289FE5FF005D89AF /* DirectInput */ = {
@@ -497,6 +496,31 @@
 				FC4F086928E97F150094D911 /* HometerviewTabType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FC4F087028EAF21E0094D911 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FCAE859628A79D98002FC940 /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FC4F087128EAF24B0094D911 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC0087B1289D7C7200E93045 /* BuildingDetailView.swift */,
+				FC373C45289D643000F10A4C /* DetailListCell.swift */,
+				6A2845D228DA1BFF008FF21C /* BuildingListCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC4F087228EAF2500094D911 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FC7AB3EB287942AD00DF03E5 = {
@@ -631,11 +655,12 @@
 				FCEB3BEE2892C55C00E35F97 /* TabView */,
 				FC7AB42F287ABC8800DF03E5 /* Main */,
 				FCEB3BF12892C5EC00E35F97 /* Home */,
+				FC0087B0289D7C6800E93045 /* BuildingDetail */,
 				FCEB3BF22892C63D00E35F97 /* Map */,
 				FCEB3BF32892C64500E35F97 /* Wish */,
 				FCEB3BF42892C66E00E35F97 /* MyPage */,
-				FC3CF021289F9ECC005D89AF /* CompanyInfo */,
-				FCAE859C28A7C2B9002FC940 /* Hometerview */,
+				FC3CF021289F9ECC005D89AF /* WriteCompanyInfo */,
+				FCAE859C28A7C2B9002FC940 /* WriteHometerview */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -812,14 +837,14 @@
 			path = EnterCompany;
 			sourceTree = "<group>";
 		};
-		FCAE859C28A7C2B9002FC940 /* Hometerview */ = {
+		FCAE859C28A7C2B9002FC940 /* WriteHometerview */ = {
 			isa = PBXGroup;
 			children = (
 				FC4F086728E97EF90094D911 /* Model */,
 				FCAE859D28A7C2CA002FC940 /* View */,
 				FCAE85B228A7D71D002FC940 /* ViewModel */,
 			);
-			path = Hometerview;
+			path = WriteHometerview;
 			sourceTree = "<group>";
 		};
 		FCAE859D28A7C2CA002FC940 /* View */ = {
@@ -854,6 +879,7 @@
 		FCEB3BED2892C55300E35F97 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				FC4F087028EAF21E0094D911 /* ViewModel */,
 				FC373C49289D6B3800F10A4C /* View */,
 			);
 			path = Base;
@@ -908,7 +934,6 @@
 		FCEB3BFE2892C70100E35F97 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				FCAE859628A79D98002FC940 /* BaseViewModel.swift */,
 				FCEB3C062892C75F00E35F97 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
@@ -920,7 +945,6 @@
 				FCEB3BF52892C69400E35F97 /* HomeView.swift */,
 				FCEDBD5E289F46F90020D276 /* HomeListCell.swift */,
 				6AD53EBD28D4E33E00093DC3 /* LoadingView.swift */,
-				FC0087B0289D7C6800E93045 /* BuildingDetail */,
 			);
 			path = View;
 			sourceTree = "<group>";
