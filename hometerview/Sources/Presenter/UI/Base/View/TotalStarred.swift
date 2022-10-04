@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TotalStarred: View {
     struct ClipShape: Shape {
-        let width: Double
+        let width: CGFloat
 
         func path(in rect: CGRect) -> Path {
             Path(CGRect(x: rect.minX, y: rect.minY, width: width, height: rect.height))
