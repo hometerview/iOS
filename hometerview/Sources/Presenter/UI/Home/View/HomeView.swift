@@ -76,7 +76,7 @@ struct HomeView: View {
             EnterCompanySearchView(isShowFullCover: $isShowEnterCompanyFullCover)
         }
         .fullScreenCover(isPresented: $isShowHometerviewFullCover, content: {
-            WriteHometerviewView(isShowFullCover: $isShowHometerviewFullCover)
+            HometerviewSearchView(isShowFullCover: $isShowHometerviewFullCover)
         })
         .modifier(ToastModifier(isShow: $isToastShow, toastString: $toastMessage))
         .onAppear {

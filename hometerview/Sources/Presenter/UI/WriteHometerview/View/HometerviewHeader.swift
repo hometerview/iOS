@@ -37,10 +37,7 @@ struct HometerviewHeader: View {
             }
             .padding()
 
-            Rectangle()
-                .frame(maxWidth: .infinity, maxHeight: 1)
-                .foregroundColor(.colorStyle(.gray200))
+            CustomDivider(color: .colorStyle(.gray200), height: 1)
         }
-        .frame(height: 50)
     }
 }

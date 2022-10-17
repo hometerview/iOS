@@ -7,39 +7,58 @@
 
 import SwiftUI
 
-struct WriteInputSearchView: View {
-    @ObservedObject var viewModel: HometerviewViewModel
-    @Binding var isTapFakeSearchBar: Bool
+struct HometerviewSearchView: View {
+    @StateObject private var viewModel: HometerviewViewModel = HometerviewViewModel()
     @Binding var isShowFullCover: Bool
     @State private var searchText: String = ""
-    @State private var isShowContents: Bool = false
-    let searchBarNamespace: Namespace.ID
 
     var body: some View {
-        ZStack {
-            Color.colorStyle(.blueGrey100)
-                .ignoresSafeArea()
+        NavigationView {
+            ZStack(alignment: .top) {
+                Color.colorStyle(.blueGrey100)
+                    .ignoresSafeArea()
 
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 10) {
-                    customSearchBar
+                VStack {
+                    HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 37, showBackButton: false)
 
-                    if isShowContents {
-                        companyList
-                        .transition(.opacity.animation(.easeInOut(duration: 0.2)))
+                    ScrollView {
+                        LazyVStack(alignment: .leading, spacing: 10) {
+                            Text("주소")
+                                .foregroundColor(.colorStyle(.gray800))
+                                .font(.pretendard(size: 14))
+                                .padding(.top, 24)
+                                .padding(.bottom, 16)
+                                .padding(.horizontal)
+
+                            customSearchBar
+
+                            if searchText == "" {
+                                addressGuideline
+                            } else {
+                                companyList
+                                    .transition(.opacity.animation(.easeInOut(duration: 0.2)))
+                            }
+                        }
                     }
+
+                    Spacer()
                 }
             }
+            .navigationBarHidden(true)
         }
-        .padding()
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                isShowContents = true
-            }
+    }
+
+    var addressGuideline: some View {
+        VStack(alignment: .leading) {
+            Text("안심하세요! 작성자의 정보는 노출되지 않아요!")
+                .foregroundColor(.colorStyle(.blue300))
+                .font(.pretendard(size: 12, weight: .medium))
+
+            AddressGuidelineView()
+                .padding(.top, 40)
+                .padding(.horizontal, 24)
         }
-        .onDisappear {
-            isShowContents = false
-        }
+        .padding(.horizontal)
     }
 
     var companyList: some View {
@@ -49,14 +68,14 @@ struct WriteInputSearchView: View {
                     LivingFloorView(viewModel: viewModel, isShowFullCover: $isShowFullCover)
                 } label: {
                     Text("서울시 마포구 문화로 32-1 석규빌딩")
-                        .font(.pretendard(size: 13, weight: .medium))
+                        .font(.pretendard(size: 14))
+                        .padding(.horizontal)
+                        .frame(height: 46)
                         .foregroundColor(.colorStyle(.gray900))
                 }
+
+                CustomDivider(color: .colorStyle(.gray100), height: 1)
             }
-            .padding(.horizontal)
-            .frame(height: 50)
-            .background(Color.white)
-            .cornerRadius(4)
         }
     }
 
@@ -78,6 +97,12 @@ struct WriteInputSearchView: View {
                     .frame(height: 50)
             )
         }
-        .matchedGeometryEffect(id: "searchBar", in: searchBarNamespace)
+        .padding(.horizontal)
+    }
+}
+
+struct HometerviewSearchViewPreview: PreviewProvider {
+    static var previews: some View {
+        HometerviewSearchView(isShowFullCover: .constant(true))
     }
 }
