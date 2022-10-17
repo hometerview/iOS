@@ -46,6 +46,8 @@ struct EnterCompanySearchView: View {
 
             ForEach(0..<5, id: \.self) { index in
                 companyListCell(index: index)
+
+                CustomDivider(color: .colorStyle(.gray100), height: 1)
             }
         }
         .padding(.vertical, 16)
@@ -99,13 +101,13 @@ struct EnterCompanySearchView: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.init(hex: "#4754F0"))
-                TextField("검색", text: $searchText)
+                TextField("회사를 검색해 주세요", text: $searchText)
                     .introspectTextField { textField in
                         textField.becomeFirstResponder()
                     }
             }
             .padding()
-            .foregroundColor(.gray)
+            .foregroundColor(searchText == "" ? Color.colorStyle(.gray400) : Color.colorStyle(.gray900))
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
                     .strokeBorder(Color.init(hex: "D4DBEB"))

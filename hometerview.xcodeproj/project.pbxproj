@@ -379,7 +379,8 @@
 		FC05286228FCF8E8003B8491 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FC3CF026289FA89E005D89AF /* EnterCompanySearchView.swift */,
+				FCAE859828A7BE91002FC940 /* EnterCompany */,
+				FC3CF028289FE5FF005D89AF /* DirectInput */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -426,8 +427,8 @@
 		FC3CF021289F9ECC005D89AF /* WriteCompanyInfo */ = {
 			isa = PBXGroup;
 			children = (
-				FCAE859828A7BE91002FC940 /* EnterCompany */,
-				FC3CF028289FE5FF005D89AF /* DirectInput */,
+				FC05286228FCF8E8003B8491 /* View */,
+				FC05286328FCF8EB003B8491 /* ViewModel */,
 				FCAE859A28A7BEAA002FC940 /* SimpleCancelButton.swift */,
 			);
 			path = WriteCompanyInfo;
@@ -838,8 +839,7 @@
 		FCAE859828A7BE91002FC940 /* EnterCompany */ = {
 			isa = PBXGroup;
 			children = (
-				FC05286228FCF8E8003B8491 /* View */,
-				FC05286328FCF8EB003B8491 /* ViewModel */,
+				FC3CF026289FA89E005D89AF /* EnterCompanySearchView.swift */,
 			);
 			path = EnterCompany;
 			sourceTree = "<group>";

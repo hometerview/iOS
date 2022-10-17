@@ -101,13 +101,13 @@ struct DirectInputSearchView: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.init(hex: "#4754F0"))
-                TextField("검색", text: $searchText)
+                TextField("건물 주소를 검색해 주세요", text: $searchText)
                     .introspectTextField { textField in
                         textField.becomeFirstResponder()
                     }
             }
             .padding()
-            .foregroundColor(.gray)
+            .foregroundColor(searchText == "" ? Color.colorStyle(.gray400) : Color.colorStyle(.gray900))
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
                     .strokeBorder(Color.init(hex: "D4DBEB"))

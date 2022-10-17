@@ -53,13 +53,13 @@ struct CompanyNameInputView: View {
     var companyNameTextField: some View {
         ZStack {
             HStack {
-                TextField("회사명을 입력하세요", text: $companyNameText)
+                TextField("회사명을 입력해 주세요", text: $companyNameText)
                     .introspectTextField { textField in
                         textField.becomeFirstResponder()
                     }
             }
             .padding()
-            .foregroundColor(.gray)
+            .foregroundColor(companyNameText == "" ? Color.colorStyle(.gray400) : Color.colorStyle(.gray900))
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
                     .strokeBorder(Color.init(hex: "D4DBEB"))
