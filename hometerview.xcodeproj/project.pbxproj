@@ -34,9 +34,7 @@
 		FC38362E289EAA4F004719AE /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FC38362D289EAA49004719AE /* libxml2.tbd */; };
 		FC383630289EAA60004719AE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FC38362F289EAA59004719AE /* libsqlite3.tbd */; };
 		FC3CF027289FA89E005D89AF /* EnterCompanySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF026289FA89E005D89AF /* EnterCompanySearchView.swift */; };
-		FC3CF02C289FE61F005D89AF /* DirectInputInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF029289FE61F005D89AF /* DirectInputInfoView.swift */; };
 		FC3CF02D289FE61F005D89AF /* DirectInputSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF02A289FE61F005D89AF /* DirectInputSearchView.swift */; };
-		FC3CF02E289FE61F005D89AF /* FakeDirectInputSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF02B289FE61F005D89AF /* FakeDirectInputSearchView.swift */; };
 		FC3CF030289FE9A2005D89AF /* CompanyNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF02F289FE9A2005D89AF /* CompanyNameInputView.swift */; };
 		FC3CF03D28A7791D005D89AF /* HomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF03C28A7791D005D89AF /* HomeDTO.swift */; };
 		FC3CF03F28A77935005D89AF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3CF03E28A77935005D89AF /* Home.swift */; };
@@ -198,9 +196,7 @@
 		FC38362D289EAA49004719AE /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		FC38362F289EAA59004719AE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FC3CF026289FA89E005D89AF /* EnterCompanySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCompanySearchView.swift; sourceTree = "<group>"; };
-		FC3CF029289FE61F005D89AF /* DirectInputInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectInputInfoView.swift; sourceTree = "<group>"; };
 		FC3CF02A289FE61F005D89AF /* DirectInputSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectInputSearchView.swift; sourceTree = "<group>"; };
-		FC3CF02B289FE61F005D89AF /* FakeDirectInputSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeDirectInputSearchView.swift; sourceTree = "<group>"; };
 		FC3CF02F289FE9A2005D89AF /* CompanyNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyNameInputView.swift; sourceTree = "<group>"; };
 		FC3CF03C28A7791D005D89AF /* HomeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDTO.swift; sourceTree = "<group>"; };
 		FC3CF03E28A77935005D89AF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -440,9 +436,7 @@
 		FC3CF028289FE5FF005D89AF /* DirectInput */ = {
 			isa = PBXGroup;
 			children = (
-				FC3CF029289FE61F005D89AF /* DirectInputInfoView.swift */,
 				FC3CF02A289FE61F005D89AF /* DirectInputSearchView.swift */,
-				FC3CF02B289FE61F005D89AF /* FakeDirectInputSearchView.swift */,
 				FC3CF02F289FE9A2005D89AF /* CompanyNameInputView.swift */,
 			);
 			path = DirectInput;
@@ -1227,7 +1221,6 @@
 				FCAE85BB28A7E807002FC940 /* RateStarModel.swift in Sources */,
 				6A350AAF2890E49A004EA957 /* KakaoLoginView.swift in Sources */,
 				FCAE85AF28A7CDD7002FC940 /* View+cornerRadius.swift in Sources */,
-				FC3CF02E289FE61F005D89AF /* FakeDirectInputSearchView.swift in Sources */,
 				FC0087B2289D7C7200E93045 /* BuildingDetailView.swift in Sources */,
 				FC4F086F28E996890094D911 /* SpeechBubbleView.swift in Sources */,
 				FCEB3C122892C8B400E35F97 /* User.swift in Sources */,
@@ -1238,7 +1231,6 @@
 				FCEB3BF02892C56B00E35F97 /* MainTabView.swift in Sources */,
 				FCFBB38028CF65A900818657 /* MyReviewMapper.swift in Sources */,
 				FC373C48289D68DD00F10A4C /* View+if.swift in Sources */,
-				FC3CF02C289FE61F005D89AF /* DirectInputInfoView.swift in Sources */,
 				FCEB3BDB2882533300E35F97 /* MainService.swift in Sources */,
 				FC05286528FCF8F8003B8491 /* EnterCompanyViewModel.swift in Sources */,
 				FCFBB37828CF63E200818657 /* NetworkError.swift in Sources */,

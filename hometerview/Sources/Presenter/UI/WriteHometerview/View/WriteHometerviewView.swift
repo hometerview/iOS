@@ -24,18 +24,11 @@ struct WriteHometerviewView: View {
                     HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 37, showBackButton: false)
 
                     Group {
-                        if isTapFakeSearchBar {
-                            WriteInputSearchView(
-                                viewModel: viewModel,
-                                isTapFakeSearchBar: $isTapFakeSearchBar,
-                                isShowFullCover: $isShowFullCover,
-                                searchBarNamespace: searchBarNamespace)
-                        } else {
-                            FakeDirectInputSearchView(
-                                isTapFakeSearchBar: $isTapFakeSearchBar, isShowHeader: false,
-                                searchBarNamespace: searchBarNamespace
-                            )
-                        }
+                        WriteInputSearchView(
+                            viewModel: viewModel,
+                            isTapFakeSearchBar: $isTapFakeSearchBar,
+                            isShowFullCover: $isShowFullCover,
+                            searchBarNamespace: searchBarNamespace)
                     }
 
                     Spacer()

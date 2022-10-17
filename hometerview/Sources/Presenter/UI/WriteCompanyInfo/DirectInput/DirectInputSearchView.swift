@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct DirectInputSearchView: View {
-    @Binding var isTapFakeSearchBar: Bool
     @State private var searchText: String = ""
-    @State private var isShowContents: Bool = false
-    let searchBarNamespace: Namespace.ID
+    @Binding var isShowFullCover: Bool
 
     var body: some View {
         ZStack {
@@ -20,37 +18,78 @@ struct DirectInputSearchView: View {
 
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 10) {
+                    CustomDivider(color: .colorStyle(.gray200), height: 1)
+
+                    header
+
                     customSearchBar
 
-                    if isShowContents {
+                    if searchText == "" {
+                        guidelineText
+                    } else {
                         companyList
-                        .transition(.opacity.animation(.easeInOut(duration: 0.2)))
+                            .transition(.opacity.animation(.easeInOut(duration: 0.2)))
                     }
                 }
             }
+            .navigationTitle("회사 정보 입력")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: BackButton(), trailing: SimpleCancelButton(isActive: $isShowFullCover))
         }
-        .padding()
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                isShowContents = true
-            }
+    }
+
+    var guidelineText: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text("TIP")
+                .font(.pretendard(size: 14, weight: .semibold))
+            Text("아래와 같은 조합으로 검색을 하시면 더욱 정확한 결과가 검색됩니다.")
+                .padding(.bottom, 8)
+
+            Text("도로명 + 건물번호")
+            Text("예) 판교역로 235, 제주 첨단로 242")
+                .foregroundColor(.colorStyle(.blue300))
+                .padding(.bottom, 8)
+
+            Text("지역명(동/리) + 번지")
+            Text("예) 삼평동 681, 제주 영평동 2181")
+                .foregroundColor(.colorStyle(.blue300))
+                .padding(.bottom, 8)
+
+            Text("지역명(동/리) + 건물명(아파트명)")
+            Text("예) 분당 주공, 연수동 주공3차")
+                .foregroundColor(.colorStyle(.blue300))
+                .padding(.bottom, 8)
+
+            Text("사서함명 + 번호")
+            Text("예) 분당우체국사서함 1~100")
+                .foregroundColor(.colorStyle(.blue300))
         }
-        .onDisappear {
-            isShowContents = false
-        }
+        .font(.pretendard(size: 10))
+        .foregroundColor(.colorStyle(.gray900))
+        .padding(.top, 40)
+        .padding(.horizontal, 24)
     }
 
     var companyList: some View {
         ForEach(0..<5, id: \.self) { index in
             LazyVStack(alignment: .leading, spacing: 10) {
                 Text("서울시 마포구 문화로 32-1 석규빌딩")
-                    .font(.pretendard(size: 13, weight: .medium))
+                    .font(.pretendard(size: 14))
+                    .padding(.horizontal)
+                    .frame(height: 46)
+
+                CustomDivider(color: .colorStyle(.gray100), height: 1)
             }
-            .padding(.horizontal)
-            .frame(height: 50)
-            .background(Color.white)
-            .cornerRadius(4)
         }
+    }
+
+    var header: some View {
+        Text("주소")
+            .font(.pretendard(size: 14))
+            .padding(.top, 24)
+            .padding(.bottom, 16)
+            .padding(.horizontal)
     }
 
     var customSearchBar: some View {
@@ -71,7 +110,7 @@ struct DirectInputSearchView: View {
                     .frame(height: 50)
             )
         }
-        .matchedGeometryEffect(id: "searchBar", in: searchBarNamespace)
+        .padding(.horizontal)
     }
 }
 
@@ -79,6 +118,6 @@ struct DirectInputSearchViewPreview: PreviewProvider {
     @Namespace static var test
 
     static var previews: some View {
-        DirectInputSearchView(isTapFakeSearchBar: .constant(false), searchBarNamespace: test)
+        DirectInputSearchView(isShowFullCover: .constant(true))
     }
 }

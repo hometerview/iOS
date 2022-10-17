@@ -76,7 +76,7 @@ struct EnterCompanySearchView: View {
 
     var notFoundCompanyButton: some View {
         NavigationLink {
-            DirectInputInfoView(isShowFullCover: $isShowFullCover)
+            DirectInputSearchView(isShowFullCover: $isShowFullCover)
         } label: {
             HStack(alignment: .center, spacing: 7) {
                 Text("내가 찾는 회사가 없어요")
