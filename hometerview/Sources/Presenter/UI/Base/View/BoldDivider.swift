@@ -7,17 +7,13 @@
 
 import SwiftUI
 
-struct BoldDivider: View {
+struct CustomDivider: View {
+    let color: Color
+    let height: CGFloat
+
     var body: some View {
         Rectangle()
-            .foregroundColor(.colorStyle(.gray100))
-            .frame(maxWidth: .infinity, minHeight: 17)
-    }
-}
-
-struct BoldDivider_Previews: PreviewProvider {
-    static var previews: some View {
-        BoldDivider()
-            .previewLayout(.sizeThatFits)
+            .foregroundColor(color)
+            .frame(maxWidth: .infinity, minHeight: height)
     }
 }

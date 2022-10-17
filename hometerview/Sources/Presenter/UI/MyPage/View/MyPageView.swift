@@ -34,7 +34,8 @@ struct MyPageView: View {
                             .padding(.leading, 14)
                             .padding(.top, 16)
                         MyPageListCell(type: .myInfo)
-                        BoldDivider()
+
+                        CustomDivider(color: .colorStyle(.gray100), height: 17)
                         
                         Text("활동")
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -42,15 +43,18 @@ struct MyPageView: View {
                             .padding(.leading, 14)
                             .padding(.top, 16)
                         MyPageListCell(type: .active)
-                        BoldDivider()
+
+                        CustomDivider(color: .colorStyle(.gray100), height: 17)
 
                         Text("계정")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.pretendard(size: 12, weight: .semibold))
                             .padding(.leading, 14)
                             .padding(.top, 16)
+                        
                         MyPageListCell(type: .account)
-                        BoldDivider()
+
+                        CustomDivider(color: .colorStyle(.gray100), height: 17)
                         
                         HStack {
                             Text("현재 버전")

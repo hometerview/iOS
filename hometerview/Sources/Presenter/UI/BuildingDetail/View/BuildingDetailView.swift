@@ -15,7 +15,7 @@ struct BuildingDetailView: View {
 
                 infoSection
 
-                BoldDivider()
+                CustomDivider(color: .colorStyle(.gray100), height: 17)
                     .padding(.vertical)
 
                 totalReviewInfo
