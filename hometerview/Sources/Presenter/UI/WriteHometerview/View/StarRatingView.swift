@@ -77,11 +77,17 @@ struct StarRatingView: View {
 
     var merit: some View {
         VStack {
-            Text("장점")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.pretendard(size: 14))
-                .foregroundColor(.colorStyle(.gray800))
-                .padding(.bottom)
+            HStack(spacing: 2) {
+                Text("장점")
+                    .font(.pretendard(size: 14))
+                    .foregroundColor(.colorStyle(.gray800))
+
+                Text("(최소 30자)")
+                    .font(.pretendard(size: 12))
+                    .foregroundColor(.colorStyle(.gray600))
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.bottom)
 
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $meritContents)
@@ -113,11 +119,17 @@ struct StarRatingView: View {
 
     var weakness: some View {
         VStack {
-            Text("단점")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.pretendard(size: 14))
-                .foregroundColor(.colorStyle(.gray800))
-                .padding(.bottom)
+            HStack(spacing: 2) {
+                Text("단점")
+                    .font(.pretendard(size: 14))
+                    .foregroundColor(.colorStyle(.gray800))
+
+                Text("(최소 30자)")
+                    .font(.pretendard(size: 12))
+                    .foregroundColor(.colorStyle(.gray600))
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.bottom)
 
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $weaknessContents)
@@ -156,7 +168,9 @@ struct StarRatingView: View {
 
             ZStack {
                 HStack {
-                    Text(selectedLengthResidenceTitle ?? "")
+                    Text(selectedLengthResidenceTitle ?? "거주기간을 선택해주세요")
+                        .font(.pretendard(size: 14))
+                        .foregroundColor(selectedLengthResidenceTitle == nil ? .colorStyle(.gray400) : .colorStyle(.gray900))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .overlay(
                             HStack {
@@ -193,6 +207,7 @@ struct StarRatingView: View {
                 .font(.pretendard(size: 14))
                 .foregroundColor(.colorStyle(.gray800))
                 .padding(.bottom)
+                .padding(.top, 24)
 
             Text(assignRateStarTitle(starCount: starCount))
                 .font(.pretendard(size: 14))
