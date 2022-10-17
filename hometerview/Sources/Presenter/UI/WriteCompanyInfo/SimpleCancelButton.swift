@@ -12,7 +12,7 @@ struct SimpleCancelButton: View {
 
     var body: some View {
         Button {
-            isActive = false
+            isActive = true
         } label: {
             Text("취소")
                 .foregroundColor(.colorStyle(.gray700))

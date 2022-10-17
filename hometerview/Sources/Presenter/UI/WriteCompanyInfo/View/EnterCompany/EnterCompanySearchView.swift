@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EnterCompanySearchView: View {
     @State private var searchText: String = ""
+    @State private var isShowDismissAlert: Bool = false
     @Binding var isShowFullCover: Bool
 
     var body: some View {
@@ -34,7 +35,10 @@ struct EnterCompanySearchView: View {
             }
             .navigationTitle("회사 정보 입력")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: SimpleCancelButton(isActive: $isShowFullCover))
+            .navigationBarItems(trailing: SimpleCancelButton(isActive: $isShowDismissAlert))
+            .modifier(AskDismissAlertModifier(
+                isShowFullCover: $isShowFullCover,
+                isShowAlert: $isShowDismissAlert))
         }
     }
 

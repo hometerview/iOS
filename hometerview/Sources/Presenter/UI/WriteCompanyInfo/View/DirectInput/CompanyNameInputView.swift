@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CompanyNameInputView: View {
     @State private var companyNameText: String = ""
+    @State private var isShowDismissAlert: Bool = false
     @Binding var isShowFullCover: Bool
 
     var body: some View {
@@ -47,7 +48,10 @@ struct CompanyNameInputView: View {
         }
         .navigationTitle("회사 정보 입력")
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: BackButton(), trailing: SimpleCancelButton(isActive: $isShowFullCover))
+        .navigationBarItems(leading: BackButton(), trailing: SimpleCancelButton(isActive: $isShowDismissAlert))
+        .modifier(AskDismissAlertModifier(
+            isShowFullCover: $isShowFullCover,
+            isShowAlert: $isShowDismissAlert))
     }
 
     var companyNameTextField: some View {
