@@ -95,7 +95,7 @@ struct HometerviewSearchView: View {
                     }
             }
             .padding()
-            .foregroundColor(.gray)
+            .foregroundColor(searchText == "" ? Color.colorStyle(.gray400) : Color.colorStyle(.gray900))
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
                     .strokeBorder(Color.init(hex: "D4DBEB"))

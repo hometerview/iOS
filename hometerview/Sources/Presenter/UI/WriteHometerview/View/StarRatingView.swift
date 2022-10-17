@@ -24,8 +24,8 @@ struct StarRatingView: View {
     @State private var weaknessContents: String = ""
 
     var isEnableNextButton: Bool {
-        return meritContents.count > 30 &&
-        weaknessContents.count > 30 &&
+        return meritContents.count >= 30 &&
+        weaknessContents.count >= 30 &&
         selectedListIndex != nil &&
         starCount > 0
     }
@@ -35,7 +35,7 @@ struct StarRatingView: View {
             Color.colorStyle(.blueGrey100)
                 .ignoresSafeArea()
 
-            HometerviewHeader(isShowDismissAlert: $isShowDismissAlert, progressValue: 37)
+            HometerviewHeader(isShowDismissAlert: $isShowDismissAlert, progressValue: 77)
 
             ScrollView {
                 VStack {
@@ -75,10 +75,10 @@ struct StarRatingView: View {
                 .font(.pretendard(size: 16, weight: .medium))
                 .frame(maxWidth: .infinity, minHeight: 50)
                 .background(!isEnableNextButton ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
-                .disabled(!isEnableNextButton)
                 .cornerRadius(8)
                 .padding(.horizontal)
         }
+        .disabled(!isEnableNextButton)
     }
 
     var merit: some View {

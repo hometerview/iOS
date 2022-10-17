@@ -19,7 +19,7 @@ struct StepEnterCompanyView: View {
                 .ignoresSafeArea()
 
             VStack(alignment: .leading) {
-                HometerviewHeader(isShowDismissAlert: $isShowDismissAlert, progressValue: 37)
+                HometerviewHeader(isShowDismissAlert: $isShowDismissAlert, progressValue: 99)
 
                 description
 
