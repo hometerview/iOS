@@ -14,6 +14,6 @@ struct CustomDivider: View {
     var body: some View {
         Rectangle()
             .foregroundColor(color)
-            .frame(maxWidth: .infinity, minHeight: height)
+            .frame(maxWidth: .infinity, maxHeight: height)
     }
 }

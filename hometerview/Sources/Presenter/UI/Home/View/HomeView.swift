@@ -73,7 +73,7 @@ struct HomeView: View {
 
         }
         .fullScreenCover(isPresented: $isShowEnterCompanyFullCover) {
-            EnterCompanyInfoView(isShowFullCover: $isShowEnterCompanyFullCover)
+            EnterCompanySearchView(isShowFullCover: $isShowEnterCompanyFullCover)
         }
         .fullScreenCover(isPresented: $isShowHometerviewFullCover, content: {
             WriteHometerviewView(isShowFullCover: $isShowHometerviewFullCover)
