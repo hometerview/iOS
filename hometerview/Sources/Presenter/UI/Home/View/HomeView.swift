@@ -130,6 +130,9 @@ struct HomeView: View {
         }
         .frame(height: headerHeight)
         .padding(.horizontal)
+        .onTapGesture {
+            isShowSpeechBubble = false
+        }
     }
 
     var rankHeader: some View {
