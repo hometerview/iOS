@@ -23,16 +23,15 @@ struct LivingFloorView: View {
             VStack(alignment: .leading) {
                 HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 37)
 
-                Group {
-                    companyAddress
+                banner
 
-                    livingFloor
+                companyAddress
 
-                    Spacer()
+                livingFloor
 
-                    nextButton
-                }
-                .padding()
+                Spacer()
+
+                nextButton
             }
         }
         .navigationBarHidden(true)
@@ -47,6 +46,19 @@ struct LivingFloorView: View {
                 selectedLivingFloorTitle =  viewModel.assignSelectedLivingFloorTitle(index: index)
             }
         }
+    }
+
+    var banner: some View {
+        Text("지금 집이라면?\n위치인증으로 집터뷰 신뢰도를 높여보세요!")
+            .font(.pretendard(size: 14, weight: .semibold))
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .lineSpacing(4)
+            .foregroundColor(.colorStyle(.blue300))
+            .padding()
+            .background(Color.colorStyle(.blue100))
+            .cornerRadius(8)
+            .padding()
+            .padding(.bottom, 8)
     }
 
     var nextButton: some View {
@@ -65,28 +77,34 @@ struct LivingFloorView: View {
                 viewModel.selectedLivingFloorTitle =  viewModel.assignSelectedLivingFloorTitle(index: index)
             }
         }))
+        .padding(.horizontal)
     }
 
     var companyAddress: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("회사 주소")
-                .font(.pretendard(size: 14, weight: .medium))
+        VStack(alignment: .leading, spacing: 8) {
+            Text("주소")
+                .font(.pretendard(size: 14, weight: .regular))
+                .foregroundColor(.colorStyle(.gray600))
 
             Text("서울시 마포구 문화로 32-3길 휘경상가")
                 .font(.pretendard(size: 14, weight: .medium))
-                .padding(.bottom, 50)
+                .foregroundColor(.colorStyle(.gray900))
         }
+        .padding(.bottom, 24)
+        .padding(.horizontal)
     }
 
     var livingFloor: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 8) {
             Text("거주층")
-                .font(.pretendard(size: 14, weight: .medium))
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.pretendard(size: 14, weight: .regular))
+                .foregroundColor(.colorStyle(.gray600))
 
             ZStack {
                 HStack {
-                    Text(selectedLivingFloorTitle ?? "")
+                    Text(selectedLivingFloorTitle ?? "거주층을 선택해주세요")
+                        .foregroundColor(selectedLivingFloorTitle == nil ? .colorStyle(.gray400) : .colorStyle(.gray900))
+                        .font(.pretendard(size: 14))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .overlay(
                             HStack {
@@ -108,6 +126,7 @@ struct LivingFloorView: View {
                 isShowLivingFloorList = true
             }
         }
+        .padding(.horizontal)
     }
 
     var header: some View {

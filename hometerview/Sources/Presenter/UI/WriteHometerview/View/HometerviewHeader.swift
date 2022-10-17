@@ -20,7 +20,6 @@ struct HometerviewHeader: View {
                 HStack {
                     if showBackButton {
                         BackButton()
-                            .padding(.leading, 14)
                     }
 
                     Spacer()
