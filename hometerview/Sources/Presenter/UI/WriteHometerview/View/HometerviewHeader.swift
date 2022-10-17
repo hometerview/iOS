@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HometerviewHeader: View {
-    @Binding var isShowFullCover: Bool
+    @Binding var isShowDismissAlert: Bool
     let progressValue: CGFloat
     var showBackButton: Bool = true
 
@@ -31,7 +31,7 @@ struct HometerviewHeader: View {
                 HStack {
                     Spacer()
 
-                    SimpleCancelButton(isActive: $isShowFullCover)
+                    SimpleCancelButton(isActive: $isShowDismissAlert)
                 }
             }
             .padding()

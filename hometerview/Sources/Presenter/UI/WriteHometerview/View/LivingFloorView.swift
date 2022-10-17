@@ -12,6 +12,7 @@ struct LivingFloorView: View {
     @State private var isShowLivingFloorList: Bool = false
     @State private var selectedIndex: Int? = nil
     @State private var selectedLivingFloorTitle: String? = nil
+    @State private var isShowDismissAlert: Bool = false
     @Binding var isShowFullCover: Bool
 
 
@@ -21,7 +22,7 @@ struct LivingFloorView: View {
                 .ignoresSafeArea()
 
             VStack(alignment: .leading) {
-                HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 37)
+                HometerviewHeader(isShowDismissAlert: $isShowDismissAlert, progressValue: 37)
 
                 banner
 
@@ -35,12 +36,15 @@ struct LivingFloorView: View {
             }
         }
         .navigationBarHidden(true)
-        .navigationBarItems(trailing: SimpleCancelButton(isActive: $isShowFullCover))
         .modifier(
             ListPopupModifier(
                 selectedIndex: $selectedIndex,
                 isShowing: $isShowLivingFloorList,
                 listContents: viewModel.livingFloorModelTitles))
+        .modifier(AskDismissAlertModifier(
+            isShowFullCover: $isShowFullCover,
+            isShowAlert: $isShowDismissAlert,
+            alertType: .hometerview))
         .onChange(of: selectedIndex) { newValue in
             if let index = selectedIndex {
                 selectedLivingFloorTitle =  viewModel.assignSelectedLivingFloorTitle(index: index)

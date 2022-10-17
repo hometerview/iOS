@@ -51,7 +51,8 @@ struct CompanyNameInputView: View {
         .navigationBarItems(leading: BackButton(), trailing: SimpleCancelButton(isActive: $isShowDismissAlert))
         .modifier(AskDismissAlertModifier(
             isShowFullCover: $isShowFullCover,
-            isShowAlert: $isShowDismissAlert))
+            isShowAlert: $isShowDismissAlert,
+            alertType: .enterCompany))
     }
 
     var companyNameTextField: some View {

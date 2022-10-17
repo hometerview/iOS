@@ -10,6 +10,7 @@ import SwiftUI
 struct HometerviewSearchView: View {
     @StateObject private var viewModel: HometerviewViewModel = HometerviewViewModel()
     @Binding var isShowFullCover: Bool
+    @State private var isShowDismissAlert: Bool = false
     @State private var searchText: String = ""
 
     var body: some View {
@@ -19,7 +20,7 @@ struct HometerviewSearchView: View {
                     .ignoresSafeArea()
 
                 VStack {
-                    HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 37, showBackButton: false)
+                    HometerviewHeader(isShowDismissAlert: $isShowDismissAlert, progressValue: 37, showBackButton: false)
 
                     ScrollView {
                         LazyVStack(alignment: .leading, spacing: 10) {
@@ -44,6 +45,10 @@ struct HometerviewSearchView: View {
                     Spacer()
                 }
             }
+            .modifier(AskDismissAlertModifier(
+                isShowFullCover: $isShowFullCover,
+                isShowAlert: $isShowDismissAlert,
+                alertType: .hometerview))
             .navigationBarHidden(true)
         }
     }

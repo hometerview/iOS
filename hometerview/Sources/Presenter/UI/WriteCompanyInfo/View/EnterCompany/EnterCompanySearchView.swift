@@ -38,7 +38,8 @@ struct EnterCompanySearchView: View {
             .navigationBarItems(trailing: SimpleCancelButton(isActive: $isShowDismissAlert))
             .modifier(AskDismissAlertModifier(
                 isShowFullCover: $isShowFullCover,
-                isShowAlert: $isShowDismissAlert))
+                isShowAlert: $isShowDismissAlert,
+                alertType: .enterCompany))
         }
     }
 

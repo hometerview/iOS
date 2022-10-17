@@ -38,7 +38,8 @@ struct DirectInputSearchView: View {
             .navigationBarItems(leading: BackButton(), trailing: SimpleCancelButton(isActive: $isShowDismissAlert))
             .modifier(AskDismissAlertModifier(
                 isShowFullCover: $isShowFullCover,
-                isShowAlert: $isShowDismissAlert))
+                isShowAlert: $isShowDismissAlert,
+                alertType: .enterCompany))
         }
     }
 
