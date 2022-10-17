@@ -17,53 +17,71 @@ struct CompanyNameInputView: View {
                 .ignoresSafeArea()
 
             VStack(alignment: .leading, spacing: 10) {
+                CustomDivider(color: .colorStyle(.gray200), height: 1)
+
                 Text("회사 주소")
                     .font(.pretendard(size: 14, weight: .medium))
+                    .foregroundColor(.colorStyle(.gray600))
+                    .padding(.horizontal)
+                    .padding(.top, 24)
 
                 Text("서울시 마포구 문화로 32-3길 휘경상가")
                     .font(.pretendard(size: 14, weight: .medium))
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 32)
+                    .padding(.horizontal)
 
                 Text("회사명")
                     .font(.pretendard(size: 14, weight: .medium))
+                    .foregroundColor(.colorStyle(.gray600))
+                    .padding(.horizontal)
 
-                ZStack {
-                    HStack {
-                        TextField("회사명을 입력하세요", text: $companyNameText)
-                            .introspectTextField { textField in
-                                textField.becomeFirstResponder()
-                            }
-                    }
-                    .padding()
-                    .foregroundColor(.gray)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .strokeBorder(Color.init(hex: "D4DBEB"))
-                            .frame(height: 50)
-                    )
-                }
+                companyNameTextField
 
                 Spacer()
 
-                Button {
-                    Log.info("직장 입력 완료")
-                } label: {
-                    Text("완료")
-                        .foregroundColor(.white)
-                        .font(.pretendard(size: 16, weight: .medium))
-                        .frame(maxWidth: .infinity, minHeight: 50)
-                        .background(companyNameText == "" ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
-                        .disabled(true)
-                        .cornerRadius(8)
-
-                }
+                okButton
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.bottom, 48)
 
         }
-        .padding()
-        .navigationBarItems(trailing: SimpleCancelButton(isActive: $isShowFullCover))
+        .navigationTitle("회사 정보 입력")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton(), trailing: SimpleCancelButton(isActive: $isShowFullCover))
+    }
+
+    var companyNameTextField: some View {
+        ZStack {
+            HStack {
+                TextField("회사명을 입력하세요", text: $companyNameText)
+                    .introspectTextField { textField in
+                        textField.becomeFirstResponder()
+                    }
+            }
+            .padding()
+            .foregroundColor(.gray)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .strokeBorder(Color.init(hex: "D4DBEB"))
+                    .frame(height: 50)
+            )
+            .padding(.horizontal)
+        }
+    }
+
+    var okButton: some View {
+        Button {
+            Log.info("직장 입력 완료")
+        } label: {
+            Text("완료")
+                .foregroundColor(.white)
+                .font(.pretendard(size: 16, weight: .medium))
+                .frame(maxWidth: .infinity, minHeight: 50)
+                .background(companyNameText == "" ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
+                .disabled(companyNameText == "")
+                .cornerRadius(8)
+        }
+        .padding(.horizontal)
     }
 }
 

@@ -33,7 +33,6 @@ struct DirectInputSearchView: View {
                 }
             }
             .navigationTitle("회사 정보 입력")
-            .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: BackButton(), trailing: SimpleCancelButton(isActive: $isShowFullCover))
         }
@@ -74,10 +73,15 @@ struct DirectInputSearchView: View {
     var companyList: some View {
         ForEach(0..<5, id: \.self) { index in
             LazyVStack(alignment: .leading, spacing: 10) {
-                Text("서울시 마포구 문화로 32-1 석규빌딩")
-                    .font(.pretendard(size: 14))
-                    .padding(.horizontal)
-                    .frame(height: 46)
+                NavigationLink {
+                    CompanyNameInputView(isShowFullCover: $isShowFullCover)
+                } label: {
+                    Text("서울시 마포구 문화로 32-1 석규빌딩")
+                        .font(.pretendard(size: 14))
+                        .padding(.horizontal)
+                        .frame(height: 46)
+                        .foregroundColor(.colorStyle(.gray900))
+                }
 
                 CustomDivider(color: .colorStyle(.gray100), height: 1)
             }
