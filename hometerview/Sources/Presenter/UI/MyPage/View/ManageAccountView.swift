@@ -36,7 +36,9 @@ struct ManageAccountView: View {
                         .padding(.vertical, 16)
                         .padding(.horizontal, 14)
                     }
-                    BoldDivider()
+
+                    CustomDivider(color: .colorStyle(.gray100), height: 17)
+                    
                     Text("기타")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.pretendard(size: 12, weight: .semibold))

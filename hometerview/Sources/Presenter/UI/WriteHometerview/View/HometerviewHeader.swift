@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HometerviewHeader: View {
-    @Binding var isShowFullCover: Bool
+    @Binding var isShowDismissAlert: Bool
     let progressValue: CGFloat
     var showBackButton: Bool = true
 
@@ -20,7 +20,6 @@ struct HometerviewHeader: View {
                 HStack {
                     if showBackButton {
                         BackButton()
-                            .padding(.leading, 14)
                     }
 
                     Spacer()
@@ -32,15 +31,12 @@ struct HometerviewHeader: View {
                 HStack {
                     Spacer()
 
-                    SimpleCancelButton(isActive: $isShowFullCover)
+                    SimpleCancelButton(isActive: $isShowDismissAlert)
                 }
             }
             .padding()
 
-            Rectangle()
-                .frame(maxWidth: .infinity, maxHeight: 1)
-                .foregroundColor(.colorStyle(.gray200))
+            CustomDivider(color: .colorStyle(.gray200), height: 1)
         }
-        .frame(height: 50)
     }
 }

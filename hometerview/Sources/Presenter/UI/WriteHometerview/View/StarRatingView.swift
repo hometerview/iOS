@@ -11,6 +11,7 @@ struct StarRatingView: View {
     @ObservedObject var viewModel: HometerviewViewModel
     @Binding var isShowFullCover: Bool
     @State private var isShowLengthResidenceList: Bool = false
+    @State private var isShowDismissAlert: Bool = false
 
     // 별점
     @State private var starCount: Int = 0
@@ -23,15 +24,18 @@ struct StarRatingView: View {
     @State private var weaknessContents: String = ""
 
     var isEnableNextButton: Bool {
-        return meritContents.count > 30 &&
-        weaknessContents.count > 30 &&
+        return meritContents.count >= 30 &&
+        weaknessContents.count >= 30 &&
         selectedListIndex != nil &&
         starCount > 0
     }
 
     var body: some View {
         ZStack(alignment: .top) {
-            HometerviewHeader(isShowFullCover: $isShowFullCover, progressValue: 70)
+            Color.colorStyle(.blueGrey100)
+                .ignoresSafeArea()
+
+            HometerviewHeader(isShowDismissAlert: $isShowDismissAlert, progressValue: 77)
 
             ScrollView {
                 VStack {
@@ -48,6 +52,10 @@ struct StarRatingView: View {
                     nextButton
                 }
             }
+            .modifier(AskDismissAlertModifier(
+                isShowFullCover: $isShowFullCover,
+                isShowAlert: $isShowDismissAlert,
+                alertType: .hometerview))
             .padding(.top, 50)
         }
         .navigationBarHidden(true)
@@ -60,28 +68,32 @@ struct StarRatingView: View {
 
     var nextButton: some View {
         NavigationLink {
-            Text("직장 검색")
+            StepEnterCompanyView(isShowFullCover: $isShowFullCover)
         } label: {
             Text("다음")
                 .foregroundColor(.white)
                 .font(.pretendard(size: 16, weight: .medium))
                 .frame(maxWidth: .infinity, minHeight: 50)
                 .background(!isEnableNextButton ? Color.colorStyle(.gray200) : Color.colorStyle(.blue300))
-                .disabled(!isEnableNextButton)
                 .cornerRadius(8)
                 .padding(.horizontal)
-        }.simultaneousGesture(TapGesture().onEnded({
-
-        }))
+        }
+        .disabled(!isEnableNextButton)
     }
 
     var merit: some View {
         VStack {
-            Text("장점")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.pretendard(size: 14))
-                .foregroundColor(.colorStyle(.gray800))
-                .padding(.bottom)
+            HStack(spacing: 2) {
+                Text("장점")
+                    .font(.pretendard(size: 14))
+                    .foregroundColor(.colorStyle(.gray800))
+
+                Text("(최소 30자)")
+                    .font(.pretendard(size: 12))
+                    .foregroundColor(.colorStyle(.gray600))
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.bottom)
 
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $meritContents)
@@ -89,18 +101,24 @@ struct StarRatingView: View {
                     .padding(.vertical, 14)
                     .padding(.horizontal, 12)
                     .font(.pretendard(size: 14))
-                    .zIndex(0)
+                    .foregroundColor(.colorStyle(.gray900))
+                    .overlay(
+                        ZStack(alignment: .topLeading) {
+                            RoundedRectangle(cornerRadius: 8)
+                                .strokeBorder(Color.init(hex: "D4DBEB"))
+                                .frame(height: 104)
+                                .background(Color.colorStyle(.blueGrey100))
+                                .allowsHitTesting(false)
 
-                RoundedRectangle(cornerRadius: 8)
-                    .strokeBorder(Color.init(hex: "D4DBEB"))
-                    .frame(height: 104)
-
-                Text(meritContents.isEmpty ? "예) 집 위치, 집주인 방음 등" : "")
-                    .frame(height: 76, alignment: .topLeading)
-                    .padding(.vertical, 20)
-                    .padding(.horizontal, 16)
-                    .font(.pretendard(size: 14))
-                    .foregroundColor(.colorStyle(.gray400))
+                            Text(meritContents == "" ? "예) 집 위치, 집주인 방음 등" : meritContents)
+                                .frame(height: 76, alignment: .topLeading)
+                                .padding(.vertical, 20)
+                                .padding(.horizontal, 16)
+                                .font(.pretendard(size: 14))
+                                .foregroundColor(meritContents == "" ? Color.colorStyle(.gray400) : Color.colorStyle(.gray900))
+                                .allowsHitTesting(false)
+                        }
+                    )
             }
 
             Text("\(meritContents.count) / 900")
@@ -113,11 +131,17 @@ struct StarRatingView: View {
 
     var weakness: some View {
         VStack {
-            Text("단점")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.pretendard(size: 14))
-                .foregroundColor(.colorStyle(.gray800))
-                .padding(.bottom)
+            HStack(spacing: 2) {
+                Text("단점")
+                    .font(.pretendard(size: 14))
+                    .foregroundColor(.colorStyle(.gray800))
+
+                Text("(최소 30자)")
+                    .font(.pretendard(size: 12))
+                    .foregroundColor(.colorStyle(.gray600))
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.bottom)
 
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $weaknessContents)
@@ -125,17 +149,24 @@ struct StarRatingView: View {
                     .padding(.vertical, 14)
                     .padding(.horizontal, 12)
                     .font(.pretendard(size: 14))
+                    .foregroundColor(.colorStyle(.gray900))
+                    .overlay(
+                        ZStack(alignment: .topLeading) {
+                            RoundedRectangle(cornerRadius: 8)
+                                .strokeBorder(Color.init(hex: "D4DBEB"))
+                                .frame(height: 104)
+                                .background(Color.colorStyle(.blueGrey100))
+                                .allowsHitTesting(false)
 
-                RoundedRectangle(cornerRadius: 8)
-                    .strokeBorder(Color.init(hex: "D4DBEB"))
-                    .frame(height: 104)
-
-                Text(weaknessContents == "" ? "예) 집 위치, 집주인 방음 등" : "")
-                    .frame(height: 76, alignment: .topLeading)
-                    .padding(.vertical, 20)
-                    .padding(.horizontal, 16)
-                    .font(.pretendard(size: 14))
-                    .foregroundColor(.colorStyle(.gray400))
+                            Text(weaknessContents == "" ? "예) 집 위치, 집주인 방음 등" : weaknessContents)
+                                .frame(height: 76, alignment: .topLeading)
+                                .padding(.vertical, 20)
+                                .padding(.horizontal, 16)
+                                .font(.pretendard(size: 14))
+                                .foregroundColor(weaknessContents == "" ? Color.colorStyle(.gray400) : Color.colorStyle(.gray900))
+                                .allowsHitTesting(false)
+                        }
+                    )
             }
 
             Text("\(weaknessContents.count) / 900")
@@ -156,7 +187,9 @@ struct StarRatingView: View {
 
             ZStack {
                 HStack {
-                    Text(selectedLengthResidenceTitle ?? "")
+                    Text(selectedLengthResidenceTitle ?? "거주기간을 선택해주세요")
+                        .font(.pretendard(size: 14))
+                        .foregroundColor(selectedLengthResidenceTitle == nil ? .colorStyle(.gray400) : .colorStyle(.gray900))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .overlay(
                             HStack {
@@ -193,6 +226,7 @@ struct StarRatingView: View {
                 .font(.pretendard(size: 14))
                 .foregroundColor(.colorStyle(.gray800))
                 .padding(.bottom)
+                .padding(.top, 24)
 
             Text(assignRateStarTitle(starCount: starCount))
                 .font(.pretendard(size: 14))

@@ -13,33 +13,34 @@ struct ListPopupView: View {
     let list: [String]
 
     var body: some View {
-        LazyVStack(spacing: 0) {
-            Rectangle()
-                .foregroundColor(.colorStyle(.gray200))
-                .cornerRadius(4)
-                .frame(width: 40, height: 4)
+        Group {
+            VStack(spacing: 0) {
+                Rectangle()
+                    .foregroundColor(.colorStyle(.gray200))
+                    .cornerRadius(4)
+                    .frame(width: 40, height: 4)
 
-            ForEach(list.indices, id: \.self) { index in
-                Text(list[index])
-                    .font(.pretendard(size: 14))
-                    .frame(maxWidth: .infinity, minHeight: 50, alignment: .leading)
-                    .padding(.leading, 14)
-                    .onTapGesture {
-                        selectedIndex = index
-                        isShowing = false
-                    }
+                ForEach(list.indices, id: \.self) { index in
+                    Text(list[index])
+                        .font(.pretendard(size: 14))
+                        .frame(maxWidth: .infinity, minHeight: 50, alignment: .leading)
+                        .padding(.leading, 14)
+                        .onTapGesture {
+                            selectedIndex = index
+                            isShowing = false
+                        }
+                }
+
+                Rectangle()
+                    .frame(height: 20)
+                    .foregroundColor(.clear)
             }
-
-            Rectangle()
-                .frame(height: 30)
-                .foregroundColor(.clear)
-
+            .padding(.vertical, 8)
+            .padding(.horizontal, 14)
+            .background(Color.white)
+            .cornerRadius(15, corners: .topLeft)
+            .cornerRadius(15, corners: .topRight)
         }
-        .padding(.vertical, 8)
-        .padding(.horizontal, 14)
-        .background(Color.white)
-        .cornerRadius(15, corners: .topLeft)
-        .cornerRadius(15, corners: .topRight)
     }
 }
 
@@ -67,13 +68,16 @@ struct ListPopupModifier: ViewModifier {
                     .frame(maxWidth: .infinity, maxHeight: safeAreaInsets.bottom)
                     .foregroundColor(.white)
 
-                ListPopupView(
-                    isShowing: $isShowing,
-                    selectedIndex: $selectedIndex,
-                    list: listContents)
+                ZStack {
+                    ListPopupView(
+                        isShowing: $isShowing,
+                        selectedIndex: $selectedIndex,
+                        list: listContents)
+                }
+                .animation(.easeInOut)
+                .transition(.move(edge: .bottom))
             }
         }
-        .transition(AnyTransition.move(edge: .bottom))
 
     }
 }

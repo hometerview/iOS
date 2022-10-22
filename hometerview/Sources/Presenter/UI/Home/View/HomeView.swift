@@ -73,10 +73,10 @@ struct HomeView: View {
 
         }
         .fullScreenCover(isPresented: $isShowEnterCompanyFullCover) {
-            EnterCompanyInfoView(isShowFullCover: $isShowEnterCompanyFullCover)
+            EnterCompanySearchView(isShowFullCover: $isShowEnterCompanyFullCover)
         }
         .fullScreenCover(isPresented: $isShowHometerviewFullCover, content: {
-            WriteHometerviewView(isShowFullCover: $isShowHometerviewFullCover)
+            HometerviewSearchView(isShowFullCover: $isShowHometerviewFullCover)
         })
         .modifier(ToastModifier(isShow: $isToastShow, toastString: $toastMessage))
         .onAppear {
@@ -130,6 +130,9 @@ struct HomeView: View {
         }
         .frame(height: headerHeight)
         .padding(.horizontal)
+        .onTapGesture {
+            isShowSpeechBubble = false
+        }
     }
 
     var rankHeader: some View {
