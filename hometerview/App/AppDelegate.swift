@@ -14,7 +14,7 @@ import KakaoSDKUser
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
-        KakaoSDK.initSDK(appKey: "f811c290471ec82c6e65a3c0c68a3bbc")
+        KakaoSDK.initSDK(appKey: "a398d16e3a17230bba6065628e65aac4")
 
         return true
     }
