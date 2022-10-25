@@ -13,11 +13,13 @@ struct WithdrawalView: View {
     @State private var thirdDetail = false
 
     var body: some View {
+        CustomDivider(color: .colorStyle(.gray100), height: 1)
+
         Text("회원 탈퇴 전 아래의 내용을 꼭 확인해 주세요.")
             .frame(maxWidth: .infinity,alignment: .leading)
             .padding(.vertical, 16)
             .padding(.horizontal, 42)
-            .font(.pretendard(size: 12, weight: .regular))
+            .font(.pretendard(size: 12, weight: .semibold))
             .foregroundColor(.colorStyle(.red500))
         VStack(alignment: .leading, spacing: 8) {
             Button {

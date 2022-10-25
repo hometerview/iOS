@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RecentReviewView: View {
     var body: some View {
+        CustomDivider(color: .colorStyle(.gray100), height: 1)
+        
         VStack(alignment: .center) {
             Text("확인한 집터뷰가 없어요")
                 .font(.pretendard(size: 14, weight: .regular))
