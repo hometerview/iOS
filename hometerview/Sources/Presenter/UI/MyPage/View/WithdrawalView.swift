@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct WithdrawalView: View {
-    @State private var showDetails = false
+    @State private var firstDetail = false
+    @State private var secondDetail = false
+    @State private var thirdDetail = false
 
     var body: some View {
         Text("회원 탈퇴 전 아래의 내용을 꼭 확인해 주세요.")
             .frame(maxWidth: .infinity,alignment: .leading)
-            .padding(.all, 42)
+            .padding(.vertical, 16)
+            .padding(.horizontal, 42)
             .font(.pretendard(size: 12, weight: .regular))
             .foregroundColor(.colorStyle(.red500))
         VStack(alignment: .leading, spacing: 8) {
             Button {
-              showDetails.toggle()
+                firstDetail.toggle()
             } label: {
                 HStack(alignment: .top) {
                     Image("icon_circle")
@@ -28,8 +31,10 @@ struct WithdrawalView: View {
                         .multilineTextAlignment(.leading)
                 }
             }
+            .accentColor(firstDetail ? .colorStyle(.red500) : .colorStyle(.gray200))
+
             Button {
-              showDetails.toggle()
+              secondDetail.toggle()
             } label: {
                 HStack(alignment: .top) {
                     Image("icon_circle")
@@ -39,8 +44,10 @@ struct WithdrawalView: View {
                         .multilineTextAlignment(.leading)
                 }
             }
+            .accentColor(secondDetail ? .colorStyle(.red500) : .colorStyle(.gray200))
+
             Button {
-              showDetails.toggle()
+              thirdDetail.toggle()
             } label: {
                 HStack(alignment: .top) {
                     Image("icon_circle")
@@ -51,6 +58,7 @@ struct WithdrawalView: View {
                 }
             }
         }
+        .accentColor(thirdDetail ? .colorStyle(.red500) : .colorStyle(.gray200))
         .padding(.horizontal, 14)
         Spacer()
         Button {
