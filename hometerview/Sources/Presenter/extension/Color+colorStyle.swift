@@ -11,6 +11,7 @@ extension Color {
     enum Config {
         case gray100
         case gray200
+        case gray300
         case gray400
         case gray500
         case gray600
@@ -30,6 +31,7 @@ extension Color {
             switch self {
                 case .gray100: return "#F2F4F6"
                 case .gray200: return "#D2D6DB"
+                case .gray300: return "#CCD0D4"
                 case .gray400: return "#B1B8C0"
                 case .gray500: return "#8D94A0"
                 case .gray600: return "#6C737D"

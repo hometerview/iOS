@@ -15,6 +15,7 @@
 		6A37EDDF28DEFAAD00DA63C3 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A37EDDE28DEFAAD00DA63C3 /* SaveButton.swift */; };
 		6A37EDE128DEFF9A00DA63C3 /* MyReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A37EDE028DEFF9A00DA63C3 /* MyReviewView.swift */; };
 		6A37EDE328DEFFA900DA63C3 /* RecentReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A37EDE228DEFFA900DA63C3 /* RecentReviewView.swift */; };
+		6A6658782908278800ABD859 /* UINavigationController+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6658772908278800ABD859 /* UINavigationController+Custom.swift */; };
 		6A82522128A7FC8500081D38 /* NicknameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82522028A7FC8500081D38 /* NicknameEditView.swift */; };
 		6A82522328A80E5600081D38 /* ManageAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82522228A80E5600081D38 /* ManageAccountView.swift */; };
 		6A82522528A8148A00081D38 /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82522428A8148A00081D38 /* TermsOfServiceView.swift */; };
@@ -179,6 +180,7 @@
 		6A37EDDE28DEFAAD00DA63C3 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		6A37EDE028DEFF9A00DA63C3 /* MyReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewView.swift; sourceTree = "<group>"; };
 		6A37EDE228DEFFA900DA63C3 /* RecentReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentReviewView.swift; sourceTree = "<group>"; };
+		6A6658772908278800ABD859 /* UINavigationController+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Custom.swift"; sourceTree = "<group>"; };
 		6A82522028A7FC8500081D38 /* NicknameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameEditView.swift; sourceTree = "<group>"; };
 		6A82522228A80E5600081D38 /* ManageAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccountView.swift; sourceTree = "<group>"; };
 		6A82522428A8148A00081D38 /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 				FCEB3C2C289506C000E35F97 /* Font+Custom.swift */,
 				FC373C47289D68DD00F10A4C /* View+if.swift */,
 				FCAE85AE28A7CDD7002FC940 /* View+cornerRadius.swift */,
+				6A6658772908278800ABD859 /* UINavigationController+Custom.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -1288,6 +1291,7 @@
 				6A37EDE328DEFFA900DA63C3 /* RecentReviewView.swift in Sources */,
 				FCFBB37028CF5D5900818657 /* MyReviewRequest.swift in Sources */,
 				FC7AB4452880596F00DF03E5 /* extension+Dictionary.swift in Sources */,
+				6A6658782908278800ABD859 /* UINavigationController+Custom.swift in Sources */,
 				FCD611A228ABC1BC0096F514 /* WriteInputSearchView.swift in Sources */,
 				FC7AB433287ABCBA00DF03E5 /* MainViewModel.swift in Sources */,
 				FCEDBD5F289F46F90020D276 /* HomeListCell.swift in Sources */,
