@@ -461,9 +461,8 @@
 		FC3CF03A28A778EB005D89AF /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				FC3CF04028A77943005D89AF /* HomeMapper.swift */,
-				FCFBB37F28CF65A900818657 /* MyReviewMapper.swift */,
-				FCFBB38128CF676C00818657 /* MyReviewWrapperMapper.swift */,
+				FC72E6AA2913350900C265CB /* Review */,
+				FC72E6A92913350600C265CB /* Home */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -471,8 +470,8 @@
 		FC3CF03B28A778FC005D89AF /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				FC3CF03C28A7791D005D89AF /* HomeDTO.swift */,
-				FCFBB37528CF607C00818657 /* MyReviewDTO.swift */,
+				FC72E6A62913349D00C265CB /* Home */,
+				FC72E6A52913348800C265CB /* Review */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -545,6 +544,71 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FC72E69D291331C300C265CB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FC3CF03E28A77935005D89AF /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FC72E6A2291333C900C265CB /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBB37D28CF653100818657 /* MyReview.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		FC72E6A52913348800C265CB /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBB37528CF607C00818657 /* MyReviewDTO.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		FC72E6A62913349D00C265CB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FC3CF03C28A7791D005D89AF /* HomeDTO.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FC72E6A92913350600C265CB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FC3CF04028A77943005D89AF /* HomeMapper.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FC72E6AA2913350900C265CB /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBB37F28CF65A900818657 /* MyReviewMapper.swift */,
+				FCFBB38128CF676C00818657 /* MyReviewWrapperMapper.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		FC72E6B02913378200C265CB /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBB36F28CF5D5900818657 /* MyReviewRequest.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		FC72E6B12913378700C265CB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB3BDC2882539600E35F97 /* HomeRequest.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		FC7AB3EB287942AD00DF03E5 = {
@@ -729,8 +793,8 @@
 		FC7AB436287ABD1500DF03E5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				FC3CF03E28A77935005D89AF /* Home.swift */,
-				FCFBB37D28CF653100818657 /* MyReview.swift */,
+				FC72E6A2291333C900C265CB /* Review */,
+				FC72E69D291331C300C265CB /* Home */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -778,8 +842,8 @@
 		FC7AB441287E213C00DF03E5 /* RequestModel */ = {
 			isa = PBXGroup;
 			children = (
-				FCEB3BDC2882539600E35F97 /* HomeRequest.swift */,
-				FCFBB36F28CF5D5900818657 /* MyReviewRequest.swift */,
+				FC72E6B12913378700C265CB /* Home */,
+				FC72E6B02913378200C265CB /* Review */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
