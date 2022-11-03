@@ -9,6 +9,10 @@ import Foundation
 
 extension MyReviewRequestDTO {
     func toData() -> MyReviewRequest {
-        return .init(offset: offset, pageNumber: pageNumber, pageSize: pageSize)
+        return .init(parameters: [
+            "offset": offset as Any,
+            "pageNumber": pageNumber as Any,
+            "pageSize": pageSize as Any
+        ])
     }
 }

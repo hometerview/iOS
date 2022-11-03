@@ -10,34 +10,34 @@ import Foundation
 import Alamofire
 
 public protocol Requestable: URLRequestConvertible {
+    associatedtype Response: Decodable
     var path: String { get }
     var baseURL: String { get }
     var method: HTTPMethod { get }
-    var requestParameters: RequestParams { get }
-    var header: [HTTPFields : String] { get }
+    var parameters: Parameters { get }
 }
 
 extension Requestable {
+    var header: [HTTPFields : String] {
+        return [
+            HTTPFields.contentType: HTTPHeaderType.contentType.header,
+            HTTPFields.authorization: "Bearer \(HTTPHeaderType.authorization.header)"
+        ]
+    }
+    
     func asURLRequest() throws -> URLRequest {
         let endPoint = try baseURL.asURL()
-
         var urlRequest = try URLRequest(url: endPoint.appendingPathComponent(path), method: method)
-        var components = URLComponents(string: endPoint.appendingPathComponent(path).absoluteString)
 
         for headerType in header {
             urlRequest.setValue(headerType.value, forHTTPHeaderField: headerType.key.description)
         }
 
-        switch requestParameters {
-            case .query(let request):
-                let params = try request?.toDictionary() ?? [:]
-                let queryParams = params.toQueryItems()
-
-                components?.queryItems = queryParams
-                urlRequest.url = components?.url
-            case .body(let request):
-                let params = try request?.toDictionary() ?? [:]
-                urlRequest.httpBody = try params.toData()
+        switch method {
+            case .post, .put, .patch:
+                return try JSONEncoding.default.encode(urlRequest, with: parameters)
+            default:
+                return try URLEncoding.default.encode(urlRequest, with: parameters)
         }
 
         return urlRequest
