@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct MemberToken: Codable {
+struct MemberToken {
     let accessToken: String
     let refreshToken: String
 }
+
+extension MemberToken: Codable, Equatable { }
