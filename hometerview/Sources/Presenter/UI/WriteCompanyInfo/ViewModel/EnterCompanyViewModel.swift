@@ -7,6 +7,5 @@
 
 import Foundation
 
-class EnterCompanyViewModel: BaseViewModel,
-                     ObservableObject {
+class EnterCompanyViewModel: BaseViewModel {
 }

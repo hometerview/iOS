@@ -8,6 +8,5 @@
 import Foundation
 import Combine
 
-class HomeViewModel: BaseViewModel,
-                     ObservableObject {
+class HomeViewModel: BaseViewModel {
 }

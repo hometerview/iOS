@@ -9,6 +9,23 @@ import Foundation
 
 protocol MainViewModelInterface { }
 
-class MainViewModel: ObservableObject, MainViewModelInterface {
-    
+class MainViewModel: BaseViewModel, 
+                     MainViewModelInterface {
+
+    func requestLogin(authType: AuthType) {
+        switch authType {
+            case .kakao:
+                requestKakaoLogin()
+            case .apple:
+                requestAppleLogin()
+        }
+    }
+
+    private func requestKakaoLogin() {
+        
+    }
+
+    private func requestAppleLogin() {
+
+    }
 }
