@@ -17,9 +17,14 @@ protocol BaseNetwork {
 struct BaseNetworkImpl: BaseNetwork {
     private let session = AF
     private let decoder = JSONDecoder()
+    private let interceptorAuthenticator: RequestInterceptor
+
+    init(interceptorAuthenticator: RequestInterceptor = InterceptorAuthenticator()) {
+        self.interceptorAuthenticator = interceptorAuthenticator
+    }
 
     func request<API: Requestable>(api: API) -> AnyPublisher<API.Response, Error> {
-        session.request(api)
+        session.request(api, interceptor: interceptorAuthenticator)
             .validate(statusCode: 200..<500)
             .publishDecodable(type: API.Response.self)
             .tryMap {
