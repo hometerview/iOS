@@ -6,15 +6,26 @@
 //
 
 import SwiftUI
+import SwiftUI
+import KakaoSDKAuth
+import KakaoSDKCommon
+import KakaoSDKUser
 
 struct KakaoLoginView: View {
     private var buttonSize: CGFloat = 36
-
+    
     var body: some View {
         HStack {
             Button {
-
-                
+                if UserApi.isKakaoTalkLoginAvailable() {
+                    UserApi.shared.loginWithKakaoTalk {
+                        (oauthToken, error) in
+                        print(oauthToken)
+                        print(error)
+                    }
+                } else {
+                    
+                }
             } label : {
                 Image("kakao")
                     .padding(.leading, 14)
@@ -31,7 +42,7 @@ struct KakaoLoginView: View {
         }
     }
 }
-
+    
 struct KakaoLoginView_Previews: PreviewProvider {
     static var previews: some View {
         KakaoLoginView()
