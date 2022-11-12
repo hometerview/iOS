@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 struct KakaoLoginRequest: Requestable {
-    typealias Response = EmptyEntity
+    typealias Response = EmptyEntity?
 
     var path: String {
         return "auth/login/kakao"

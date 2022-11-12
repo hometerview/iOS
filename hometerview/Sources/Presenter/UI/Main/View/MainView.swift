@@ -44,7 +44,7 @@ struct MainView: View {
 
             VStack(spacing: 24) {
                 VStack(spacing: 8) {
-                    KakaoLoginView()
+                    KakaoLoginView(viewModel: viewModel)
                         .cornerRadius(8)
                         .frame(width: 347, height: 50)
                     AppleLoginView()

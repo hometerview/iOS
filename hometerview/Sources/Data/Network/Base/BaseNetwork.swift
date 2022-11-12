@@ -41,8 +41,7 @@ struct BaseNetworkImpl: BaseNetwork {
                     throw ResponseError(responseCode: nil, message: "알 수 없는 에러가 발생했습니다.")
                 }
 
-                guard ((json["data"] as? API.Response) != nil),
-                      responseCode == "CM00" else {
+                guard responseCode == "CM00" else {
                     throw ResponseError(responseCode: responseCode, message: message)
                 }
 

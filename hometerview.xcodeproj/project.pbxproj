@@ -59,7 +59,6 @@
 		FC7AB413287942AE00DF03E5 /* hometerviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB412287942AE00DF03E5 /* hometerviewUITests.swift */; };
 		FC7AB415287942AE00DF03E5 /* hometerviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB414287942AE00DF03E5 /* hometerviewUITestsLaunchTests.swift */; };
 		FC7AB433287ABCBA00DF03E5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB432287ABCBA00DF03E5 /* MainViewModel.swift */; };
-		FC7AB438287ABD3000DF03E5 /* MainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB437287ABD3000DF03E5 /* MainUseCase.swift */; };
 		FC7AB43E287ABE8F00DF03E5 /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB43D287ABE8F00DF03E5 /* BaseNetwork.swift */; };
 		FC7AB4452880596F00DF03E5 /* extension+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB4442880596F00DF03E5 /* extension+Dictionary.swift */; };
 		FC7AB4472880598500DF03E5 /* extension+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AB4462880598500DF03E5 /* extension+Encodable.swift */; };
@@ -69,13 +68,14 @@
 		FC83D4A5291FAEAD00F76278 /* InterceptorAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4A4291FAEAD00F76278 /* InterceptorAuthenticator.swift */; };
 		FC83D4A7291FB36100F76278 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4A6291FB36100F76278 /* UserDefaultsKeys.swift */; };
 		FC83D4A9291FB38200F76278 /* MemberToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4A8291FB38200F76278 /* MemberToken.swift */; };
-		FC83D4AC291FB5C500F76278 /* AuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4AB291FB5C500F76278 /* AuthType.swift */; };
 		FC83D4AF291FB62600F76278 /* KakaoLoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4AE291FB62600F76278 /* KakaoLoginRequestDTO.swift */; };
 		FC83D4B4291FB66300F76278 /* KakaoLoginRequestDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4B3291FB66300F76278 /* KakaoLoginRequestDTOMapper.swift */; };
 		FC83D4B7291FB6BF00F76278 /* KakaoLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4B6291FB6BF00F76278 /* KakaoLoginRequest.swift */; };
 		FC83D4BB291FB78C00F76278 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4BA291FB78C00F76278 /* EmptyEntity.swift */; };
 		FC83D4BD291FD67100F76278 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4BC291FD67100F76278 /* Environment.swift */; };
 		FC83D4C0291FDB8100F76278 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4BF291FDB8100F76278 /* NotificationName.swift */; };
+		FC83D4C3291FE19C00F76278 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4C2291FE19C00F76278 /* LoginService.swift */; };
+		FC83D4C5291FE25700F76278 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4C4291FE25700F76278 /* LoginUseCase.swift */; };
 		FCA699AE289EB31E0074AF29 /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA69989289EB31E0074AF29 /* map_pinup_custom@3x.png */; };
 		FCA699AF289EB31E0074AF29 /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA6998A289EB31E0074AF29 /* map_pin_custom.png */; };
 		FCA699B0289EB31E0074AF29 /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA6998B289EB31E0074AF29 /* shadow_balloon.png */; };
@@ -229,7 +229,6 @@
 		FC7AB412287942AE00DF03E5 /* hometerviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hometerviewUITests.swift; sourceTree = "<group>"; };
 		FC7AB414287942AE00DF03E5 /* hometerviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hometerviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FC7AB432287ABCBA00DF03E5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		FC7AB437287ABD3000DF03E5 /* MainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCase.swift; sourceTree = "<group>"; };
 		FC7AB43D287ABE8F00DF03E5 /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		FC7AB43F287ACC7400DF03E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FC7AB4442880596F00DF03E5 /* extension+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+Dictionary.swift"; sourceTree = "<group>"; };
@@ -240,13 +239,14 @@
 		FC83D4A4291FAEAD00F76278 /* InterceptorAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterceptorAuthenticator.swift; sourceTree = "<group>"; };
 		FC83D4A6291FB36100F76278 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		FC83D4A8291FB38200F76278 /* MemberToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberToken.swift; sourceTree = "<group>"; };
-		FC83D4AB291FB5C500F76278 /* AuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthType.swift; sourceTree = "<group>"; };
 		FC83D4AE291FB62600F76278 /* KakaoLoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequestDTO.swift; sourceTree = "<group>"; };
 		FC83D4B3291FB66300F76278 /* KakaoLoginRequestDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequestDTOMapper.swift; sourceTree = "<group>"; };
 		FC83D4B6291FB6BF00F76278 /* KakaoLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequest.swift; sourceTree = "<group>"; };
 		FC83D4BA291FB78C00F76278 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
 		FC83D4BC291FD67100F76278 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FC83D4BF291FDB8100F76278 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		FC83D4C2291FE19C00F76278 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		FC83D4C4291FE25700F76278 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		FCA69989289EB31E0074AF29 /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		FCA6998A289EB31E0074AF29 /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
 		FCA6998B289EB31E0074AF29 /* shadow_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_balloon.png; sourceTree = "<group>"; };
@@ -736,7 +736,6 @@
 		FC7AB42F287ABC8800DF03E5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FC83D4AA291FB5B900F76278 /* Model */,
 				FC7AB430287ABC9500DF03E5 /* View */,
 				FC7AB431287ABC9700DF03E5 /* ViewModel */,
 			);
@@ -764,8 +763,8 @@
 		FC7AB435287ABD0E00DF03E5 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				FC7AB437287ABD3000DF03E5 /* MainUseCase.swift */,
 				FCFBB37928CF643500818657 /* MyPageUseCase.swift */,
+				FC83D4C4291FE25700F76278 /* LoginUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -839,14 +838,6 @@
 				FC7AB4462880598500DF03E5 /* extension+Encodable.swift */,
 			);
 			path = extension;
-			sourceTree = "<group>";
-		};
-		FC83D4AA291FB5B900F76278 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FC83D4AB291FB5C500F76278 /* AuthType.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FC83D4AD291FB61600F76278 /* Main */ = {
@@ -1014,6 +1005,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFBB37128CF5F0C00818657 /* MyPageService.swift */,
+				FC83D4C2291FE19C00F76278 /* LoginService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1381,6 +1373,7 @@
 				FCEB3BF62892C69400E35F97 /* HomeView.swift in Sources */,
 				6A82522728A8170A00081D38 /* WithdrawalView.swift in Sources */,
 				FC7AB449288059AB00DF03E5 /* Requestable.swift in Sources */,
+				FC83D4C5291FE25700F76278 /* LoginUseCase.swift in Sources */,
 				FCEB3BF82892C69B00E35F97 /* MapView.swift in Sources */,
 				FCD611A428AE24510096F514 /* Environment+SafeAreaInsets.swift in Sources */,
 				FC4F086D28E98ACB0094D911 /* SegmentView.swift in Sources */,
@@ -1408,7 +1401,7 @@
 				FC83D4BD291FD67100F76278 /* Environment.swift in Sources */,
 				FC373C46289D643000F10A4C /* DetailListCell.swift in Sources */,
 				FCEB3BFA2892C6A500E35F97 /* WishView.swift in Sources */,
-				FC7AB438287ABD3000DF03E5 /* MainUseCase.swift in Sources */,
+				FC83D4C3291FE19C00F76278 /* LoginService.swift in Sources */,
 				FC3CF030289FE9A2005D89AF /* CompanyNameInputView.swift in Sources */,
 				FC83D4A9291FB38200F76278 /* MemberToken.swift in Sources */,
 				6A37EDE328DEFFA900DA63C3 /* RecentReviewView.swift in Sources */,
@@ -1423,7 +1416,6 @@
 				FCEB3C072892C75F00E35F97 /* HomeViewModel.swift in Sources */,
 				FCEB3C092892C77E00E35F97 /* MapViewModel.swift in Sources */,
 				6A350AAD2890E493004EA957 /* AppleLoginView.swift in Sources */,
-				FC83D4AC291FB5C500F76278 /* AuthType.swift in Sources */,
 				FCEB3BFC2892C6AD00E35F97 /* MyPageView.swift in Sources */,
 				FCFBB37428CF5F5D00818657 /* MyReviewRequestDTO.swift in Sources */,
 				FCD611A728AE8B9E0096F514 /* PickerTabType.swift in Sources */,

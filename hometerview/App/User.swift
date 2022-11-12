@@ -26,6 +26,8 @@ class User: ObservableObject {
     private init() {
         if checkHasToken() {
             status = .authenticated
+        } else {
+            status = .unAuthenticated
         }
     }
 }
