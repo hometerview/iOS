@@ -43,7 +43,7 @@ extension User {
     public func getUserDefaults<T: Decodable>(key: UserDefaultsKeys) -> T? {
         guard let data = userDefaults.object(forKey: key.description) as? Data,
               let object = try? decoder.decode(T.self, from: data) else {
-            Log.error("User Defaults decoding 에러")
+            Log.error("User Defaults decoding 에러 또는 해당 값 없음")
             return nil
         }
 
