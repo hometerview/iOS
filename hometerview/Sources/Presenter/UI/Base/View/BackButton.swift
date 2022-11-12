@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BackButton: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @SwiftUI.Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
         Button {

@@ -45,7 +45,7 @@ struct ListPopupView: View {
 }
 
 struct ListPopupModifier: ViewModifier {
-    @Environment(\.safeAreaInsets) private var safeAreaInsets
+    @SwiftUI.Environment(\.safeAreaInsets) private var safeAreaInsets
     @Binding var selectedIndex: Int?
     @Binding var isShowing: Bool
     let listContents: [String]

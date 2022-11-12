@@ -15,24 +15,15 @@ protocol MyPageServiceInterface {
 }
 
 struct MyPageService: MyPageServiceInterface {
-    let session = AF
+    private let network: BaseNetwork
+
+    init(baseNetwork: BaseNetwork = BaseNetworkImpl()) {
+        self.network = baseNetwork
+    }
 
     func myReview(request: MyReviewRequest) -> AnyPublisher<MyReviewWrapper, Error> {
-        session.request(MyReviewTarget.myReview(request))
-            .validate(statusCode: 200..<500)
-            .publishDecodable(type: MyReviewWrapperDTO.self)
-            .subscribe(on: DispatchQueue.global())
-            .receive(on: DispatchQueue.main)
-            .tryCompactMap { response -> MyReviewWrapperDTO in
-                guard let myReviewWrapperDTO = response.value else {
-                    throw NetworkError.unknown
-                }
-
-                return myReviewWrapperDTO
-            }
-            .map({
-                $0.toDomain()
-            })
+        return network.request(api: request)
+            .map{ $0.toDomain() }
             .eraseToAnyPublisher()
     }
 }

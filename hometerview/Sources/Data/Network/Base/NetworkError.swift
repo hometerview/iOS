@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case unknown
+struct ResponseError: Error {
+    let responseCode: String? // "CM03",
+    let message: String // "비인증된 요청입니다.",
 }
