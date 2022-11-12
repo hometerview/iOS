@@ -33,7 +33,7 @@ class User: ObservableObject {
 }
 
 extension User {
-    public func setToken(memberToken: MemberToken) {
+    public func setToken(_ memberToken: MemberToken) {
         setUserDefaults(key: .token, value: memberToken)
         self.memberToken = memberToken
     }

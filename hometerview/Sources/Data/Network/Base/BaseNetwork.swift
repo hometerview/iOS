@@ -57,14 +57,14 @@ struct BaseNetworkImpl: BaseNetwork {
     }
 
     private func saveNewToken<API: Requestable>(api: API, _ event: DataResponsePublisher<API.Response>.Output) {
-        guard let accessToken = event.response?.allHeaderFields[HTTPHeaderType.authorizationAccessToken.header] as? String,
-              let refreshToken = event.response?.allHeaderFields[HTTPHeaderType.authorizationRefreshToken.header] as? String,
+        guard let accessToken = event.response?.allHeaderFields[HTTPFields.authorizationAccessToken.description] as? String,
+              let refreshToken = event.response?.allHeaderFields[HTTPFields.authorizationRefreshToken.description] as? String,
               User.shared.memberToken?.accessToken != accessToken,
               User.shared.memberToken?.refreshToken != refreshToken else {
             return
         }
 
         let memberToken = MemberToken(accessToken: accessToken, refreshToken: refreshToken)
-        User.shared.setToken(memberToken: memberToken)
+        User.shared.setToken(memberToken)
     }
 }

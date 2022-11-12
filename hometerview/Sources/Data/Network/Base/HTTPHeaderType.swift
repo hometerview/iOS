@@ -10,8 +10,6 @@ import Foundation
 public enum HTTPHeaderType {
     case contentType
     case multiPartFormData
-    case authorizationRefreshToken
-    case authorizationAccessToken
 
     var header: String {
         switch self {
@@ -19,10 +17,6 @@ public enum HTTPHeaderType {
                 return "application/json"
             case .multiPartFormData:
                 return "multipart/form-data"
-            case .authorizationAccessToken:
-                return "Authorization-Access-Token"
-            case .authorizationRefreshToken:
-                return "Authorization-Refresh-Token"
         }
     }
 }

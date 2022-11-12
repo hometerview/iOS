@@ -14,8 +14,8 @@ public class InterceptorAuthenticator: RequestInterceptor {
         var request = urlRequest
 
         if let memterToken = User.shared.memberToken {
-            request.setValue("\(memterToken.accessToken)", forHTTPHeaderField: HTTPHeaderType.authorizationAccessToken.header)
-            request.setValue("\(memterToken.refreshToken)", forHTTPHeaderField: HTTPHeaderType.authorizationRefreshToken.header)
+            request.setValue("\(memterToken.accessToken)", forHTTPHeaderField: HTTPFields.authorizationAccessToken.description)
+            request.setValue("\(memterToken.refreshToken)", forHTTPHeaderField: HTTPFields.authorizationRefreshToken.description)
             Log.info("adapted => \(request)")
         }
 
@@ -30,11 +30,11 @@ public class InterceptorAuthenticator: RequestInterceptor {
         }
 
         #warning("토큰 언제 다시 주는지 확인 필요")
-        if let newAccessToken = response.allHeaderFields[HTTPHeaderType.authorizationAccessToken.header] as? String,
-           let newRefreshToken = response.allHeaderFields[HTTPHeaderType.authorizationRefreshToken.header] as? String {
+        if let newAccessToken = response.allHeaderFields[HTTPFields.authorizationAccessToken.description] as? String,
+           let newRefreshToken = response.allHeaderFields[HTTPFields.authorizationRefreshToken.description] as? String {
 
             let newMemberToken = MemberToken(accessToken: newAccessToken, refreshToken: newRefreshToken)
-            User.shared.setToken(memberToken: newMemberToken)
+            User.shared.setToken(newMemberToken)
 
             Log.info("retry => 새 토큰 갱신")
 
@@ -44,7 +44,7 @@ public class InterceptorAuthenticator: RequestInterceptor {
                 NotificationCenter.default.post(name: .tokenExpired, object: nil)
             }
 
-            Log.info("401, 토큰 만료")
+            Log.info("401, 토큰 만료, 로그인 화면으로 돌아가야 합니다.")
 
             let tokenExpiredError = ResponseError(responseCode: nil, message: NetworkErrorType.tokenExpired.description)
             completion(.doNotRetryWithError(tokenExpiredError))

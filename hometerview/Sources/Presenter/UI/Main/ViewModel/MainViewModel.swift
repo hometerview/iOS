@@ -26,10 +26,10 @@ class MainViewModel: BaseViewModel,
                     case .finished:
                         break
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        Log.error(error.localizedDescription)
                 }
             } receiveValue: { _ in
-                Log.info("카카오 로그인 성공")
+                User.shared.status = .authenticated
             }.store(in: &cancellable)
     }
 
