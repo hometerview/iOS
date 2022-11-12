@@ -31,6 +31,10 @@ struct hometerviewApp: App {
                         MainTabView()
                 }
             }
+            .onReceive(NotificationCenter.default.publisher(for: .tokenExpired)) { _ in
+                #warning("재로그인 구현 필요")
+                Log.warning("재로그인 구현 필요")
+            }
         }
     }
 }

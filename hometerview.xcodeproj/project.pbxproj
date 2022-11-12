@@ -69,6 +69,13 @@
 		FC83D4A5291FAEAD00F76278 /* InterceptorAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4A4291FAEAD00F76278 /* InterceptorAuthenticator.swift */; };
 		FC83D4A7291FB36100F76278 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4A6291FB36100F76278 /* UserDefaultsKeys.swift */; };
 		FC83D4A9291FB38200F76278 /* MemberToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4A8291FB38200F76278 /* MemberToken.swift */; };
+		FC83D4AC291FB5C500F76278 /* AuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4AB291FB5C500F76278 /* AuthType.swift */; };
+		FC83D4AF291FB62600F76278 /* KakaoLoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4AE291FB62600F76278 /* KakaoLoginRequestDTO.swift */; };
+		FC83D4B4291FB66300F76278 /* KakaoLoginRequestDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4B3291FB66300F76278 /* KakaoLoginRequestDTOMapper.swift */; };
+		FC83D4B7291FB6BF00F76278 /* KakaoLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4B6291FB6BF00F76278 /* KakaoLoginRequest.swift */; };
+		FC83D4BB291FB78C00F76278 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4BA291FB78C00F76278 /* EmptyEntity.swift */; };
+		FC83D4BD291FD67100F76278 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4BC291FD67100F76278 /* Environment.swift */; };
+		FC83D4C0291FDB8100F76278 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4BF291FDB8100F76278 /* NotificationName.swift */; };
 		FCA699AE289EB31E0074AF29 /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA69989289EB31E0074AF29 /* map_pinup_custom@3x.png */; };
 		FCA699AF289EB31E0074AF29 /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA6998A289EB31E0074AF29 /* map_pin_custom.png */; };
 		FCA699B0289EB31E0074AF29 /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA6998B289EB31E0074AF29 /* shadow_balloon.png */; };
@@ -233,6 +240,13 @@
 		FC83D4A4291FAEAD00F76278 /* InterceptorAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterceptorAuthenticator.swift; sourceTree = "<group>"; };
 		FC83D4A6291FB36100F76278 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		FC83D4A8291FB38200F76278 /* MemberToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberToken.swift; sourceTree = "<group>"; };
+		FC83D4AB291FB5C500F76278 /* AuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthType.swift; sourceTree = "<group>"; };
+		FC83D4AE291FB62600F76278 /* KakaoLoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequestDTO.swift; sourceTree = "<group>"; };
+		FC83D4B3291FB66300F76278 /* KakaoLoginRequestDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequestDTOMapper.swift; sourceTree = "<group>"; };
+		FC83D4B6291FB6BF00F76278 /* KakaoLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequest.swift; sourceTree = "<group>"; };
+		FC83D4BA291FB78C00F76278 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
+		FC83D4BC291FD67100F76278 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		FC83D4BF291FDB8100F76278 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		FCA69989289EB31E0074AF29 /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		FCA6998A289EB31E0074AF29 /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
 		FCA6998B289EB31E0074AF29 /* shadow_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_balloon.png; sourceTree = "<group>"; };
@@ -475,7 +489,8 @@
 		FC3CF04228A77974005D89AF /* RequestDTO */ = {
 			isa = PBXGroup;
 			children = (
-				FCFBB37328CF5F5D00818657 /* MyReviewRequestDTO.swift */,
+				FC83D4B0291FB64C00F76278 /* Login */,
+				FC83D4AD291FB61600F76278 /* Main */,
 			);
 			path = RequestDTO;
 			sourceTree = "<group>";
@@ -483,7 +498,8 @@
 		FC3CF04528A7798C005D89AF /* RequestMapper */ = {
 			isa = PBXGroup;
 			children = (
-				FCFBB37B28CF649C00818657 /* MyReviewRequestDTOMapper.swift */,
+				FC83D4B2291FB65B00F76278 /* Login */,
+				FC83D4B1291FB65600F76278 /* Review */,
 			);
 			path = RequestMapper;
 			sourceTree = "<group>";
@@ -655,6 +671,7 @@
 		FC7AB42A287ABC2A00DF03E5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FC83D4B8291FB77B00F76278 /* Base */,
 				FC7AB443287E223600DF03E5 /* extension */,
 				FC7AB43A287ABDDB00DF03E5 /* Network */,
 				FC7AB441287E213C00DF03E5 /* RequestModel */,
@@ -719,6 +736,7 @@
 		FC7AB42F287ABC8800DF03E5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FC83D4AA291FB5B900F76278 /* Model */,
 				FC7AB430287ABC9500DF03E5 /* View */,
 				FC7AB431287ABC9700DF03E5 /* ViewModel */,
 			);
@@ -763,6 +781,7 @@
 		FC7AB439287ABDAD00DF03E5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FC83D4BE291FDB7700F76278 /* extention */,
 				FC7AB3F7287942AD00DF03E5 /* hometerviewApp.swift */,
 				FC3C851128FECC430012C69F /* AppDelegate.swift */,
 				FCEB3C112892C8B400E35F97 /* User.swift */,
@@ -798,6 +817,7 @@
 				FC7AB448288059AB00DF03E5 /* Requestable.swift */,
 				FC7AB44C288059E900DF03E5 /* HTTPFields.swift */,
 				FC7AB44A288059D500DF03E5 /* HTTPHeaderType.swift */,
+				FC83D4BC291FD67100F76278 /* Environment.swift */,
 				FCFBB37728CF63E200818657 /* NetworkError.swift */,
 			);
 			path = Base;
@@ -806,6 +826,7 @@
 		FC7AB441287E213C00DF03E5 /* RequestModel */ = {
 			isa = PBXGroup;
 			children = (
+				FC83D4B5291FB68400F76278 /* Login */,
 				FC72E6B02913378200C265CB /* Review */,
 			);
 			path = RequestModel;
@@ -818,6 +839,78 @@
 				FC7AB4462880598500DF03E5 /* extension+Encodable.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		FC83D4AA291FB5B900F76278 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC83D4AB291FB5C500F76278 /* AuthType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC83D4AD291FB61600F76278 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FC83D4AE291FB62600F76278 /* KakaoLoginRequestDTO.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FC83D4B0291FB64C00F76278 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBB37328CF5F5D00818657 /* MyReviewRequestDTO.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FC83D4B1291FB65600F76278 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBB37B28CF649C00818657 /* MyReviewRequestDTOMapper.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		FC83D4B2291FB65B00F76278 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FC83D4B3291FB66300F76278 /* KakaoLoginRequestDTOMapper.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FC83D4B5291FB68400F76278 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FC83D4B6291FB6BF00F76278 /* KakaoLoginRequest.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FC83D4B8291FB77B00F76278 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FC83D4B9291FB78300F76278 /* Model */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FC83D4B9291FB78300F76278 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC83D4BA291FB78C00F76278 /* EmptyEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC83D4BE291FDB7700F76278 /* extention */ = {
+			isa = PBXGroup;
+			children = (
+				FC83D4BF291FDB8100F76278 /* NotificationName.swift */,
+			);
+			path = extention;
 			sourceTree = "<group>";
 		};
 		FCA69987289EB31E0074AF29 /* DaumMap.embeddedframework */ = {
@@ -1279,6 +1372,7 @@
 				FCFBB38028CF65A900818657 /* MyReviewMapper.swift in Sources */,
 				FC373C48289D68DD00F10A4C /* View+if.swift in Sources */,
 				FC05286528FCF8F8003B8491 /* EnterCompanyViewModel.swift in Sources */,
+				FC83D4B4291FB66300F76278 /* KakaoLoginRequestDTOMapper.swift in Sources */,
 				FCFBB37828CF63E200818657 /* NetworkError.swift in Sources */,
 				FC3CF027289FA89E005D89AF /* EnterCompanySearchView.swift in Sources */,
 				FCFBB37C28CF649C00818657 /* MyReviewRequestDTOMapper.swift in Sources */,
@@ -1292,14 +1386,17 @@
 				FC4F086D28E98ACB0094D911 /* SegmentView.swift in Sources */,
 				6A82522328A80E5600081D38 /* ManageAccountView.swift in Sources */,
 				FC45F326289E0AB200C7B1CF /* BoldDivider.swift in Sources */,
+				FC83D4AF291FB62600F76278 /* KakaoLoginRequestDTO.swift in Sources */,
 				FCAE85BF28A7FB89002FC940 /* LengthResidenceModel.swift in Sources */,
 				FC3CF04B28A781D5005D89AF /* ToastView.swift in Sources */,
 				FCEB3C142892CF2B00E35F97 /* Logger.swift in Sources */,
+				FC83D4C0291FDB8100F76278 /* NotificationName.swift in Sources */,
 				6AD53EBE28D4E33E00093DC3 /* LoadingView.swift in Sources */,
 				FCEB3C0B2892C78C00E35F97 /* WishViewModel.swift in Sources */,
 				FC7AB3FA287942AD00DF03E5 /* MainView.swift in Sources */,
 				FCFBB37E28CF653100818657 /* MyReview.swift in Sources */,
 				FCEB3C1828942D1800E35F97 /* Color+hex.swift in Sources */,
+				FC83D4BB291FB78C00F76278 /* EmptyEntity.swift in Sources */,
 				FCEB3C1628942C3900E35F97 /* Color+colorStyle.swift in Sources */,
 				FCFBB37A28CF643500818657 /* MyPageUseCase.swift in Sources */,
 				FC7AB3F8287942AD00DF03E5 /* hometerviewApp.swift in Sources */,
@@ -1308,6 +1405,7 @@
 				FCAE859728A79D98002FC940 /* BaseViewModel.swift in Sources */,
 				6A350AAB288B0956004EA957 /* CoreDataStorage.xcdatamodeld in Sources */,
 				FCFBB38228CF676C00818657 /* MyReviewWrapperMapper.swift in Sources */,
+				FC83D4BD291FD67100F76278 /* Environment.swift in Sources */,
 				FC373C46289D643000F10A4C /* DetailListCell.swift in Sources */,
 				FCEB3BFA2892C6A500E35F97 /* WishView.swift in Sources */,
 				FC7AB438287ABD3000DF03E5 /* MainUseCase.swift in Sources */,
@@ -1325,6 +1423,7 @@
 				FCEB3C072892C75F00E35F97 /* HomeViewModel.swift in Sources */,
 				FCEB3C092892C77E00E35F97 /* MapViewModel.swift in Sources */,
 				6A350AAD2890E493004EA957 /* AppleLoginView.swift in Sources */,
+				FC83D4AC291FB5C500F76278 /* AuthType.swift in Sources */,
 				FCEB3BFC2892C6AD00E35F97 /* MyPageView.swift in Sources */,
 				FCFBB37428CF5F5D00818657 /* MyReviewRequestDTO.swift in Sources */,
 				FCD611A728AE8B9E0096F514 /* PickerTabType.swift in Sources */,
@@ -1335,6 +1434,7 @@
 				6A350AA8288B0674004EA957 /* CoreDataStorage.swift in Sources */,
 				FC45F328289E0C6A00C7B1CF /* TotalStarred.swift in Sources */,
 				FC45F32A289E0F3B00C7B1CF /* HelpfulButton.swift in Sources */,
+				FC83D4B7291FB6BF00F76278 /* KakaoLoginRequest.swift in Sources */,
 				FC83D4A7291FB36100F76278 /* UserDefaultsKeys.swift in Sources */,
 				FCD611A028ABBCF20096F514 /* BackButton.swift in Sources */,
 				FC3C851228FECC430012C69F /* AppDelegate.swift in Sources */,

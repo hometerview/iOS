@@ -21,7 +21,7 @@ class User: ObservableObject {
     private let encoder = JSONEncoder()
 
     @Published open var status: User.Status = .unAuthenticated
-    open var memberToken: MemberToken? = nil
+    open private(set) var memberToken: MemberToken? = nil
 
     private init() {
         if checkHasToken() {
@@ -31,6 +31,11 @@ class User: ObservableObject {
 }
 
 extension User {
+    public func setToken(memberToken: MemberToken) {
+        setUserDefaults(key: .token, value: memberToken)
+        self.memberToken = memberToken
+    }
+
     public func setUserDefaults<T: Encodable>(key: UserDefaultsKeys, value: T) {
         guard let data = try? encoder.encode(value) else {
             Log.error("User Defaults encoding 에러")
