@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class BaseViewModel {
+class BaseViewModel: ObservableObject {
     var isToastShow: Bool = false
     var toastMessage: String = ""
 

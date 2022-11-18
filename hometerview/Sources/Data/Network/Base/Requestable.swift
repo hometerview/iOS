@@ -21,7 +21,6 @@ extension Requestable {
     var header: [HTTPFields : String] {
         return [
             HTTPFields.contentType: HTTPHeaderType.contentType.header,
-            HTTPFields.authorization: "Bearer \(HTTPHeaderType.authorization.header)"
         ]
     }
     
@@ -39,7 +38,5 @@ extension Requestable {
             default:
                 return try URLEncoding.default.encode(urlRequest, with: parameters)
         }
-
-        return urlRequest
     }
 }

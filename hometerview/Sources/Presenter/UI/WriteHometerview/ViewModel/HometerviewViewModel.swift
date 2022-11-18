@@ -7,8 +7,7 @@
 
 import Foundation
 
-class HometerviewViewModel: BaseViewModel,
-                            ObservableObject {
+class HometerviewViewModel: BaseViewModel {
     
     let livingFloorModelTitles: [String] = LivingFloorModel.allCases.map({ $0.description })
     let lengthResidenceTitles: [String] = LengthResidenceModel.popupListTitles

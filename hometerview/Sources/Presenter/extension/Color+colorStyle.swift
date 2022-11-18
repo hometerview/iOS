@@ -26,6 +26,7 @@ extension Color {
         case red500
         case blueGrey100
         case blueGrey200
+        case unknown191919
 
         var hexCode: String {
             switch self {
@@ -46,6 +47,7 @@ extension Color {
                 case .red500: return "#E25848"
                 case .blueGrey100: return "#F8FAFD"
                 case .blueGrey200: return "#EBEEF5"
+                case .unknown191919: return "#191919"
             }
         }
     }

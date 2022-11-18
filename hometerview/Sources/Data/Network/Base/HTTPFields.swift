@@ -11,15 +11,10 @@ public enum HTTPFields: String, CustomStringConvertible {
     case contentType = "Content-Type"
     case accept = "Accept"
     case authorization = "Authorization"
+    case authorizationRefreshToken = "Authorization-Access-Token"
+    case authorizationAccessToken = "Authorization-Refresh-Token"
 
     public var description: String {
-        switch self {
-            case .contentType:
-                return self.rawValue
-            case .accept:
-                return self.rawValue
-            case .authorization:
-                return self.rawValue
-        }
+        return self.rawValue
     }
 }

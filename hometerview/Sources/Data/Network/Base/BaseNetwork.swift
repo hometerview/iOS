@@ -15,13 +15,24 @@ protocol BaseNetwork {
 }
 
 struct BaseNetworkImpl: BaseNetwork {
-    private let session = AF
     private let decoder = JSONDecoder()
+    private let session: Session
+    private let interceptorAuthenticator: RequestInterceptor
+
+    init(interceptorAuthenticator: RequestInterceptor = InterceptorAuthenticator()) {
+        self.interceptorAuthenticator = interceptorAuthenticator
+
+        let configuration = URLSessionConfiguration.af.default
+        configuration.timeoutIntervalForRequest = 10
+        configuration.waitsForConnectivity = true
+        self.session = Session(configuration: configuration)
+    }
 
     func request<API: Requestable>(api: API) -> AnyPublisher<API.Response, Error> {
-        session.request(api)
+        session.request(api, interceptor: interceptorAuthenticator)
             .validate(statusCode: 200..<500)
             .publishDecodable(type: API.Response.self)
+            .handleEvents(receiveOutput: { saveNewToken(api: api, $0) })
             .tryMap {
                 guard let responseData = $0.data,
                       let json = try JSONSerialization.jsonObject(with: responseData) as? [String: Any],
@@ -36,8 +47,7 @@ struct BaseNetworkImpl: BaseNetwork {
                     throw ResponseError(responseCode: nil, message: "알 수 없는 에러가 발생했습니다.")
                 }
 
-                guard ((json["data"] as? API.Response) != nil),
-                      responseCode == "CM00" else {
+                guard responseCode == "CM00" else {
                     throw ResponseError(responseCode: responseCode, message: message)
                 }
 
@@ -45,14 +55,16 @@ struct BaseNetworkImpl: BaseNetwork {
             }
             .eraseToAnyPublisher()
     }
-}
 
-struct Environment {
-    public static var baseURL: String {
-        guard let baseURLString = Bundle.main.object(forInfoDictionaryKey: "BaseURL") as? String else {
-            return "https://" + "13.125.75.159:8080/api/v1/"
+    private func saveNewToken<API: Requestable>(api: API, _ event: DataResponsePublisher<API.Response>.Output) {
+        guard let accessToken = event.response?.allHeaderFields[HTTPFields.authorizationAccessToken.description] as? String,
+              let refreshToken = event.response?.allHeaderFields[HTTPFields.authorizationRefreshToken.description] as? String,
+              User.shared.memberToken?.accessToken != accessToken,
+              User.shared.memberToken?.refreshToken != refreshToken else {
+            return
         }
 
-        return baseURLString
+        let memberToken = MemberToken(accessToken: accessToken, refreshToken: refreshToken)
+        User.shared.setToken(memberToken)
     }
 }

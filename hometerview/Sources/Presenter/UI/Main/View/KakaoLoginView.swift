@@ -6,22 +6,34 @@
 //
 
 import SwiftUI
+import SwiftUI
+import KakaoSDKAuth
+import KakaoSDKCommon
+import KakaoSDKUser
 
 struct KakaoLoginView: View {
-    private var buttonSize: CGFloat = 36
-
+    @ObservedObject var viewModel: MainViewModel
+    private let buttonSize: CGFloat = 36
+    
     var body: some View {
         HStack {
             Button {
-
-                
+                if UserApi.isKakaoTalkLoginAvailable() {
+                    UserApi.shared.loginWithKakaoTalk {
+                        (oauthToken, error) in
+                        viewModel.requestKakaoLogin(accessToken: oauthToken?.accessToken ?? "",
+                                                    refreshToken: oauthToken?.refreshToken ?? "")
+                    }
+                } else {
+                    
+                }
             } label : {
                 Image("kakao")
                     .padding(.leading, 14)
                 Spacer()
                 Text("카카오로 시작하기")
                     .font(.pretendard(size: 14, weight: .semibold))
-                    .foregroundColor(.init(hex: "#191919"))
+                    .foregroundColor(.colorStyle(.unknown191919))
                     .padding(.leading, -buttonSize)
                 Spacer()
             }
@@ -29,11 +41,5 @@ struct KakaoLoginView: View {
             .frame(maxWidth: .infinity)
             .background(Color.init(hex: "#FAE64C"))
         }
-    }
-}
-
-struct KakaoLoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        KakaoLoginView()
     }
 }
