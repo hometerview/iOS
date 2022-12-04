@@ -7,17 +7,18 @@
 
 import SwiftUI
 
+// 지도, 위시리스트 2차 페이즈
 enum HometerviewTabType {
     case home
-    case map
-    case wish
+//    case map
+//    case wish
     case myPage
 
     var iconImageName: String {
         switch self {
             case .home: return "icon_home"
-            case .map: return "icon_map"
-            case .wish: return "icon_heart"
+//            case .map: return "icon_mapd"
+//            case .wish: return "icon_heart"
             case .myPage: return "icon_user"
         }
     }
@@ -25,8 +26,8 @@ enum HometerviewTabType {
     @ViewBuilder func view() -> some View {
         switch self {
             case .home: HomeView()
-            case .map: MapView()
-            case .wish: WishView()
+//            case .map: MapView()
+//            case .wish: WishView()
             case .myPage: MyPageView()
         }
     }
