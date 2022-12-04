@@ -122,6 +122,20 @@
 		FCD611A228ABC1BC0096F514 /* WriteInputSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD611A128ABC1BC0096F514 /* WriteInputSearchView.swift */; };
 		FCD611A428AE24510096F514 /* Environment+SafeAreaInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD611A328AE24510096F514 /* Environment+SafeAreaInsets.swift */; };
 		FCD611A728AE8B9E0096F514 /* PickerTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD611A628AE8B9E0096F514 /* PickerTabType.swift */; };
+		FCE03FDC293C6A5200944DB8 /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FDB293C6A5200944DB8 /* HomeUseCase.swift */; };
+		FCE03FE1293C6A9200944DB8 /* HomeReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE0293C6A9200944DB8 /* HomeReview.swift */; };
+		FCE03FE3293C6C4100944DB8 /* HomeReviewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE2293C6C4100944DB8 /* HomeReviewDetail.swift */; };
+		FCE03FE5293C6C4D00944DB8 /* HomeReviewPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE4293C6C4D00944DB8 /* HomeReviewPrice.swift */; };
+		FCE03FEA293C6CA700944DB8 /* HomeReviewPriceDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE7293C6CA700944DB8 /* HomeReviewPriceDTO.swift */; };
+		FCE03FEB293C6CA700944DB8 /* HomeReviewDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE8293C6CA700944DB8 /* HomeReviewDTO.swift */; };
+		FCE03FEC293C6CA700944DB8 /* HomeReviewDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE9293C6CA700944DB8 /* HomeReviewDetailDTO.swift */; };
+		FCE03FEF293C6D1400944DB8 /* HomeReviewMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FEE293C6D1400944DB8 /* HomeReviewMapper.swift */; };
+		FCE03FF1293C6E2E00944DB8 /* HomeReviewDetailMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FF0293C6E2E00944DB8 /* HomeReviewDetailMapper.swift */; };
+		FCE03FF3293C6E8000944DB8 /* HomeReviewPriceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FF2293C6E8000944DB8 /* HomeReviewPriceMapper.swift */; };
+		FCE03FF6293C6EBB00944DB8 /* HomeReviewRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FF5293C6EBB00944DB8 /* HomeReviewRequestDTO.swift */; };
+		FCE03FF9293C6F0500944DB8 /* HomeReviewRequestDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FF8293C6F0500944DB8 /* HomeReviewRequestDTOMapper.swift */; };
+		FCE03FFC293C6F4900944DB8 /* HomeReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FFB293C6F4900944DB8 /* HomeReviewRequest.swift */; };
+		FCE03FFE293C741F00944DB8 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FFD293C741F00944DB8 /* HomeService.swift */; };
 		FCE5DE9A289EB091004C4160 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCE5DE99289EB091004C4160 /* Alamofire */; };
 		FCEB3BF02892C56B00E35F97 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BEF2892C56B00E35F97 /* MainTabView.swift */; };
 		FCEB3BF62892C69400E35F97 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BF52892C69400E35F97 /* HomeView.swift */; };
@@ -301,6 +315,20 @@
 		FCD611A128ABC1BC0096F514 /* WriteInputSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteInputSearchView.swift; sourceTree = "<group>"; };
 		FCD611A328AE24510096F514 /* Environment+SafeAreaInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+SafeAreaInsets.swift"; sourceTree = "<group>"; };
 		FCD611A628AE8B9E0096F514 /* PickerTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTabType.swift; sourceTree = "<group>"; };
+		FCE03FDB293C6A5200944DB8 /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
+		FCE03FE0293C6A9200944DB8 /* HomeReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReview.swift; sourceTree = "<group>"; };
+		FCE03FE2293C6C4100944DB8 /* HomeReviewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewDetail.swift; sourceTree = "<group>"; };
+		FCE03FE4293C6C4D00944DB8 /* HomeReviewPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewPrice.swift; sourceTree = "<group>"; };
+		FCE03FE7293C6CA700944DB8 /* HomeReviewPriceDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeReviewPriceDTO.swift; sourceTree = "<group>"; };
+		FCE03FE8293C6CA700944DB8 /* HomeReviewDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeReviewDTO.swift; sourceTree = "<group>"; };
+		FCE03FE9293C6CA700944DB8 /* HomeReviewDetailDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeReviewDetailDTO.swift; sourceTree = "<group>"; };
+		FCE03FEE293C6D1400944DB8 /* HomeReviewMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewMapper.swift; sourceTree = "<group>"; };
+		FCE03FF0293C6E2E00944DB8 /* HomeReviewDetailMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewDetailMapper.swift; sourceTree = "<group>"; };
+		FCE03FF2293C6E8000944DB8 /* HomeReviewPriceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewPriceMapper.swift; sourceTree = "<group>"; };
+		FCE03FF5293C6EBB00944DB8 /* HomeReviewRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewRequestDTO.swift; sourceTree = "<group>"; };
+		FCE03FF8293C6F0500944DB8 /* HomeReviewRequestDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewRequestDTOMapper.swift; sourceTree = "<group>"; };
+		FCE03FFB293C6F4900944DB8 /* HomeReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewRequest.swift; sourceTree = "<group>"; };
+		FCE03FFD293C741F00944DB8 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		FCE5DE97289EAB8B004C4160 /* KakaoMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCEB3BEF2892C56B00E35F97 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		FCEB3BF52892C69400E35F97 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -473,6 +501,7 @@
 		FC3CF03A28A778EB005D89AF /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				FCE03FED293C6CFD00944DB8 /* Home */,
 				FC72E6AA2913350900C265CB /* Review */,
 			);
 			path = Mapper;
@@ -481,6 +510,7 @@
 		FC3CF03B28A778FC005D89AF /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				FCE03FE6293C6C6800944DB8 /* Home */,
 				FC72E6A52913348800C265CB /* Review */,
 			);
 			path = DTO;
@@ -489,6 +519,7 @@
 		FC3CF04228A77974005D89AF /* RequestDTO */ = {
 			isa = PBXGroup;
 			children = (
+				FCE03FF4293C6EAD00944DB8 /* Home */,
 				FC83D4B0291FB64C00F76278 /* Login */,
 				FC83D4AD291FB61600F76278 /* Main */,
 			);
@@ -498,6 +529,7 @@
 		FC3CF04528A7798C005D89AF /* RequestMapper */ = {
 			isa = PBXGroup;
 			children = (
+				FCE03FF7293C6EFD00944DB8 /* Home */,
 				FC83D4B2291FB65B00F76278 /* Login */,
 				FC83D4B1291FB65600F76278 /* Review */,
 			);
@@ -764,6 +796,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFBB37928CF643500818657 /* MyPageUseCase.swift */,
+				FCE03FDB293C6A5200944DB8 /* HomeUseCase.swift */,
 				FC83D4C4291FE25700F76278 /* LoginUseCase.swift */,
 			);
 			path = UseCase;
@@ -772,6 +805,7 @@
 		FC7AB436287ABD1500DF03E5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				FCE03FDD293C6A7300944DB8 /* Home */,
 				FC72E6A2291333C900C265CB /* Review */,
 			);
 			path = Entities;
@@ -825,6 +859,7 @@
 		FC7AB441287E213C00DF03E5 /* RequestModel */ = {
 			isa = PBXGroup;
 			children = (
+				FCE03FFA293C6F4000944DB8 /* Home */,
 				FC83D4B5291FB68400F76278 /* Login */,
 				FC72E6B02913378200C265CB /* Review */,
 			);
@@ -1001,9 +1036,64 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FCE03FDD293C6A7300944DB8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCE03FE0293C6A9200944DB8 /* HomeReview.swift */,
+				FCE03FE4293C6C4D00944DB8 /* HomeReviewPrice.swift */,
+				FCE03FE2293C6C4100944DB8 /* HomeReviewDetail.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FCE03FE6293C6C6800944DB8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCE03FE8293C6CA700944DB8 /* HomeReviewDTO.swift */,
+				FCE03FE9293C6CA700944DB8 /* HomeReviewDetailDTO.swift */,
+				FCE03FE7293C6CA700944DB8 /* HomeReviewPriceDTO.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FCE03FED293C6CFD00944DB8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCE03FEE293C6D1400944DB8 /* HomeReviewMapper.swift */,
+				FCE03FF0293C6E2E00944DB8 /* HomeReviewDetailMapper.swift */,
+				FCE03FF2293C6E8000944DB8 /* HomeReviewPriceMapper.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FCE03FF4293C6EAD00944DB8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCE03FF5293C6EBB00944DB8 /* HomeReviewRequestDTO.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FCE03FF7293C6EFD00944DB8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCE03FF8293C6F0500944DB8 /* HomeReviewRequestDTOMapper.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FCE03FFA293C6F4000944DB8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCE03FFB293C6F4900944DB8 /* HomeReviewRequest.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		FCEB3BD82882532200E35F97 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FCE03FFD293C741F00944DB8 /* HomeService.swift */,
 				FCFBB37128CF5F0C00818657 /* MyPageService.swift */,
 				FC83D4C2291FE19C00F76278 /* LoginService.swift */,
 			);
@@ -1352,19 +1442,25 @@
 				FCAE85BB28A7E807002FC940 /* RateStarModel.swift in Sources */,
 				6A350AAF2890E49A004EA957 /* KakaoLoginView.swift in Sources */,
 				FCAE85AF28A7CDD7002FC940 /* View+cornerRadius.swift in Sources */,
+				FCE03FFE293C741F00944DB8 /* HomeService.swift in Sources */,
 				FC0087B2289D7C7200E93045 /* BuildingDetailView.swift in Sources */,
 				FC4F086F28E996890094D911 /* SpeechBubbleView.swift in Sources */,
 				FCEB3C122892C8B400E35F97 /* User.swift in Sources */,
+				FCE03FEF293C6D1400944DB8 /* HomeReviewMapper.swift in Sources */,
+				FCE03FE1293C6A9200944DB8 /* HomeReview.swift in Sources */,
 				FCAE85AA28A7C962002FC940 /* ListPopupView.swift in Sources */,
+				FCE03FF9293C6F0500944DB8 /* HomeReviewRequestDTOMapper.swift in Sources */,
 				FCAE85BD28A7F544002FC940 /* RateStarTitleModel.swift in Sources */,
 				FCFBB37228CF5F0C00818657 /* MyPageService.swift in Sources */,
 				6A82522128A7FC8500081D38 /* NicknameEditView.swift in Sources */,
 				FC05286C28FD4F23003B8491 /* StepEnterCompanyView.swift in Sources */,
+				FCE03FEB293C6CA700944DB8 /* HomeReviewDTO.swift in Sources */,
 				FCEB3BF02892C56B00E35F97 /* MainTabView.swift in Sources */,
 				FCFBB38028CF65A900818657 /* MyReviewMapper.swift in Sources */,
 				FC373C48289D68DD00F10A4C /* View+if.swift in Sources */,
 				FC05286528FCF8F8003B8491 /* EnterCompanyViewModel.swift in Sources */,
 				FC83D4B4291FB66300F76278 /* KakaoLoginRequestDTOMapper.swift in Sources */,
+				FCE03FF3293C6E8000944DB8 /* HomeReviewPriceMapper.swift in Sources */,
 				FCFBB37828CF63E200818657 /* NetworkError.swift in Sources */,
 				FC3CF027289FA89E005D89AF /* EnterCompanySearchView.swift in Sources */,
 				FCFBB37C28CF649C00818657 /* MyReviewRequestDTOMapper.swift in Sources */,
@@ -1374,6 +1470,7 @@
 				6A82522728A8170A00081D38 /* WithdrawalView.swift in Sources */,
 				FC7AB449288059AB00DF03E5 /* Requestable.swift in Sources */,
 				FC83D4C5291FE25700F76278 /* LoginUseCase.swift in Sources */,
+				FCE03FDC293C6A5200944DB8 /* HomeUseCase.swift in Sources */,
 				FCEB3BF82892C69B00E35F97 /* MapView.swift in Sources */,
 				FCD611A428AE24510096F514 /* Environment+SafeAreaInsets.swift in Sources */,
 				FC4F086D28E98ACB0094D911 /* SegmentView.swift in Sources */,
@@ -1383,6 +1480,7 @@
 				FCAE85BF28A7FB89002FC940 /* LengthResidenceModel.swift in Sources */,
 				FC3CF04B28A781D5005D89AF /* ToastView.swift in Sources */,
 				FCEB3C142892CF2B00E35F97 /* Logger.swift in Sources */,
+				FCE03FE3293C6C4100944DB8 /* HomeReviewDetail.swift in Sources */,
 				FC83D4C0291FDB8100F76278 /* NotificationName.swift in Sources */,
 				6AD53EBE28D4E33E00093DC3 /* LoadingView.swift in Sources */,
 				FCEB3C0B2892C78C00E35F97 /* WishViewModel.swift in Sources */,
@@ -1395,6 +1493,7 @@
 				FC7AB3F8287942AD00DF03E5 /* hometerviewApp.swift in Sources */,
 				FCAE85B628A7DB67002FC940 /* StarRatingView.swift in Sources */,
 				FCAE85B128A7D27A002FC940 /* LivingFloorView.swift in Sources */,
+				FCE03FEC293C6CA700944DB8 /* HomeReviewDetailDTO.swift in Sources */,
 				FCAE859728A79D98002FC940 /* BaseViewModel.swift in Sources */,
 				6A350AAB288B0956004EA957 /* CoreDataStorage.xcdatamodeld in Sources */,
 				FCFBB38228CF676C00818657 /* MyReviewWrapperMapper.swift in Sources */,
@@ -1407,14 +1506,17 @@
 				6A37EDE328DEFFA900DA63C3 /* RecentReviewView.swift in Sources */,
 				FCFBB37028CF5D5900818657 /* MyReviewRequest.swift in Sources */,
 				FC83D4A5291FAEAD00F76278 /* InterceptorAuthenticator.swift in Sources */,
+				FCE03FEA293C6CA700944DB8 /* HomeReviewPriceDTO.swift in Sources */,
 				FC7AB4452880596F00DF03E5 /* extension+Dictionary.swift in Sources */,
 				6A6658782908278800ABD859 /* UINavigationController+Custom.swift in Sources */,
 				FCD611A228ABC1BC0096F514 /* WriteInputSearchView.swift in Sources */,
 				FC7AB433287ABCBA00DF03E5 /* MainViewModel.swift in Sources */,
+				FCE03FF1293C6E2E00944DB8 /* HomeReviewDetailMapper.swift in Sources */,
 				FCEDBD5F289F46F90020D276 /* HomeListCell.swift in Sources */,
 				FC7AB43E287ABE8F00DF03E5 /* BaseNetwork.swift in Sources */,
 				FCEB3C072892C75F00E35F97 /* HomeViewModel.swift in Sources */,
 				FCEB3C092892C77E00E35F97 /* MapViewModel.swift in Sources */,
+				FCE03FE5293C6C4D00944DB8 /* HomeReviewPrice.swift in Sources */,
 				6A350AAD2890E493004EA957 /* AppleLoginView.swift in Sources */,
 				FCEB3BFC2892C6AD00E35F97 /* MyPageView.swift in Sources */,
 				FCFBB37428CF5F5D00818657 /* MyReviewRequestDTO.swift in Sources */,
@@ -1427,6 +1529,7 @@
 				FC45F328289E0C6A00C7B1CF /* TotalStarred.swift in Sources */,
 				FC45F32A289E0F3B00C7B1CF /* HelpfulButton.swift in Sources */,
 				FC83D4B7291FB6BF00F76278 /* KakaoLoginRequest.swift in Sources */,
+				FCE03FFC293C6F4900944DB8 /* HomeReviewRequest.swift in Sources */,
 				FC83D4A7291FB36100F76278 /* UserDefaultsKeys.swift in Sources */,
 				FCD611A028ABBCF20096F514 /* BackButton.swift in Sources */,
 				FC3C851228FECC430012C69F /* AppDelegate.swift in Sources */,
@@ -1436,6 +1539,7 @@
 				FCEB3C0D2892C7C900E35F97 /* MyPageViewModel.swift in Sources */,
 				FCAE85AD28A7CCF4002FC940 /* LivingFloorModel.swift in Sources */,
 				FCAE859B28A7BEAA002FC940 /* SimpleCancelButton.swift in Sources */,
+				FCE03FF6293C6EBB00944DB8 /* HomeReviewRequestDTO.swift in Sources */,
 				6A2845D328DA1BFF008FF21C /* BuildingListCell.swift in Sources */,
 				FC05286A28FD0D7A003B8491 /* AddressGuidelineView.swift in Sources */,
 				6A37EDDF28DEFAAD00DA63C3 /* SaveButton.swift in Sources */,
