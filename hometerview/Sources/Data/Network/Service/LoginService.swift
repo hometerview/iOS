@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import Combine
 
 import Alamofire
-import Combine
 
 protocol LoginServiceInterface {
     func kakao(request: KakaoLoginRequest) -> AnyPublisher<EmptyEntity?, Error>
@@ -23,7 +23,6 @@ struct LoginService: LoginServiceInterface {
 
     func kakao(request: KakaoLoginRequest) -> AnyPublisher<EmptyEntity?, Error> {
         return network.request(api: request)
-            .map({ _ in EmptyEntity() })
             .eraseToAnyPublisher()
     }
 }

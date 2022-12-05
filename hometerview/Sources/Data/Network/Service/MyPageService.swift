@@ -6,12 +6,12 @@
 //
 
 import Foundation
-
-import Alamofire
 import Combine
 
+import Alamofire
+
 protocol MyPageServiceInterface {
-    func myReview(request: MyReviewRequest) -> AnyPublisher<MyReviewWrapper, Error>
+    func myReview(request: MyReviewRequest) -> AnyPublisher<MyReviewWrapperDTO, Error>
 }
 
 struct MyPageService: MyPageServiceInterface {
@@ -21,9 +21,8 @@ struct MyPageService: MyPageServiceInterface {
         self.network = baseNetwork
     }
 
-    func myReview(request: MyReviewRequest) -> AnyPublisher<MyReviewWrapper, Error> {
+    func myReview(request: MyReviewRequest) -> AnyPublisher<MyReviewWrapperDTO, Error> {
         return network.request(api: request)
-            .map{ $0.toDomain() }
             .eraseToAnyPublisher()
     }
 }

@@ -13,14 +13,14 @@ protocol LoginUseCaseInterface {
 }
 
 class LoginUseCase: LoginUseCaseInterface {
-    let loginService: LoginServiceInterface
+    let loginRepsitory: LoginRepositoryInterface
 
-    init(service: LoginServiceInterface = LoginService()) {
-        self.loginService = service
+    init(repository: LoginRepositoryInterface = LoginRepository()) {
+        self.loginRepsitory = repository
     }
 
     func requestKakaoLogin(requestDTO: KakaoLoginRequestDTO) -> AnyPublisher<EmptyEntity?, Error> {
         let request = requestDTO.toData()
-        return loginService.kakao(request: request)
+        return loginRepsitory.kakao(request: request)
     }
 }

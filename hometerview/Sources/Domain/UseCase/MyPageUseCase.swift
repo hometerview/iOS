@@ -13,14 +13,14 @@ protocol MyPageUseCaseInterface {
 }
 
 class MyPageUseCase: MyPageUseCaseInterface {
-    let myPageService: MyPageServiceInterface
+    let myPageRepository: MyPageRepositoryInterface
 
-    init(service: MyPageServiceInterface = MyPageService()) {
-        self.myPageService = service
+    init(repository: MyPageRepositoryInterface = MyPageRepository()) {
+        self.myPageRepository = repository
     }
 
     func fetchMyReview(requestDTO: MyReviewRequestDTO) -> AnyPublisher<MyReviewWrapper, Error> {
         let request = requestDTO.toData()
-        return myPageService.myReview(request: request)
+        return myPageRepository.myReview(request: request)
     }
 }

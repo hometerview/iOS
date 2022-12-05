@@ -13,15 +13,15 @@ protocol HomeUseCaseInterface {
 }
 
 class HomeUseCase: HomeUseCaseInterface {
-    let homeService: HomeServiceInterface
+    let homeRepository: HomeRepositoryInterface
 
     // HomeService or 영구 저장소 구현 예정
-    init(service: HomeServiceInterface) {
-        self.homeService = service
+    init(repository: HomeRepositoryInterface) {
+        self.homeRepository = repository
     }
 
     func fetchHomeReview(requestDTO: HomeReviewRequestDTO) -> AnyPublisher<HomeReview, Error> {
         let request = requestDTO.toData()
-        return homeService.homeReview(request: request)
+        return homeRepository.homeReview(request: request)
     }
 }
