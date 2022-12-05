@@ -10,6 +10,7 @@ import Combine
 
 protocol HomeUseCaseInterface {
     func fetchHomeReview(requestDTO: HomeReviewRequestDTO) -> AnyPublisher<HomeReview, Error>
+    func fetchHomeCities(requestDTO: HomeCitiesRequestDTO) -> AnyPublisher<[HomeCities], Error>
 }
 
 class HomeUseCase: HomeUseCaseInterface {
@@ -23,5 +24,10 @@ class HomeUseCase: HomeUseCaseInterface {
     func fetchHomeReview(requestDTO: HomeReviewRequestDTO) -> AnyPublisher<HomeReview, Error> {
         let request = requestDTO.toData()
         return homeRepository.homeReview(request: request)
+    }
+
+    func fetchHomeCities(requestDTO: HomeCitiesRequestDTO) -> AnyPublisher<[HomeCities], Error> {
+        let request = requestDTO.toData()
+        return homeRepository.homeCities(request: request)
     }
 }

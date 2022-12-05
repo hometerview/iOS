@@ -20,4 +20,10 @@ struct HomeRepository: HomeRepositoryInterface {
             .map({ $0.toDomain() })
             .eraseToAnyPublisher()
     }
+
+    func homeCities(request: HomeCitiesRequest) -> AnyPublisher<[HomeCities], Error> {
+        return service.homeCities(request: request)
+            .map({ $0.map({ $0.toDomain() }) })
+            .eraseToAnyPublisher()
+    }
 }

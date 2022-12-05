@@ -10,4 +10,6 @@ import Combine
 
 protocol HomeRepositoryInterface {
     func homeReview(request: HomeReviewRequest) -> AnyPublisher<HomeReview, Error>
+
+    func homeCities(request: HomeCitiesRequest) -> AnyPublisher<[HomeCities], Error>
 }

@@ -12,6 +12,7 @@ import Alamofire
 
 protocol HomeServiceInterface {
     func homeReview(request: HomeReviewRequest) -> AnyPublisher<HomeReviewDTO, Error>
+    func homeCities(request: HomeCitiesRequest) -> AnyPublisher<[HomeCitiesDTO], Error>
 }
 
 struct HomeService: HomeServiceInterface {
@@ -23,7 +24,16 @@ struct HomeService: HomeServiceInterface {
 
     func homeReview(request: HomeReviewRequest) -> AnyPublisher<HomeReviewDTO, Error> {
         #warning("homeReview 네트워크 구현 필요")
-        let mock = HomeReviewDTO(advantage: "좋음", buildingId: "idasdf", disadvantage: "매우 나쁨", rating: 3.4, reviewId: "reviewId", review: HomeReviewDetailDTO(advantage: "좋음", bookmarkCount: 3, buildingId: "idasdf", certification: ["a", "s"], companyId: "companyId", disadvantage: "매우 나쁨", floor: "3층", id: "reviewId", likeCount: 2, memberId: "memberId", period: 118273698, price: HomeReviewPriceDTO(deposit: "300", maintainFee: "20", monthly: "3"), rating: 3.4))
+        let mock = HomeReviewDTO(advantage: "좋음", buildingId: "idasdf", disadvantage: "매우 나쁨", rating: 3.4, reviewId: "reviewId", buildingType: "APARTMENT", buildingName: "아크로텔")
+
+        return Just(mock)
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+    }
+
+    func homeCities(request: HomeCitiesRequest) -> AnyPublisher<[HomeCitiesDTO], Error> {
+        #warning("homeReview 네트워크 구현 필요")
+        let mock = [HomeCitiesDTO(cityId: "asdfg", cityName: "강남구"), HomeCitiesDTO(cityId: "asddfg", cityName: "서초구"), HomeCitiesDTO(cityId: "dasdfg", cityName: "동작구")]
 
         return Just(mock)
             .setFailureType(to: Error.self)
