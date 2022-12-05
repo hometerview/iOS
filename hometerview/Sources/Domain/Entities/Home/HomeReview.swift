@@ -13,5 +13,6 @@ struct HomeReview {
     let disadvantage: String
     let rating: Float
     let reviewId: String
-    let review: HomeReviewDetail
+    let buildingType: String
+    let buildingName: String
 }
