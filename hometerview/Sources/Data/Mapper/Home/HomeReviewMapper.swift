@@ -9,6 +9,6 @@ import Foundation
 
 extension HomeReviewDTO {
     func toDomain() -> HomeReview {
-        return .init(advantage: advantage, buildingId: buildingId, disadvantage: disadvantage, rating: rating, reviewId: reviewId, review: review.toDomain())
+        return .init(advantage: advantage, buildingId: buildingId, disadvantage: disadvantage, rating: rating, reviewId: reviewId, buildingType: buildingType, buildingName: buildingName)
     }
 }

@@ -10,18 +10,24 @@ import Combine
 
 protocol HomeUseCaseInterface {
     func fetchHomeReview(requestDTO: HomeReviewRequestDTO) -> AnyPublisher<HomeReview, Error>
+    func fetchHomeCities(requestDTO: HomeCitiesRequestDTO) -> AnyPublisher<[HomeCities], Error>
 }
 
 class HomeUseCase: HomeUseCaseInterface {
-    let homeService: HomeServiceInterface
+    let homeRepository: HomeRepositoryInterface
 
     // HomeService or 영구 저장소 구현 예정
-    init(service: HomeServiceInterface) {
-        self.homeService = service
+    init(repository: HomeRepositoryInterface) {
+        self.homeRepository = repository
     }
 
     func fetchHomeReview(requestDTO: HomeReviewRequestDTO) -> AnyPublisher<HomeReview, Error> {
         let request = requestDTO.toData()
-        return homeService.homeReview(request: request)
+        return homeRepository.homeReview(request: request)
+    }
+
+    func fetchHomeCities(requestDTO: HomeCitiesRequestDTO) -> AnyPublisher<[HomeCities], Error> {
+        let request = requestDTO.toData()
+        return homeRepository.homeCities(request: request)
     }
 }

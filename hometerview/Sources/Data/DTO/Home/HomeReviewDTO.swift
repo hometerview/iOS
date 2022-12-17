@@ -13,5 +13,6 @@ struct HomeReviewDTO: Decodable {
     let disadvantage: String
     let rating: Float
     let reviewId: String
-    let review: HomeReviewDetailDTO
+    let buildingType: String
+    let buildingName: String
 }

@@ -124,18 +124,24 @@
 		FCD611A728AE8B9E0096F514 /* PickerTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD611A628AE8B9E0096F514 /* PickerTabType.swift */; };
 		FCE03FDC293C6A5200944DB8 /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FDB293C6A5200944DB8 /* HomeUseCase.swift */; };
 		FCE03FE1293C6A9200944DB8 /* HomeReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE0293C6A9200944DB8 /* HomeReview.swift */; };
-		FCE03FE3293C6C4100944DB8 /* HomeReviewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE2293C6C4100944DB8 /* HomeReviewDetail.swift */; };
-		FCE03FE5293C6C4D00944DB8 /* HomeReviewPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE4293C6C4D00944DB8 /* HomeReviewPrice.swift */; };
-		FCE03FEA293C6CA700944DB8 /* HomeReviewPriceDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE7293C6CA700944DB8 /* HomeReviewPriceDTO.swift */; };
 		FCE03FEB293C6CA700944DB8 /* HomeReviewDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE8293C6CA700944DB8 /* HomeReviewDTO.swift */; };
-		FCE03FEC293C6CA700944DB8 /* HomeReviewDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FE9293C6CA700944DB8 /* HomeReviewDetailDTO.swift */; };
 		FCE03FEF293C6D1400944DB8 /* HomeReviewMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FEE293C6D1400944DB8 /* HomeReviewMapper.swift */; };
-		FCE03FF1293C6E2E00944DB8 /* HomeReviewDetailMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FF0293C6E2E00944DB8 /* HomeReviewDetailMapper.swift */; };
-		FCE03FF3293C6E8000944DB8 /* HomeReviewPriceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FF2293C6E8000944DB8 /* HomeReviewPriceMapper.swift */; };
 		FCE03FF6293C6EBB00944DB8 /* HomeReviewRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FF5293C6EBB00944DB8 /* HomeReviewRequestDTO.swift */; };
 		FCE03FF9293C6F0500944DB8 /* HomeReviewRequestDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FF8293C6F0500944DB8 /* HomeReviewRequestDTOMapper.swift */; };
 		FCE03FFC293C6F4900944DB8 /* HomeReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FFB293C6F4900944DB8 /* HomeReviewRequest.swift */; };
 		FCE03FFE293C741F00944DB8 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE03FFD293C741F00944DB8 /* HomeService.swift */; };
+		FCE04001293D9DA300944DB8 /* MyPageRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04000293D9DA300944DB8 /* MyPageRepositoryInterface.swift */; };
+		FCE04003293D9DAB00944DB8 /* HomeRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04002293D9DAB00944DB8 /* HomeRepositoryInterface.swift */; };
+		FCE04005293D9DB600944DB8 /* LoginRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04004293D9DB600944DB8 /* LoginRepositoryInterface.swift */; };
+		FCE04008293D9E6B00944DB8 /* MyPageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04007293D9E6B00944DB8 /* MyPageRepository.swift */; };
+		FCE0400A293D9E7000944DB8 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04009293D9E7000944DB8 /* HomeRepository.swift */; };
+		FCE0400C293D9E7500944DB8 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0400B293D9E7500944DB8 /* LoginRepository.swift */; };
+		FCE0400E293DA70900944DB8 /* HomeCitiesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0400D293DA70900944DB8 /* HomeCitiesDTO.swift */; };
+		FCE04010293DA78E00944DB8 /* HomeCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0400F293DA78E00944DB8 /* HomeCities.swift */; };
+		FCE04012293DA7A100944DB8 /* HomeCitiesMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04011293DA7A100944DB8 /* HomeCitiesMapper.swift */; };
+		FCE04014293DA7C300944DB8 /* HomeCitiesRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04013293DA7C300944DB8 /* HomeCitiesRequestDTO.swift */; };
+		FCE04016293DA7E500944DB8 /* HomeCitiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04015293DA7E500944DB8 /* HomeCitiesRequest.swift */; };
+		FCE04018293DA86500944DB8 /* HomeCitiesRequestDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04017293DA86500944DB8 /* HomeCitiesRequestDTOMapper.swift */; };
 		FCE5DE9A289EB091004C4160 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCE5DE99289EB091004C4160 /* Alamofire */; };
 		FCEB3BF02892C56B00E35F97 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BEF2892C56B00E35F97 /* MainTabView.swift */; };
 		FCEB3BF62892C69400E35F97 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB3BF52892C69400E35F97 /* HomeView.swift */; };
@@ -317,18 +323,24 @@
 		FCD611A628AE8B9E0096F514 /* PickerTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTabType.swift; sourceTree = "<group>"; };
 		FCE03FDB293C6A5200944DB8 /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		FCE03FE0293C6A9200944DB8 /* HomeReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReview.swift; sourceTree = "<group>"; };
-		FCE03FE2293C6C4100944DB8 /* HomeReviewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewDetail.swift; sourceTree = "<group>"; };
-		FCE03FE4293C6C4D00944DB8 /* HomeReviewPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewPrice.swift; sourceTree = "<group>"; };
-		FCE03FE7293C6CA700944DB8 /* HomeReviewPriceDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeReviewPriceDTO.swift; sourceTree = "<group>"; };
 		FCE03FE8293C6CA700944DB8 /* HomeReviewDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeReviewDTO.swift; sourceTree = "<group>"; };
-		FCE03FE9293C6CA700944DB8 /* HomeReviewDetailDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeReviewDetailDTO.swift; sourceTree = "<group>"; };
 		FCE03FEE293C6D1400944DB8 /* HomeReviewMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewMapper.swift; sourceTree = "<group>"; };
-		FCE03FF0293C6E2E00944DB8 /* HomeReviewDetailMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewDetailMapper.swift; sourceTree = "<group>"; };
-		FCE03FF2293C6E8000944DB8 /* HomeReviewPriceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewPriceMapper.swift; sourceTree = "<group>"; };
 		FCE03FF5293C6EBB00944DB8 /* HomeReviewRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewRequestDTO.swift; sourceTree = "<group>"; };
 		FCE03FF8293C6F0500944DB8 /* HomeReviewRequestDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewRequestDTOMapper.swift; sourceTree = "<group>"; };
 		FCE03FFB293C6F4900944DB8 /* HomeReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewRequest.swift; sourceTree = "<group>"; };
 		FCE03FFD293C741F00944DB8 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		FCE04000293D9DA300944DB8 /* MyPageRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRepositoryInterface.swift; sourceTree = "<group>"; };
+		FCE04002293D9DAB00944DB8 /* HomeRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryInterface.swift; sourceTree = "<group>"; };
+		FCE04004293D9DB600944DB8 /* LoginRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryInterface.swift; sourceTree = "<group>"; };
+		FCE04007293D9E6B00944DB8 /* MyPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRepository.swift; sourceTree = "<group>"; };
+		FCE04009293D9E7000944DB8 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		FCE0400B293D9E7500944DB8 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		FCE0400D293DA70900944DB8 /* HomeCitiesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCitiesDTO.swift; sourceTree = "<group>"; };
+		FCE0400F293DA78E00944DB8 /* HomeCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCities.swift; sourceTree = "<group>"; };
+		FCE04011293DA7A100944DB8 /* HomeCitiesMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCitiesMapper.swift; sourceTree = "<group>"; };
+		FCE04013293DA7C300944DB8 /* HomeCitiesRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCitiesRequestDTO.swift; sourceTree = "<group>"; };
+		FCE04015293DA7E500944DB8 /* HomeCitiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCitiesRequest.swift; sourceTree = "<group>"; };
+		FCE04017293DA86500944DB8 /* HomeCitiesRequestDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCitiesRequestDTOMapper.swift; sourceTree = "<group>"; };
 		FCE5DE97289EAB8B004C4160 /* KakaoMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCEB3BEF2892C56B00E35F97 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		FCEB3BF52892C69400E35F97 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -710,6 +722,7 @@
 				FC7AB43B287ABDE000DF03E5 /* DB */,
 				FC3CF03B28A778FC005D89AF /* DTO */,
 				FC3CF03A28A778EB005D89AF /* Mapper */,
+				FCE04006293D9E5800944DB8 /* Repository */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -717,6 +730,7 @@
 		FC7AB42B287ABC3100DF03E5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				FCE03FFF293D9D8800944DB8 /* RepositoryInterface */,
 				FC3CF04528A7798C005D89AF /* RequestMapper */,
 				FC3CF04228A77974005D89AF /* RequestDTO */,
 				FC7AB436287ABD1500DF03E5 /* Entities */,
@@ -1040,8 +1054,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE03FE0293C6A9200944DB8 /* HomeReview.swift */,
-				FCE03FE4293C6C4D00944DB8 /* HomeReviewPrice.swift */,
-				FCE03FE2293C6C4100944DB8 /* HomeReviewDetail.swift */,
+				FCE0400F293DA78E00944DB8 /* HomeCities.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1050,8 +1063,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE03FE8293C6CA700944DB8 /* HomeReviewDTO.swift */,
-				FCE03FE9293C6CA700944DB8 /* HomeReviewDetailDTO.swift */,
-				FCE03FE7293C6CA700944DB8 /* HomeReviewPriceDTO.swift */,
+				FCE0400D293DA70900944DB8 /* HomeCitiesDTO.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1060,8 +1072,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE03FEE293C6D1400944DB8 /* HomeReviewMapper.swift */,
-				FCE03FF0293C6E2E00944DB8 /* HomeReviewDetailMapper.swift */,
-				FCE03FF2293C6E8000944DB8 /* HomeReviewPriceMapper.swift */,
+				FCE04011293DA7A100944DB8 /* HomeCitiesMapper.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1070,6 +1081,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE03FF5293C6EBB00944DB8 /* HomeReviewRequestDTO.swift */,
+				FCE04013293DA7C300944DB8 /* HomeCitiesRequestDTO.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1078,6 +1090,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE03FF8293C6F0500944DB8 /* HomeReviewRequestDTOMapper.swift */,
+				FCE04017293DA86500944DB8 /* HomeCitiesRequestDTOMapper.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1086,8 +1099,29 @@
 			isa = PBXGroup;
 			children = (
 				FCE03FFB293C6F4900944DB8 /* HomeReviewRequest.swift */,
+				FCE04015293DA7E500944DB8 /* HomeCitiesRequest.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FCE03FFF293D9D8800944DB8 /* RepositoryInterface */ = {
+			isa = PBXGroup;
+			children = (
+				FCE04000293D9DA300944DB8 /* MyPageRepositoryInterface.swift */,
+				FCE04002293D9DAB00944DB8 /* HomeRepositoryInterface.swift */,
+				FCE04004293D9DB600944DB8 /* LoginRepositoryInterface.swift */,
+			);
+			path = RepositoryInterface;
+			sourceTree = "<group>";
+		};
+		FCE04006293D9E5800944DB8 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FCE04007293D9E6B00944DB8 /* MyPageRepository.swift */,
+				FCE04009293D9E7000944DB8 /* HomeRepository.swift */,
+				FCE0400B293D9E7500944DB8 /* LoginRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		FCEB3BD82882532200E35F97 /* Service */ = {
@@ -1434,6 +1468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE04010293DA78E00944DB8 /* HomeCities.swift in Sources */,
 				FC7AB44D288059E900DF03E5 /* HTTPFields.swift in Sources */,
 				FCFBB37628CF607C00818657 /* MyReviewDTO.swift in Sources */,
 				FC7AB4472880598500DF03E5 /* extension+Encodable.swift in Sources */,
@@ -1457,16 +1492,18 @@
 				FCE03FEB293C6CA700944DB8 /* HomeReviewDTO.swift in Sources */,
 				FCEB3BF02892C56B00E35F97 /* MainTabView.swift in Sources */,
 				FCFBB38028CF65A900818657 /* MyReviewMapper.swift in Sources */,
+				FCE04014293DA7C300944DB8 /* HomeCitiesRequestDTO.swift in Sources */,
 				FC373C48289D68DD00F10A4C /* View+if.swift in Sources */,
 				FC05286528FCF8F8003B8491 /* EnterCompanyViewModel.swift in Sources */,
 				FC83D4B4291FB66300F76278 /* KakaoLoginRequestDTOMapper.swift in Sources */,
-				FCE03FF3293C6E8000944DB8 /* HomeReviewPriceMapper.swift in Sources */,
+				FCE04008293D9E6B00944DB8 /* MyPageRepository.swift in Sources */,
 				FCFBB37828CF63E200818657 /* NetworkError.swift in Sources */,
 				FC3CF027289FA89E005D89AF /* EnterCompanySearchView.swift in Sources */,
 				FCFBB37C28CF649C00818657 /* MyReviewRequestDTOMapper.swift in Sources */,
 				FC4F086A28E97F150094D911 /* HometerviewTabType.swift in Sources */,
 				FCEB3C2D289506C000E35F97 /* Font+Custom.swift in Sources */,
 				FCEB3BF62892C69400E35F97 /* HomeView.swift in Sources */,
+				FCE0400A293D9E7000944DB8 /* HomeRepository.swift in Sources */,
 				6A82522728A8170A00081D38 /* WithdrawalView.swift in Sources */,
 				FC7AB449288059AB00DF03E5 /* Requestable.swift in Sources */,
 				FC83D4C5291FE25700F76278 /* LoginUseCase.swift in Sources */,
@@ -1480,7 +1517,6 @@
 				FCAE85BF28A7FB89002FC940 /* LengthResidenceModel.swift in Sources */,
 				FC3CF04B28A781D5005D89AF /* ToastView.swift in Sources */,
 				FCEB3C142892CF2B00E35F97 /* Logger.swift in Sources */,
-				FCE03FE3293C6C4100944DB8 /* HomeReviewDetail.swift in Sources */,
 				FC83D4C0291FDB8100F76278 /* NotificationName.swift in Sources */,
 				6AD53EBE28D4E33E00093DC3 /* LoadingView.swift in Sources */,
 				FCEB3C0B2892C78C00E35F97 /* WishViewModel.swift in Sources */,
@@ -1492,13 +1528,14 @@
 				FCFBB37A28CF643500818657 /* MyPageUseCase.swift in Sources */,
 				FC7AB3F8287942AD00DF03E5 /* hometerviewApp.swift in Sources */,
 				FCAE85B628A7DB67002FC940 /* StarRatingView.swift in Sources */,
+				FCE04003293D9DAB00944DB8 /* HomeRepositoryInterface.swift in Sources */,
 				FCAE85B128A7D27A002FC940 /* LivingFloorView.swift in Sources */,
-				FCE03FEC293C6CA700944DB8 /* HomeReviewDetailDTO.swift in Sources */,
 				FCAE859728A79D98002FC940 /* BaseViewModel.swift in Sources */,
 				6A350AAB288B0956004EA957 /* CoreDataStorage.xcdatamodeld in Sources */,
 				FCFBB38228CF676C00818657 /* MyReviewWrapperMapper.swift in Sources */,
 				FC83D4BD291FD67100F76278 /* Environment.swift in Sources */,
 				FC373C46289D643000F10A4C /* DetailListCell.swift in Sources */,
+				FCE04016293DA7E500944DB8 /* HomeCitiesRequest.swift in Sources */,
 				FCEB3BFA2892C6A500E35F97 /* WishView.swift in Sources */,
 				FC83D4C3291FE19C00F76278 /* LoginService.swift in Sources */,
 				FC3CF030289FE9A2005D89AF /* CompanyNameInputView.swift in Sources */,
@@ -1506,17 +1543,16 @@
 				6A37EDE328DEFFA900DA63C3 /* RecentReviewView.swift in Sources */,
 				FCFBB37028CF5D5900818657 /* MyReviewRequest.swift in Sources */,
 				FC83D4A5291FAEAD00F76278 /* InterceptorAuthenticator.swift in Sources */,
-				FCE03FEA293C6CA700944DB8 /* HomeReviewPriceDTO.swift in Sources */,
 				FC7AB4452880596F00DF03E5 /* extension+Dictionary.swift in Sources */,
 				6A6658782908278800ABD859 /* UINavigationController+Custom.swift in Sources */,
 				FCD611A228ABC1BC0096F514 /* WriteInputSearchView.swift in Sources */,
 				FC7AB433287ABCBA00DF03E5 /* MainViewModel.swift in Sources */,
-				FCE03FF1293C6E2E00944DB8 /* HomeReviewDetailMapper.swift in Sources */,
 				FCEDBD5F289F46F90020D276 /* HomeListCell.swift in Sources */,
 				FC7AB43E287ABE8F00DF03E5 /* BaseNetwork.swift in Sources */,
 				FCEB3C072892C75F00E35F97 /* HomeViewModel.swift in Sources */,
+				FCE04012293DA7A100944DB8 /* HomeCitiesMapper.swift in Sources */,
 				FCEB3C092892C77E00E35F97 /* MapViewModel.swift in Sources */,
-				FCE03FE5293C6C4D00944DB8 /* HomeReviewPrice.swift in Sources */,
+				FCE04005293D9DB600944DB8 /* LoginRepositoryInterface.swift in Sources */,
 				6A350AAD2890E493004EA957 /* AppleLoginView.swift in Sources */,
 				FCEB3BFC2892C6AD00E35F97 /* MyPageView.swift in Sources */,
 				FCFBB37428CF5F5D00818657 /* MyReviewRequestDTO.swift in Sources */,
@@ -1524,16 +1560,20 @@
 				6A82522528A8148A00081D38 /* TermsOfServiceView.swift in Sources */,
 				6A37EDE128DEFF9A00DA63C3 /* MyReviewView.swift in Sources */,
 				FC05286728FD0748003B8491 /* AskDismissAlertModifier.swift in Sources */,
+				FCE04018293DA86500944DB8 /* HomeCitiesRequestDTOMapper.swift in Sources */,
 				FC7AB44B288059D500DF03E5 /* HTTPHeaderType.swift in Sources */,
 				6A350AA8288B0674004EA957 /* CoreDataStorage.swift in Sources */,
 				FC45F328289E0C6A00C7B1CF /* TotalStarred.swift in Sources */,
 				FC45F32A289E0F3B00C7B1CF /* HelpfulButton.swift in Sources */,
 				FC83D4B7291FB6BF00F76278 /* KakaoLoginRequest.swift in Sources */,
 				FCE03FFC293C6F4900944DB8 /* HomeReviewRequest.swift in Sources */,
+				FCE0400C293D9E7500944DB8 /* LoginRepository.swift in Sources */,
 				FC83D4A7291FB36100F76278 /* UserDefaultsKeys.swift in Sources */,
 				FCD611A028ABBCF20096F514 /* BackButton.swift in Sources */,
 				FC3C851228FECC430012C69F /* AppDelegate.swift in Sources */,
 				FCAE85B928A7E5E9002FC940 /* HometerviewHeader.swift in Sources */,
+				FCE0400E293DA70900944DB8 /* HomeCitiesDTO.swift in Sources */,
+				FCE04001293D9DA300944DB8 /* MyPageRepositoryInterface.swift in Sources */,
 				FC3CF02D289FE61F005D89AF /* DirectInputSearchView.swift in Sources */,
 				FC373C4B289D6B4500F10A4C /* LikeButton.swift in Sources */,
 				FCEB3C0D2892C7C900E35F97 /* MyPageViewModel.swift in Sources */,
